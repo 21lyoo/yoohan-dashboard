@@ -760,73 +760,89 @@ function renderProyecciones(resumen) {
     const diffColor  = diffCierre >= 0 ? '#4DFFB4' : '#FF6B6B';
     const diffSign   = diffCierre >= 0 ? '+' : '';
 
+    // Diferencia en $ entre real y meta del día
+    const brechaVenta = ventaReal - metaHoy;
+    const brechaSign  = brechaVenta >= 0 ? '+' : '';
+    const brechaColor = brechaVenta >= 0 ? '#4DFFB4' : '#FF6B6B';
+
+    // Etiqueta de estado
+    const etiqueta = pctVenta >= 95 ? '✓ En ritmo' : pctVenta >= 80 ? '↗ Levemente bajo' : '↘ Por debajo';
+
     return `
-      <div style="background:var(--surface);border:1px solid var(--border);border-top:2px solid ${color};border-radius:6px;padding:18px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:3px solid ${color};border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:0">
 
-        <!-- Nombre tienda -->
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${color};margin-bottom:16px">${tienda}</div>
+        <!-- HEADER: nombre + estado -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${color}">${tienda}</span>
+          <span style="font-size:10px;font-family:var(--font-m);color:${semV};border:1px solid ${semV}44;padding:2px 8px;border-radius:10px">${etiqueta}</span>
+        </div>
 
-        <!-- FACTURACIÓN -->
-        <div style="margin-bottom:16px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px">Facturación</span>
-            <span style="font-size:13px;font-weight:700;color:${semV}">${Math.round(pctVenta)}%</span>
+        <!-- BLOQUE FACTURACIÓN -->
+        <div style="margin-bottom:14px">
+
+          <!-- Fila 1: Real vs Esperado hoy -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+            <div style="background:var(--bg);border-radius:6px;padding:10px">
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Facturado</div>
+              <div style="font-size:15px;font-weight:700;color:var(--text)">$${Math.round(ventaReal/1000000*10)/10}M</div>
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);margin-top:2px">$${Math.round(ventaReal).toLocaleString('es-AR')}</div>
+            </div>
+            <div style="background:var(--bg);border-radius:6px;padding:10px;border:1px solid ${color}33">
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Esperado hoy</div>
+              <div style="font-size:15px;font-weight:700;color:${color}">$${Math.round(metaHoy/1000000*10)/10}M</div>
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);margin-top:2px">al día ${diaActual} (${Math.round(pctHistorico*100)}% del mes)</div>
+            </div>
           </div>
 
-          <!-- Barra doble: real vs esperado -->
-          <div style="position:relative;height:8px;background:var(--border);border-radius:4px;margin-bottom:8px">
-            <!-- Meta esperada al día de hoy (100%) -->
-            <div style="position:absolute;left:0;top:0;height:100%;width:100%;background:${color}22;border-radius:4px"></div>
-            <!-- Real -->
-            <div style="position:absolute;left:0;top:0;height:100%;width:${Math.min(pctVenta,150)}%;background:${semV};border-radius:4px;transition:width .6s;max-width:100%"></div>
-            <!-- Marker meta mensual total -->
-            <div style="position:absolute;left:${pctHistorico*100}%;top:-3px;height:14px;width:2px;background:${color};opacity:0.8" title="Meta al día de hoy"></div>
+          <!-- Barra de progreso con label -->
+          <div style="margin-bottom:6px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-size:9px;color:var(--muted);font-family:var(--font-m)">Ritmo actual</span>
+              <span style="font-size:12px;font-weight:700;font-family:var(--font-m);color:${semV}">${Math.round(pctVenta)}% de lo esperado</span>
+            </div>
+            <div style="position:relative;height:6px;background:var(--border);border-radius:3px">
+              <div style="height:100%;width:${Math.min(pctVenta,100)}%;background:${semV};border-radius:3px;transition:width .6s"></div>
+            </div>
           </div>
 
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <!-- Brecha y cierre estimado -->
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg);border-radius:6px;margin-top:8px">
             <div>
-              <div style="font-size:16px;font-weight:700">$${Math.round(ventaReal).toLocaleString('es-AR')}</div>
-              <div style="font-size:10px;color:var(--muted);font-family:var(--font-m)">
-                esperado al día ${diaActual}: $${Math.round(metaHoy).toLocaleString('es-AR')}
-              </div>
+              <span style="font-size:9px;color:var(--muted);font-family:var(--font-m);display:block;margin-bottom:2px">Diferencia vs ritmo</span>
+              <span style="font-size:13px;font-weight:700;font-family:var(--font-m);color:${brechaColor}">${brechaSign}$${Math.abs(Math.round(brechaVenta)).toLocaleString('es-AR')}</span>
             </div>
             <div style="text-align:right">
-              <div style="font-size:11px;color:${diffColor};font-family:var(--font-m);font-weight:500">
-                cierre est. ${diffSign}${Math.round(diffPct)}%
-              </div>
-              <div style="font-size:10px;color:var(--muted);font-family:var(--font-m)">
-                $${Math.round(proyeccionCierre).toLocaleString('es-AR')} / meta $${Math.round(proyFac).toLocaleString('es-AR')}
-              </div>
+              <span style="font-size:9px;color:var(--muted);font-family:var(--font-m);display:block;margin-bottom:2px">Cierre estimado</span>
+              <span style="font-size:13px;font-weight:700;font-family:var(--font-m);color:${diffColor}">${diffSign}${Math.round(diffPct)}% vs meta</span>
             </div>
+          </div>
+          <div style="text-align:center;font-size:10px;color:var(--muted);font-family:var(--font-m);margin-top:4px">
+            Meta mensual: $${Math.round(proyFac/1000000*10)/10}M · Proyección cierre: $${Math.round(proyeccionCierre/1000000*10)/10}M
           </div>
         </div>
 
-        <!-- Separador -->
-        <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+        <!-- SEPARADOR -->
+        <div style="height:1px;background:var(--border);margin:4px 0 14px"></div>
 
-        <!-- TICKETS -->
+        <!-- BLOQUE TICKETS -->
         <div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px">Tickets</span>
-            <span style="font-size:13px;font-weight:700;color:${semT}">${Math.round(pctTick)}%</span>
-          </div>
-          <div style="position:relative;height:6px;background:var(--border);border-radius:3px;margin-bottom:8px">
-            <div style="position:absolute;left:0;top:0;height:100%;width:${Math.min(pctTick,150)}%;background:${semT};border-radius:3px;transition:width .6s;max-width:100%"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between">
-            <div>
-              <span style="font-size:14px;font-weight:700">${ticketsReal.toLocaleString('es-AR')}</span>
-              <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);margin-left:6px">esperado: ${Math.round(metaTickHoy).toLocaleString('es-AR')}</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+            <div style="background:var(--bg);border-radius:6px;padding:8px 10px">
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Tickets emitidos</div>
+              <div style="font-size:14px;font-weight:700">${ticketsReal.toLocaleString('es-AR')}</div>
             </div>
-            <div style="text-align:right;font-size:10px;color:var(--muted);font-family:var(--font-m)">
-              meta mensual: ${Math.round(proyTick).toLocaleString('es-AR')}
+            <div style="background:var(--bg);border-radius:6px;padding:8px 10px;border:1px solid ${color}33">
+              <div style="font-size:9px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Esperado hoy</div>
+              <div style="font-size:14px;font-weight:700;color:${color}">${Math.round(metaTickHoy).toLocaleString('es-AR')}</div>
             </div>
           </div>
-        </div>
-
-        <!-- Nota día histórico -->
-        <div style="margin-top:12px;padding:8px;background:var(--border);border-radius:4px;font-size:10px;color:var(--muted);font-family:var(--font-m)">
-          Histórico: al día ${diaActual} se acumula el ${Math.round(pctHistorico*100)}% del mes
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-size:9px;color:var(--muted);font-family:var(--font-m)">Ritmo tickets</span>
+            <span style="font-size:11px;font-weight:700;font-family:var(--font-m);color:${semT}">${Math.round(pctTick)}% · meta mensual: ${Math.round(proyTick).toLocaleString('es-AR')}</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px">
+            <div style="height:100%;width:${Math.min(pctTick,100)}%;background:${semT};border-radius:3px;transition:width .6s"></div>
+          </div>
         </div>
 
       </div>
