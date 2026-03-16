@@ -1,0 +1,481 @@
+{
+  "ultima_actualizacion": "2026-03-16T22:21:27.212Z",
+  "proyecciones": {
+    "2025-05": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 109448213,
+        "proy_tickets": 2131,
+        "proy_unidades": 4551,
+        "real_facturacion": 109660787,
+        "real_tickets": 2042,
+        "real_unidades": 4573
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 80592897,
+        "proy_tickets": 1635,
+        "proy_unidades": 4050,
+        "real_facturacion": 81375424,
+        "real_tickets": 1648,
+        "real_unidades": 4192
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 109395000,
+        "proy_tickets": 2145,
+        "proy_unidades": 4648,
+        "real_facturacion": 110543943,
+        "real_tickets": 2022,
+        "real_unidades": 4415
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 85087059,
+        "proy_tickets": 1611,
+        "proy_unidades": 4155,
+        "real_facturacion": 63217255,
+        "real_tickets": 1352,
+        "real_unidades": 3560
+      }
+    },
+    "2025-06": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 126412685,
+        "proy_tickets": 2344,
+        "proy_unidades": 5006,
+        "real_facturacion": 117687315,
+        "real_tickets": 2076,
+        "real_unidades": 4721
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 92681832,
+        "proy_tickets": 1880,
+        "proy_unidades": 4658,
+        "real_facturacion": 87587798,
+        "real_tickets": 1722,
+        "real_unidades": 4063
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 126351225,
+        "proy_tickets": 2360,
+        "proy_unidades": 5112,
+        "real_facturacion": 117353617,
+        "real_tickets": 2021,
+        "real_unidades": 4554
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 76578353,
+        "proy_tickets": 1450,
+        "proy_unidades": 3770,
+        "real_facturacion": 79716332,
+        "real_tickets": 1654,
+        "real_unidades": 3945
+      }
+    },
+    "2025-07": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 149055363,
+        "proy_tickets": 2579,
+        "proy_unidades": 6759,
+        "real_facturacion": 152152608,
+        "real_tickets": 2714,
+        "real_unidades": 6394
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 107047516,
+        "proy_tickets": 2068,
+        "proy_unidades": 5357,
+        "real_facturacion": 93305083,
+        "real_tickets": 1799,
+        "real_unidades": 4430
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 150536100,
+        "proy_tickets": 2595,
+        "proy_unidades": 6902,
+        "real_facturacion": 147720735,
+        "real_tickets": 2590,
+        "real_unidades": 5901
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 88065106,
+        "proy_tickets": 1668,
+        "proy_unidades": 4336,
+        "real_facturacion": 73324703,
+        "real_tickets": 1660,
+        "real_unidades": 3897
+      }
+    },
+    "2025-08": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 117965638,
+        "proy_tickets": 2171,
+        "proy_unidades": 5115,
+        "real_facturacion": 117857927,
+        "real_tickets": 2266,
+        "real_unidades": 5602
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 79624822,
+        "proy_tickets": 1619,
+        "proy_unidades": 3987,
+        "real_facturacion": 77305381,
+        "real_tickets": 1694,
+        "real_unidades": 4554
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 112965440,
+        "proy_tickets": 2072,
+        "proy_unidades": 4721,
+        "real_facturacion": 121532628,
+        "real_tickets": 2397,
+        "real_unidades": 5384
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 74945427,
+        "proy_tickets": 1494,
+        "proy_unidades": 3507,
+        "real_facturacion": 79760781,
+        "real_tickets": 1828,
+        "real_unidades": 5330
+      }
+    },
+    "2025-09": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 133655068,
+        "proy_tickets": 2388,
+        "proy_unidades": 5627,
+        "real_facturacion": 100610017,
+        "real_tickets": 1968,
+        "real_unidades": 4452
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 91966669,
+        "proy_tickets": 1781,
+        "proy_unidades": 4386,
+        "real_facturacion": 77373484,
+        "real_tickets": 1669,
+        "real_unidades": 4605
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 127989844,
+        "proy_tickets": 2279,
+        "proy_unidades": 5193,
+        "real_facturacion": 108184601,
+        "real_tickets": 2125,
+        "real_unidades": 4532
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 86561968,
+        "proy_tickets": 1643,
+        "proy_unidades": 3858,
+        "real_facturacion": 78978647,
+        "real_tickets": 1846,
+        "real_unidades": 4100
+      }
+    },
+    "2025-10": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 142482986,
+        "proy_tickets": 2747,
+        "proy_unidades": 6471,
+        "real_facturacion": 81975167,
+        "real_tickets": 1496,
+        "real_unidades": 3530
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 108635628,
+        "proy_tickets": 2226,
+        "proy_unidades": 4824,
+        "real_facturacion": 70255899,
+        "real_tickets": 1450,
+        "real_unidades": 4234
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 144023771,
+        "proy_tickets": 2621,
+        "proy_unidades": 5972,
+        "real_facturacion": 86956150,
+        "real_tickets": 1677,
+        "real_unidades": 3606
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 113612583,
+        "proy_tickets": 2054,
+        "proy_unidades": 4244,
+        "real_facturacion": 68773149,
+        "real_tickets": 1433,
+        "real_unidades": 3286
+      }
+    },
+    "2025-11": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 104514856,
+        "real_tickets": 2140,
+        "real_unidades": 4553
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 96965395,
+        "real_tickets": 2121,
+        "real_unidades": 4998
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 121455149,
+        "real_tickets": 2410,
+        "real_unidades": 5082
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 79262306,
+        "real_tickets": 1930,
+        "real_unidades": 4306
+      }
+    },
+    "2025-12": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 274753662,
+        "real_tickets": 5368,
+        "real_unidades": 11965
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 175594018,
+        "real_tickets": 3920,
+        "real_unidades": 9286
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 293653791,
+        "real_tickets": 5747,
+        "real_unidades": 12125
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 195786929,
+        "real_tickets": 4532,
+        "real_unidades": 10429
+      }
+    },
+    "2026-01": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 73201420,
+        "real_tickets": 1684,
+        "real_unidades": 3639
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 52007456,
+        "real_tickets": 1209,
+        "real_unidades": 2864
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 87855522,
+        "real_tickets": 1959,
+        "real_unidades": 4484
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 57439868,
+        "real_tickets": 1441,
+        "real_unidades": 3171
+      }
+    },
+    "2026-02": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 71303871,
+        "real_tickets": 1367,
+        "real_unidades": 2789
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 63950775,
+        "real_tickets": 1318,
+        "real_unidades": 3427
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 82351163,
+        "real_tickets": 1535,
+        "real_unidades": 3213
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": 74347224,
+        "real_tickets": 1639,
+        "real_unidades": 3998
+      }
+    },
+    "2026-03": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 105886569,
+        "proy_tickets": 1845,
+        "proy_unidades": 3905,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 76740814,
+        "proy_tickets": 1582,
+        "proy_unidades": 4284,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 113232921,
+        "proy_tickets": 1919,
+        "proy_unidades": 4016,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 85870414,
+        "proy_tickets": 1721,
+        "proy_unidades": 4198,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      }
+    },
+    "2026-04": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 100592241,
+        "proy_tickets": 1753,
+        "proy_unidades": 3709,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 69066732,
+        "proy_tickets": 1423,
+        "proy_unidades": 4070,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 107571275,
+        "proy_tickets": 1823,
+        "proy_unidades": 3815,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 72989852,
+        "proy_tickets": 1463,
+        "proy_unidades": 3568,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      }
+    },
+    "2026-05": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": 127668609,
+        "proy_tickets": 2104,
+        "proy_unidades": 4563,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": 94966757,
+        "proy_tickets": 1779,
+        "proy_unidades": 5087,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": 130587889,
+        "proy_tickets": 2133,
+        "proy_unidades": 4502,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": 86128025,
+        "proy_tickets": 1726,
+        "proy_unidades": 4210,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      }
+    },
+    "2026-06": {
+      "Plaza CC Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Río Grande": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Plaza CC Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      },
+      "Casa Corea Ushuaia": {
+        "proy_facturacion": null,
+        "proy_tickets": null,
+        "proy_unidades": null,
+        "real_facturacion": null,
+        "real_tickets": null,
+        "real_unidades": null
+      }
+    }
+  }
+}
