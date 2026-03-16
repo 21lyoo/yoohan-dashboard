@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoo Han SRL — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:       #0D0E11;
+  --surface:  #13151A;
+  --card:     #191C23;
+  --border:   #252830;
+  --accent:   #E8FF47;
+  --accent2:  #4DFFB4;
+  --accent3:  #FF6B6B;
+  --text:     #F0F0F0;
+  --muted:    #6B7280;
+  --font-d:   'Syne', sans-serif;
+  --font-m:   'DM Mono', monospace;
+
+  /* tiendas */
+  --t1: #E8FF47;
+  --t2: #4DFFB4;
+  --t3: #FF9F43;
+  --t4: #A78BFA;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-d);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── fondo grain ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+/* ── layout ── */
+.wrapper { max-width: 1440px; margin: 0 auto; padding: 0 24px 60px; position: relative; z-index: 1; }
+
+/* ── header ── */
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 0 36px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+}
+.logo-block { display: flex; align-items: baseline; gap: 12px; }
+.logo-main { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.logo-sub  { font-size: 11px; font-weight: 400; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-m); }
+.meta-block { text-align: right; }
+.meta-fecha { font-size: 11px; color: var(--muted); font-family: var(--font-m); }
+.meta-badge {
+  display: inline-block; margin-top: 4px;
+  font-size: 10px; font-family: var(--font-m);
+  color: var(--accent); border: 1px solid var(--accent);
+  padding: 2px 8px; border-radius: 2px; letter-spacing: 1px;
+}
+
+/* ── controles ── */
+.controles {
+  display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.ctrl-grupo { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.ctrl-btn {
+  background: transparent; color: var(--muted);
+  border: none; padding: 8px 16px;
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 1px;
+  cursor: pointer; transition: all .15s; text-transform: uppercase;
+  border-right: 1px solid var(--border);
+}
+.ctrl-btn:last-child { border-right: none; }
+.ctrl-btn:hover { color: var(--text); background: var(--border); }
+.ctrl-btn.activo { background: var(--accent); color: #000; font-weight: 500; }
+.ctrl-sep { width: 1px; background: var(--border); margin: 0 8px; }
+
+/* ── KPI strip ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px; margin-bottom: 28px;
+}
+.kpi-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 20px 20px 16px;
+  position: relative; overflow: hidden;
+  transition: border-color .2s;
+}
+.kpi-card:hover { border-color: var(--accent); }
+.kpi-card::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--kpi-color, var(--accent));
+}
+.kpi-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-m); margin-bottom: 10px; }
+.kpi-valor { font-size: 28px; font-weight: 800; color: var(--text); line-height: 1; }
+.kpi-valor.small { font-size: 20px; }
+.kpi-sub { font-size: 11px; color: var(--muted); font-family: var(--font-m); margin-top: 6px; }
+
+/* ── grid principal ── */
+.grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 16px;
+}
+@media (max-width: 900px) { .grid-main { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 24px;
+}
+.panel-wide { grid-column: 1 / -1; }
+.panel-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px;
+}
+.panel-title { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+.panel-meta  { font-size: 10px; color: var(--muted); font-family: var(--font-m); }
+
+/* ── ranking list ── */
+.rank-list { display: flex; flex-direction: column; gap: 6px; }
+.rank-item {
+  display: grid; grid-template-columns: 24px 1fr auto auto;
+  align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 4px;
+  background: var(--surface); border: 1px solid transparent;
+  transition: border-color .15s;
+}
+.rank-item:hover { border-color: var(--border); }
+.rank-n { font-size: 11px; color: var(--muted); font-family: var(--font-m); text-align: right; }
+.rank-info { min-width: 0; }
+.rank-nombre { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rank-rubro  { font-size: 10px; color: var(--muted); font-family: var(--font-m); margin-top: 2px; }
+.rank-uds    { font-size: 13px; font-family: var(--font-m); font-weight: 500; color: var(--accent); white-space: nowrap; text-align: right; }
+.rank-venta  { font-size: 11px; color: var(--muted); font-family: var(--font-m); white-space: nowrap; text-align: right; }
+
+/* barra de fondo del rank */
+.rank-item { position: relative; overflow: hidden; }
+.rank-bar {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: var(--accent); opacity: .04;
+  transition: width .5s ease;
+}
+
+/* ── tab tiendas ── */
+.tienda-tabs {
+  display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.tienda-tab {
+  font-size: 10px; font-family: var(--font-m); letter-spacing: 1px;
+  text-transform: uppercase; padding: 5px 12px;
+  border-radius: 2px; cursor: pointer; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); transition: all .15s;
+}
+.tienda-tab:hover { color: var(--text); }
+.tienda-tab.activo { color: #000; border-color: transparent; }
+
+/* ── chart containers ── */
+.chart-wrap { position: relative; height: 260px; }
+.chart-wrap.tall { height: 320px; }
+
+/* ── comparativo tiendas ── */
+.tiendas-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) { .tiendas-grid { grid-template-columns: 1fr; } }
+
+.tienda-card {
+  border-radius: 6px; padding: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.tienda-nombre { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.tienda-stat { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.tienda-stat-label { font-size: 10px; color: var(--muted); font-family: var(--font-m); }
+.tienda-stat-val   { font-size: 14px; font-weight: 700; font-family: var(--font-m); }
+
+/* ── loading / error ── */
+.loading {
+  display: flex; align-items: center; justify-content: center;
+  height: 200px; color: var(--muted); font-family: var(--font-m);
+  font-size: 12px; letter-spacing: 2px;
+}
+.loading::after {
+  content: ''; width: 16px; height: 16px; margin-left: 12px;
+  border: 2px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── responsive ajustes ── */
+@media (max-width: 600px) {
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+  header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <span class="logo-main">YOO HAN SRL</span>
+      <span class="logo-sub">Dashboard</span>
+    </div>
+    <div class="meta-block">
+      <div class="meta-fecha" id="meta-fecha">Cargando...</div>
+      <div class="meta-badge" id="meta-badge">LIVE</div>
+    </div>
+  </header>
+
+  <!-- CONTROLES DE PERÍODO -->
+  <div class="controles">
+    <div class="ctrl-grupo">
+      <button class="ctrl-btn" data-periodo="hoy" onclick="setPeriodo('hoy', this)">Hoy</button>
+      <button class="ctrl-btn activo" data-periodo="semana" onclick="setPeriodo('semana', this)">7 días</button>
+      <button class="ctrl-btn" data-periodo="mes" onclick="setPeriodo('mes', this)">Mes</button>
+      <button class="ctrl-btn" data-periodo="anio" onclick="setPeriodo('anio', this)">Año</button>
+    </div>
+    <div class="ctrl-sep"></div>
+    <div class="ctrl-grupo">
+      <button class="ctrl-btn activo" data-vista="unidades" onclick="setVista('unidades', this)">Unidades</button>
+      <button class="ctrl-btn" data-vista="venta" onclick="setVista('venta', this)">$ Venta</button>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-strip" id="kpi-strip">
+    <div class="loading">Cargando datos</div>
+  </div>
+
+  <!-- COMPARATIVO TIENDAS -->
+  <div class="panel panel-wide" style="margin-bottom:16px">
+    <div class="panel-header">
+      <span class="panel-title">Comparativo por tienda</span>
+      <span class="panel-meta" id="comp-periodo-label">últimos 7 días</span>
+    </div>
+    <div class="tiendas-grid" id="tiendas-grid">
+      <div class="loading">Cargando</div>
+    </div>
+  </div>
+
+  <!-- GRID PRINCIPAL -->
+  <div class="grid-main">
+
+    <!-- RANKING DE PRODUCTOS -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Ranking de productos</span>
+        <span class="panel-meta" id="rank-periodo-label">7 días</span>
+      </div>
+      <div class="tienda-tabs" id="rank-tabs"></div>
+      <div id="rank-lista"><div class="loading">Cargando</div></div>
+    </div>
+
+    <!-- RANKING DE RUBROS -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Rubros — mes actual</span>
+        <span class="panel-meta">por venta neta</span>
+      </div>
+      <div class="chart-wrap tall">
+        <canvas id="chart-rubros"></canvas>
+      </div>
+    </div>
+
+    <!-- TENDENCIA VENTAS DIARIAS -->
+    <div class="panel panel-wide">
+      <div class="panel-header">
+        <span class="panel-title">Tendencia — últimos 30 días</span>
+        <span class="panel-meta">venta neta por tienda</span>
+      </div>
+      <div class="tienda-tabs" id="tend-tabs"></div>
+      <div class="chart-wrap tall">
+        <canvas id="chart-tendencia"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────
+// Reemplazar con la URL real de GitHub Pages cuando esté configurado
+// Ejemplo: 'https://tuusuario.github.io/yoohan-dashboard/data'
+const DATA_URL = './data';
+
+const COLORES_TIENDA = {
+  'Plaza CC Río Grande':    '#E8FF47',
+  'Casa Corea Río Grande':  '#4DFFB4',
+  'Plaza CC Ushuaia':       '#FF9F43',
+  'Casa Corea Ushuaia':     '#A78BFA',
+  'Todas las tiendas':      '#E8FF47',
+};
+
+const PERIODOS_LABEL = {
+  hoy: 'hoy', semana: 'últimos 7 días', mes: 'mes actual', anio: 'año actual'
+};
+
+// ── ESTADO ────────────────────────────────────────────
+let estado = {
+  periodo: 'semana',
+  vista: 'unidades',
+  tiendaRank: 'Todas las tiendas',
+  tiendaTend: null,
+  datos: {},
+};
+
+let charts = {};
+
+// ── FETCH ─────────────────────────────────────────────
+async function cargar(nombre) {
+  if (estado.datos[nombre]) return estado.datos[nombre];
+  const r = await fetch(`${DATA_URL}/${nombre}.json?t=${Date.now()}`);
+  if (!r.ok) throw new Error(`No se pudo cargar ${nombre}`);
+  estado.datos[nombre] = await r.json();
+  return estado.datos[nombre];
+}
+
+async function init() {
+  try {
+    const [meta, resumen, ranking, diarias, rubros] = await Promise.all([
+      cargar('meta'),
+      cargar('resumen_ventas'),
+      cargar('ranking_productos'),
+      cargar('ventas_diarias'),
+      cargar('ranking_rubros'),
+    ]);
+
+    // Meta
+    const fecha = new Date(meta.ultima_actualizacion);
+    document.getElementById('meta-fecha').textContent =
+      'Actualizado: ' + fecha.toLocaleDateString('es-AR', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+    document.getElementById('meta-badge').textContent = '✓ ACTUALIZADO';
+
+    renderKPIs(resumen);
+    renderComparativo(resumen);
+    renderRankingTabs(ranking);
+    renderRanking(ranking);
+    renderTendenciaTabs(diarias);
+    renderTendencia(diarias);
+    renderRubros(rubros);
+
+  } catch(e) {
+    console.error(e);
+    document.querySelector('.wrapper').innerHTML +=
+      `<div style="color:#FF6B6B;font-family:monospace;padding:20px">
+        Error cargando datos: ${e.message}<br><br>
+        <small>Verificar que los archivos JSON estén en ${DATA_URL}/</small>
+      </div>`;
+  }
+}
+
+// ── KPIs ──────────────────────────────────────────────
+function fmt(n, tipo) {
+  if (n === undefined || n === null) return '—';
+  if (tipo === '$') return '$' + Math.round(n).toLocaleString('es-AR');
+  if (tipo === 'dec') return n.toLocaleString('es-AR', { minimumFractionDigits:1, maximumFractionDigits:1 });
+  if (tipo === 'pct') return n.toFixed(1) + '%';
+  return Math.round(n).toLocaleString('es-AR');
+}
+
+function renderKPIs(resumen) {
+  const p = estado.periodo;
+  const rows = resumen[p] || [];
+  const tot = rows.reduce((a,b) => ({
+    tickets: (a.tickets||0) + (b.tickets||0),
+    unidades: (a.unidades||0) + (b.unidades||0),
+    venta_neta: (a.venta_neta||0) + (b.venta_neta||0),
+    costo: (a.costo||0) + (b.costo||0),
+  }), {});
+
+  const upt = tot.tickets ? tot.unidades / tot.tickets : 0;
+  const ticket = tot.tickets ? tot.venta_neta / tot.tickets : 0;
+  const margen = tot.venta_neta ? (tot.venta_neta - tot.costo) / tot.venta_neta * 100 : 0;
+
+  document.getElementById('kpi-strip').innerHTML = `
+    <div class="kpi-card" style="--kpi-color:#E8FF47">
+      <div class="kpi-label">Venta neta</div>
+      <div class="kpi-valor small">${fmt(tot.venta_neta, '$')}</div>
+      <div class="kpi-sub">${PERIODOS_LABEL[p]}</div>
+    </div>
+    <div class="kpi-card" style="--kpi-color:#4DFFB4">
+      <div class="kpi-label">Tickets</div>
+      <div class="kpi-valor">${fmt(tot.tickets)}</div>
+      <div class="kpi-sub">${PERIODOS_LABEL[p]}</div>
+    </div>
+    <div class="kpi-card" style="--kpi-color:#FF9F43">
+      <div class="kpi-label">Unidades</div>
+      <div class="kpi-valor">${fmt(tot.unidades)}</div>
+      <div class="kpi-sub">${PERIODOS_LABEL[p]}</div>
+    </div>
+    <div class="kpi-card" style="--kpi-color:#A78BFA">
+      <div class="kpi-label">Ticket prom.</div>
+      <div class="kpi-valor small">${fmt(ticket, '$')}</div>
+      <div class="kpi-sub">${PERIODOS_LABEL[p]}</div>
+    </div>
+    <div class="kpi-card" style="--kpi-color:#E8FF47">
+      <div class="kpi-label">UPT</div>
+      <div class="kpi-valor">${fmt(upt, 'dec')}</div>
+      <div class="kpi-sub">unidades por ticket</div>
+    </div>
+    <div class="kpi-card" style="--kpi-color:#4DFFB4">
+      <div class="kpi-label">Margen bruto</div>
+      <div class="kpi-valor">${fmt(margen, 'pct')}</div>
+      <div class="kpi-sub">${PERIODOS_LABEL[p]}</div>
+    </div>
+  `;
+}
+
+// ── COMPARATIVO TIENDAS ───────────────────────────────
+function renderComparativo(resumen) {
+  const p = estado.periodo;
+  const rows = (resumen[p] || []).sort((a,b) => b.venta_neta - a.venta_neta);
+  const maxVenta = Math.max(...rows.map(r => r.venta_neta || 0)) || 1;
+
+  document.getElementById('comp-periodo-label').textContent = PERIODOS_LABEL[p];
+
+  document.getElementById('tiendas-grid').innerHTML = rows.map(r => {
+    const color = COLORES_TIENDA[r.tienda] || '#E8FF47';
+    const pct = Math.round((r.venta_neta / maxVenta) * 100);
+    return `
+      <div class="tienda-card" style="border-left: 3px solid ${color}">
+        <div class="tienda-nombre" style="color:${color}">${r.tienda}</div>
+        <div class="tienda-stat">
+          <span class="tienda-stat-label">Venta neta</span>
+          <span class="tienda-stat-val">${fmt(r.venta_neta, '$')}</span>
+        </div>
+        <div style="height:3px;background:${color}20;border-radius:2px;margin-bottom:10px">
+          <div style="height:100%;width:${pct}%;background:${color};border-radius:2px;transition:width .5s"></div>
+        </div>
+        <div class="tienda-stat">
+          <span class="tienda-stat-label">Tickets</span>
+          <span class="tienda-stat-val" style="font-size:12px">${fmt(r.tickets)}</span>
+        </div>
+        <div class="tienda-stat">
+          <span class="tienda-stat-label">UPT</span>
+          <span class="tienda-stat-val" style="font-size:12px">${fmt(r.upt, 'dec')}</span>
+        </div>
+        <div class="tienda-stat">
+          <span class="tienda-stat-label">Ticket prom.</span>
+          <span class="tienda-stat-val" style="font-size:12px">${fmt(r.ticket_promedio, '$')}</span>
+        </div>
+        <div class="tienda-stat">
+          <span class="tienda-stat-label">Margen</span>
+          <span class="tienda-stat-val" style="font-size:12px;color:${r.margen_pct > 30 ? '#4DFFB4' : '#FF9F43'}">${fmt(r.margen_pct, 'pct')}</span>
+        </div>
+      </div>
+    `;
+  }).join('') || '<div style="color:var(--muted);font-family:var(--font-m);font-size:12px">Sin datos para este período</div>';
+}
+
+// ── RANKING ───────────────────────────────────────────
+function renderRankingTabs(ranking) {
+  const p = estado.periodo === 'hoy' ? 'semana' : estado.periodo;
+  const tiendas = ['Todas las tiendas', 'Plaza CC Río Grande', 'Casa Corea Río Grande', 'Plaza CC Ushuaia', 'Casa Corea Ushuaia'];
+  const container = document.getElementById('rank-tabs');
+  container.innerHTML = tiendas.map(t => `
+    <button class="tienda-tab ${t === estado.tiendaRank ? 'activo' : ''}"
+      style="${t === estado.tiendaRank ? `background:${COLORES_TIENDA[t]||'#E8FF47'}` : ''}"
+      onclick="setTiendaRank('${t}', this)">
+      ${t === 'Todas las tiendas' ? 'Todas' : t.split(' ').slice(-1)[0]}
+    </button>
+  `).join('');
+}
+
+function renderRanking(ranking) {
+  const p = estado.periodo === 'hoy' ? 'semana' : estado.periodo;
+  const data = ranking[p];
+  if (!data) return;
+  const items = data[estado.tiendaRank] || [];
+  const key = estado.vista === 'unidades' ? 'unidades' : 'venta_neta';
+  const max = Math.max(...items.map(i => i[key] || 0)) || 1;
+
+  document.getElementById('rank-periodo-label').textContent = PERIODOS_LABEL[p];
+  document.getElementById('rank-lista').innerHTML = `
+    <div class="rank-list">
+      ${items.slice(0, 15).map((item, i) => {
+        const val = item[key] || 0;
+        const pct = (val / max) * 100;
+        return `
+          <div class="rank-item">
+            <div class="rank-bar" style="width:${pct}%"></div>
+            <span class="rank-n">${i + 1}</span>
+            <div class="rank-info">
+              <div class="rank-nombre">${item.articulo || '—'}</div>
+              <div class="rank-rubro">${item.rubro || ''}</div>
+            </div>
+            <span class="rank-uds">${estado.vista === 'unidades' ? fmt(item.unidades) + ' u.' : fmt(item.venta_neta, '$')}</span>
+            <span class="rank-venta">${estado.vista === 'unidades' ? fmt(item.venta_neta, '$') : fmt(item.unidades) + ' u.'}</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+// ── TENDENCIA ─────────────────────────────────────────
+function renderTendenciaTabs(diarias) {
+  const tiendas = Object.keys(diarias);
+  if (!estado.tiendaTend) estado.tiendaTend = tiendas;
+  const container = document.getElementById('tend-tabs');
+  container.innerHTML = ['Todas', ...tiendas].map(t => {
+    const activo = t === 'Todas' ? estado.tiendaTend.length === tiendas.length : estado.tiendaTend.includes(t);
+    const color = COLORES_TIENDA[t] || '#E8FF47';
+    return `
+      <button class="tienda-tab ${activo ? 'activo' : ''}"
+        style="${activo ? `background:${color}` : ''}"
+        onclick="toggleTiendaTend('${t}', ${JSON.stringify(tiendas)}, this)">
+        ${t === 'Todas' ? 'Todas' : t.split(' ').slice(-1)[0]}
+      </button>
+    `;
+  }).join('');
+}
+
+function renderTendencia(diarias) {
+  const tiendas = Object.keys(diarias);
+  const tiendas_vis = Array.isArray(estado.tiendaTend) ? estado.tiendaTend : tiendas;
+
+  // Fechas únicas ordenadas
+  const fechas = [...new Set(
+    Object.values(diarias).flat().map(r => r.fecha)
+  )].sort();
+
+  if (charts.tendencia) charts.tendencia.destroy();
+  const ctx = document.getElementById('chart-tendencia');
+  charts.tendencia = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: fechas.map(f => {
+        const d = new Date(f + 'T00:00:00');
+        return d.toLocaleDateString('es-AR', { day:'2-digit', month:'short' });
+      }),
+      datasets: tiendas_vis.map(t => {
+        const datos = diarias[t] || [];
+        const byFecha = Object.fromEntries(datos.map(r => [r.fecha, r]));
+        return {
+          label: t,
+          data: fechas.map(f => byFecha[f]?.venta_neta || 0),
+          borderColor: COLORES_TIENDA[t] || '#E8FF47',
+          backgroundColor: (COLORES_TIENDA[t] || '#E8FF47') + '15',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointHoverRadius: 5,
+          tension: 0.3,
+          fill: false,
+        };
+      }),
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#6B7280', font: { family: 'DM Mono', size: 10 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#13151A', borderColor: '#252830', borderWidth: 1,
+          titleColor: '#F0F0F0', bodyColor: '#6B7280',
+          titleFont: { family: 'Syne', size: 12 },
+          bodyFont: { family: 'DM Mono', size: 11 },
+          callbacks: { label: ctx => ` ${ctx.dataset.label}: $${Math.round(ctx.raw).toLocaleString('es-AR')}` },
+        },
+      },
+      scales: {
+        x: { ticks: { color: '#6B7280', font: { family: 'DM Mono', size: 9 }, maxTicksLimit: 10 }, grid: { color: '#252830' } },
+        y: { ticks: { color: '#6B7280', font: { family: 'DM Mono', size: 9 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' }, grid: { color: '#252830' } },
+      },
+    },
+  });
+}
+
+// ── RUBROS ────────────────────────────────────────────
+function renderRubros(rubros) {
+  const top = rubros.slice(0, 12);
+  if (charts.rubros) charts.rubros.destroy();
+  const ctx = document.getElementById('chart-rubros');
+  charts.rubros = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: top.map(r => r.rubro?.substring(0, 20) || '—'),
+      datasets: [{
+        data: top.map(r => r.venta_neta),
+        backgroundColor: top.map((_, i) => {
+          const colors = ['#E8FF47','#4DFFB4','#FF9F43','#A78BFA','#FF6B6B','#45B7D1'];
+          return colors[i % colors.length] + 'CC';
+        }),
+        borderRadius: 3,
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#13151A', borderColor: '#252830', borderWidth: 1,
+          titleColor: '#F0F0F0', bodyColor: '#6B7280',
+          titleFont: { family: 'Syne', size: 12 },
+          bodyFont: { family: 'DM Mono', size: 11 },
+          callbacks: {
+            label: ctx => ` $${Math.round(ctx.raw).toLocaleString('es-AR')}`,
+          },
+        },
+      },
+      scales: {
+        x: { ticks: { color: '#6B7280', font: { family: 'DM Mono', size: 9 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' }, grid: { color: '#252830' } },
+        y: { ticks: { color: '#9CA3AF', font: { family: 'DM Mono', size: 9 } }, grid: { display: false } },
+      },
+    },
+  });
+}
+
+// ── CONTROLES ─────────────────────────────────────────
+function setPeriodo(p, btn) {
+  estado.periodo = p;
+  document.querySelectorAll('[data-periodo]').forEach(b => b.classList.remove('activo'));
+  btn.classList.add('activo');
+  const resumen  = estado.datos['resumen_ventas'];
+  const ranking  = estado.datos['ranking_productos'];
+  const diarias  = estado.datos['ventas_diarias'];
+  if (resumen) { renderKPIs(resumen); renderComparativo(resumen); }
+  if (ranking)  { renderRankingTabs(ranking); renderRanking(ranking); }
+}
+
+function setVista(v, btn) {
+  estado.vista = v;
+  document.querySelectorAll('[data-vista]').forEach(b => b.classList.remove('activo'));
+  btn.classList.add('activo');
+  const ranking = estado.datos['ranking_productos'];
+  if (ranking) renderRanking(ranking);
+}
+
+function setTiendaRank(t, btn) {
+  estado.tiendaRank = t;
+  document.querySelectorAll('#rank-tabs .tienda-tab').forEach(b => {
+    b.classList.remove('activo');
+    b.style.background = '';
+  });
+  btn.classList.add('activo');
+  btn.style.background = COLORES_TIENDA[t] || '#E8FF47';
+  const ranking = estado.datos['ranking_productos'];
+  if (ranking) renderRanking(ranking);
+}
+
+function toggleTiendaTend(t, todasTiendas, btn) {
+  if (t === 'Todas') {
+    estado.tiendaTend = [...todasTiendas];
+  } else {
+    if (!Array.isArray(estado.tiendaTend)) estado.tiendaTend = [...todasTiendas];
+    const idx = estado.tiendaTend.indexOf(t);
+    if (idx >= 0) {
+      if (estado.tiendaTend.length > 1) estado.tiendaTend.splice(idx, 1);
+    } else {
+      estado.tiendaTend.push(t);
+    }
+  }
+  const diarias = estado.datos['ventas_diarias'];
+  if (diarias) { renderTendenciaTabs(diarias); renderTendencia(diarias); }
+}
+
+// ── INICIO ────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
