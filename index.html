@@ -674,32 +674,50 @@ function renderRubros(rubros) {
 }
 
 // ── PROYECCIONES ──────────────────────────────────────
+function getPctAcumuladoHistorico(diaDelMes) {
+  // Patrón histórico calculado de 12 meses reales de Yoo Han
+  const patron = estado.datos['patron_ventas'];
+  if (patron && patron.patron_acumulacion) {
+    return patron.patron_acumulacion[diaDelMes] || diaDelMes / 31;
+  }
+  // Fallback: tabla hardcodeada de los datos calculados
+  const PATRON = {
+    1:0.021,2:0.052,3:0.080,4:0.111,5:0.151,6:0.190,7:0.215,
+    8:0.254,9:0.294,10:0.334,11:0.365,12:0.399,13:0.434,14:0.466,
+    15:0.509,16:0.546,17:0.583,18:0.620,19:0.652,20:0.684,21:0.708,
+    22:0.742,23:0.780,24:0.817,25:0.835,26:0.860,27:0.886,28:0.909,
+    29:0.937,30:0.969,31:1.000
+  };
+  return PATRON[diaDelMes] || diaDelMes / 31;
+}
+
 function renderProyecciones(resumen) {
   const panel = document.getElementById('panel-proyecciones');
   const grid  = document.getElementById('proy-grid');
   const label = document.getElementById('proy-mes-label');
-  const pdata = estado.datos['proyecciones'];
   panel.style.display = 'block';
-  panel.style.marginTop = '16px';
 
-  const ahora = new Date();
-  const mesKey = ahora.getFullYear() + '-' + String(ahora.getMonth()+1).padStart(2,'0');
-  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  const diasMes = new Date(ahora.getFullYear(), ahora.getMonth()+1, 0).getDate();
+  const ahora    = new Date();
+  const mesKey   = ahora.getFullYear() + '-' + String(ahora.getMonth()+1).padStart(2,'0');
+  const MESES    = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const diasMes  = new Date(ahora.getFullYear(), ahora.getMonth()+1, 0).getDate();
   const diaActual = ahora.getDate();
-  const pctMes = diaActual / diasMes;
 
-  label.textContent = meses[ahora.getMonth()] + ' ' + ahora.getFullYear() + ' — día ' + diaActual + ' de ' + diasMes;
+  // % que históricamente se acumula hasta este día del mes
+  const pctHistorico = getPctAcumuladoHistorico(diaActual);
+  const pctRestante  = 1 - pctHistorico;
 
+  label.textContent = MESES[ahora.getMonth()] + ' ' + ahora.getFullYear() + ' — día ' + diaActual + ' de ' + diasMes;
+
+  const pdata = estado.datos['proyecciones'];
   if (!pdata || !pdata.proyecciones || !pdata.proyecciones[mesKey]) {
     grid.innerHTML = `<div style="color:var(--muted);font-family:var(--font-m);font-size:12px;padding:8px;grid-column:1/-1">
-      Proyecciones del mes aún no disponibles. Ejecutar el Apps Script en el Google Sheet para sincronizar.
+      Proyecciones del mes no disponibles. Ejecutar el Apps Script en el Google Sheet.
     </div>`;
     return;
   }
 
   const proyMes = pdata.proyecciones[mesKey];
-  // Reales SIEMPRE desde la base de datos (resumen_ventas.json), más confiables
   const rows = resumen['mes'] || [];
   const realPorTienda = Object.fromEntries(rows.map(r => [r.tienda, r]));
 
@@ -708,58 +726,112 @@ function renderProyecciones(resumen) {
     const real  = realPorTienda[tienda] || {};
     const color = COLORES_TIENDA[tienda] || '#E8FF47';
 
-    // ✓ Reales desde la base (actualizados diariamente)
     const ventaReal   = real.venta_neta || 0;
     const ticketsReal = real.tickets    || 0;
+    const proyFac     = p.proy_facturacion || 0;
+    const proyTick    = p.proy_tickets     || 0;
 
-    // Proyecciones desde el Google Sheet
-    const proyFac  = p.proy_facturacion || 0;
-    const proyTick = p.proy_tickets     || 0;
+    if (!proyFac) return '';
 
-    // Comparar real de base vs proyectado prorrata
-    const proyRata = proyFac  * pctMes;
-    const tickRata = proyTick * pctMes;
-    const pctVenta = proyRata > 0 ? Math.min((ventaReal  / proyRata) * 100, 200) : 0;
-    const pctTick  = tickRata > 0 ? Math.min((ticketsReal / tickRata) * 100, 200) : 0;
+    // Meta esperada al día de hoy según el patrón histórico
+    const metaHoy    = proyFac  * pctHistorico;
+    const metaTickHoy = proyTick * pctHistorico;
 
-    const sem  = v => v >= 95 ? '#4DFFB4' : v >= 75 ? '#FF9F43' : '#FF6B6B';
-    const falta = proyFac > 0 ? proyFac - ventaReal : null;
+    // % de cumplimiento vs lo esperado a esta altura del mes
+    const pctVenta = metaHoy > 0 ? ventaReal  / metaHoy  * 100 : 0;
+    const pctTick  = metaTickHoy > 0 ? ticketsReal / metaTickHoy * 100 : 0;
+
+    // Proyección de cierre de mes si se mantiene el ritmo actual
+    const proyeccionCierre = pctHistorico > 0 ? ventaReal / pctHistorico : 0;
+    const proyeccionCierreTick = pctHistorico > 0 ? ticketsReal / pctHistorico : 0;
+
+    // Cuánto falta para llegar a la meta mensual
+    const faltaVenta = proyFac - ventaReal;
+    const faltaTick  = proyTick - ticketsReal;
+
+    // Semáforo
+    const sem = v => v >= 95 ? '#4DFFB4' : v >= 80 ? '#FF9F43' : '#FF6B6B';
+    const semV = sem(pctVenta);
+    const semT = sem(pctTick);
+
+    // Diferencia proyección de cierre vs meta
+    const diffCierre = proyeccionCierre - proyFac;
+    const diffPct    = proyFac > 0 ? diffCierre / proyFac * 100 : 0;
+    const diffColor  = diffCierre >= 0 ? '#4DFFB4' : '#FF6B6B';
+    const diffSign   = diffCierre >= 0 ? '+' : '';
 
     return `
-      <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid ${color};border-radius:6px;padding:16px">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${color};margin-bottom:14px">${tienda}</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-top:2px solid ${color};border-radius:6px;padding:18px">
 
-        <div style="margin-bottom:12px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">Facturación</span>
-            <span style="font-size:11px;font-family:var(--font-m);color:${sem(pctVenta)};font-weight:500">${Math.round(pctVenta)}% del ritmo</span>
-          </div>
+        <!-- Nombre tienda -->
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${color};margin-bottom:16px">${tienda}</div>
+
+        <!-- FACTURACIÓN -->
+        <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-            <span style="font-size:15px;font-weight:700">$${Math.round(ventaReal).toLocaleString('es-AR')}</span>
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">meta $${Math.round(proyFac).toLocaleString('es-AR')}</span>
+            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px">Facturación</span>
+            <span style="font-size:13px;font-weight:700;color:${semV}">${Math.round(pctVenta)}%</span>
           </div>
-          <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:4px">
-            <div style="height:100%;width:${Math.min(pctVenta,100)}%;background:${sem(pctVenta)};border-radius:2px;transition:width .6s"></div>
+
+          <!-- Barra doble: real vs esperado -->
+          <div style="position:relative;height:8px;background:var(--border);border-radius:4px;margin-bottom:8px">
+            <!-- Meta esperada al día de hoy (100%) -->
+            <div style="position:absolute;left:0;top:0;height:100%;width:100%;background:${color}22;border-radius:4px"></div>
+            <!-- Real -->
+            <div style="position:absolute;left:0;top:0;height:100%;width:${Math.min(pctVenta,150)}%;background:${semV};border-radius:4px;transition:width .6s;max-width:100%"></div>
+            <!-- Marker meta mensual total -->
+            <div style="position:absolute;left:${pctHistorico*100}%;top:-3px;height:14px;width:2px;background:${color};opacity:0.8" title="Meta al día de hoy"></div>
           </div>
-          ${falta !== null && falta > 0 ? `<div style="font-size:10px;color:var(--muted);font-family:var(--font-m)">Faltan $${Math.round(falta).toLocaleString('es-AR')} para la meta mensual</div>` : falta !== null ? `<div style="font-size:10px;color:#4DFFB4;font-family:var(--font-m)">✓ Meta mensual superada</div>` : ''}
+
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div>
+              <div style="font-size:16px;font-weight:700">$${Math.round(ventaReal).toLocaleString('es-AR')}</div>
+              <div style="font-size:10px;color:var(--muted);font-family:var(--font-m)">
+                esperado al día ${diaActual}: $${Math.round(metaHoy).toLocaleString('es-AR')}
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:11px;color:${diffColor};font-family:var(--font-m);font-weight:500">
+                cierre est. ${diffSign}${Math.round(diffPct)}%
+              </div>
+              <div style="font-size:10px;color:var(--muted);font-family:var(--font-m)">
+                $${Math.round(proyeccionCierre).toLocaleString('es-AR')} / meta $${Math.round(proyFac).toLocaleString('es-AR')}
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- Separador -->
+        <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+
+        <!-- TICKETS -->
         <div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">Tickets</span>
-            <span style="font-size:11px;font-family:var(--font-m);color:${sem(pctTick)};font-weight:500">${Math.round(pctTick)}% del ritmo</span>
-          </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-            <span style="font-size:15px;font-weight:700">${ticketsReal.toLocaleString('es-AR')}</span>
-            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">meta ${Math.round(proyTick).toLocaleString('es-AR')}</span>
+            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);text-transform:uppercase;letter-spacing:1px">Tickets</span>
+            <span style="font-size:13px;font-weight:700;color:${semT}">${Math.round(pctTick)}%</span>
           </div>
-          <div style="height:4px;background:var(--border);border-radius:2px">
-            <div style="height:100%;width:${Math.min(pctTick,100)}%;background:${sem(pctTick)};border-radius:2px;transition:width .6s"></div>
+          <div style="position:relative;height:6px;background:var(--border);border-radius:3px;margin-bottom:8px">
+            <div style="position:absolute;left:0;top:0;height:100%;width:${Math.min(pctTick,150)}%;background:${semT};border-radius:3px;transition:width .6s;max-width:100%"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <div>
+              <span style="font-size:14px;font-weight:700">${ticketsReal.toLocaleString('es-AR')}</span>
+              <span style="font-size:10px;color:var(--muted);font-family:var(--font-m);margin-left:6px">esperado: ${Math.round(metaTickHoy).toLocaleString('es-AR')}</span>
+            </div>
+            <div style="text-align:right;font-size:10px;color:var(--muted);font-family:var(--font-m)">
+              meta mensual: ${Math.round(proyTick).toLocaleString('es-AR')}
+            </div>
           </div>
         </div>
+
+        <!-- Nota día histórico -->
+        <div style="margin-top:12px;padding:8px;background:var(--border);border-radius:4px;font-size:10px;color:var(--muted);font-family:var(--font-m)">
+          Histórico: al día ${diaActual} se acumula el ${Math.round(pctHistorico*100)}% del mes
+        </div>
+
       </div>
     `;
-  }).join('');
+  }).filter(Boolean).join('');
 }
 
 // ── CONTROLES ─────────────────────────────────────────
@@ -828,8 +900,9 @@ async function init() {
     ]);
     // Rubros por tienda — no bloquear si falla
     try { await cargar('ranking_rubros_tienda'); } catch(e) { console.log('ranking_rubros_tienda.json no disponible'); }
-    // Proyecciones — cargar y esperar antes de renderizar
+    // Proyecciones y patrón de ventas
     try { await cargar('proyecciones'); } catch(e) { console.log('proyecciones.json no disponible'); }
+    try { await cargar('patron_ventas'); } catch(e) { console.log('patron_ventas.json no disponible'); }
 
     const fecha = new Date(meta.ultima_actualizacion);
     document.getElementById('meta-fecha').textContent =
