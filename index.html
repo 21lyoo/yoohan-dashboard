@@ -297,7 +297,7 @@ header {
   </div>
 
   <!-- PROYECCIONES vs REAL -->
-  <div class="panel panel-wide" id="panel-proyecciones" style="margin-top:16px;display:none">
+  <div class="panel panel-wide" id="panel-proyecciones" style="margin-top:16px;">
     <div class="panel-header">
       <span class="panel-title">Proyecciones vs real — mes actual</span>
       <span class="panel-meta" id="proy-mes-label"></span>
@@ -680,6 +680,7 @@ function renderProyecciones(resumen) {
   const label = document.getElementById('proy-mes-label');
   const pdata = estado.datos['proyecciones'];
   panel.style.display = 'block';
+  panel.style.marginTop = '16px';
 
   const ahora = new Date();
   const mesKey = ahora.getFullYear() + '-' + String(ahora.getMonth()+1).padStart(2,'0');
@@ -698,24 +699,22 @@ function renderProyecciones(resumen) {
   }
 
   const proyMes = pdata.proyecciones[mesKey];
+  // Reales SIEMPRE desde la base de datos (resumen_ventas.json), más confiables
   const rows = resumen['mes'] || [];
   const realPorTienda = Object.fromEntries(rows.map(r => [r.tienda, r]));
 
   grid.innerHTML = TIENDAS_ORDEN.map(tienda => {
-    const p    = proyMes[tienda];
-    const real = realPorTienda[tienda] || {};
+    const p     = proyMes[tienda] || {};
+    const real  = realPorTienda[tienda] || {};
     const color = COLORES_TIENDA[tienda] || '#E8FF47';
 
-    // Ventas reales del mes (desde la base)
+    // ✓ Reales desde la base (actualizados diariamente)
     const ventaReal   = real.venta_neta || 0;
     const ticketsReal = real.tickets    || 0;
 
-    // Si hay real en el sheet también, usarlo para validar
-    const realSheetFac  = p?.real_facturacion  || null;
-    const realSheetTick = p?.real_tickets      || null;
-
-    const proyFac  = p?.proy_facturacion || 0;
-    const proyTick = p?.proy_tickets     || 0;
+    // Proyecciones desde el Google Sheet
+    const proyFac  = p.proy_facturacion || 0;
+    const proyTick = p.proy_tickets     || 0;
 
     // Comparar real de base vs proyectado prorrata
     const proyRata = proyFac  * pctMes;
@@ -827,9 +826,11 @@ async function init() {
       cargar('meta'), cargar('resumen_ventas'), cargar('ranking_productos'),
       cargar('ventas_diarias'), cargar('ranking_rubros'),
     ]);
-    // Rubros por tienda y proyecciones — no bloquear si fallan
-    try { await cargar('ranking_rubros_tienda'); } catch(e) { console.log('ranking_rubros_tienda.json no disponible aún'); }
-    try { await cargar('proyecciones'); } catch(e) { console.log('proyecciones.json no disponible aún'); }
+    // Rubros por tienda — no bloquear si falla
+    try { await cargar('ranking_rubros_tienda'); } catch(e) { console.log('ranking_rubros_tienda.json no disponible'); }
+    // Proyecciones — cargar y esperar antes de renderizar
+    try { await cargar('proyecciones'); } catch(e) { console.log('proyecciones.json no disponible'); }
+
     const fecha = new Date(meta.ultima_actualizacion);
     document.getElementById('meta-fecha').textContent =
       'Actualizado: ' + fecha.toLocaleDateString('es-AR', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
@@ -842,6 +843,7 @@ async function init() {
     renderTendenciaTabs(diarias);
     renderTendencia(diarias);
     renderRubros(rubros);
+    // Proyecciones siempre al final, después de que todo esté cargado
     renderProyecciones(resumen);
   } catch(e) {
     console.error(e);
