@@ -276,6 +276,7 @@ header {
         <span class="panel-title">Rubros — mes actual</span>
         <span class="panel-meta">por venta neta</span>
       </div>
+      <div class="tienda-tabs" id="rubros-tabs"></div>
       <div class="chart-wrap tall">
         <canvas id="chart-rubros"></canvas>
       </div>
@@ -295,13 +296,22 @@ header {
 
   </div>
 
+  <!-- PROYECCIONES vs REAL -->
+  <div class="panel panel-wide" id="panel-proyecciones" style="margin-top:16px;display:none">
+    <div class="panel-header">
+      <span class="panel-title">Proyecciones vs real — mes actual</span>
+      <span class="panel-meta" id="proy-mes-label"></span>
+    </div>
+    <div id="proy-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px"></div>
+  </div>
+
 </div>
 
 <script>
 // ── CONFIG ────────────────────────────────────────────
 // Reemplazar con la URL real de GitHub Pages cuando esté configurado
 // Ejemplo: 'https://tuusuario.github.io/yoohan-dashboard/data'
-const DATA_URL = 'https://21lyoo.github.io/yoohan-dashboard/data';;
+const DATA_URL = './data';
 
 const COLORES_TIENDA = {
   'Plaza CC Río Grande':    '#E8FF47',
@@ -477,7 +487,11 @@ function renderRankingTabs(ranking) {
     <button class="tienda-tab ${t === estado.tiendaRank ? 'activo' : ''}"
       style="${t === estado.tiendaRank ? `background:${COLORES_TIENDA[t]||'#E8FF47'}` : ''}"
       onclick="setTiendaRank('${t}', this)">
-      ${t === 'Todas las tiendas' ? 'Todas' : t.split(' ').slice(-1)[0]}
+      ${t === 'Todas las tiendas' ? 'Todas' :
+        t === 'Plaza CC Río Grande' ? 'Plaza RGA' :
+        t === 'Casa Corea Río Grande' ? 'Corea RGA' :
+        t === 'Plaza CC Ushuaia' ? 'Plaza USH' :
+        t === 'Casa Corea Ushuaia' ? 'Corea USH' : t}
     </button>
   `).join('');
 }
@@ -525,7 +539,11 @@ function renderTendenciaTabs(diarias) {
       <button class="tienda-tab ${activo ? 'activo' : ''}"
         style="${activo ? `background:${color}` : ''}"
         onclick="toggleTiendaTend('${t}', ${JSON.stringify(tiendas)}, this)">
-        ${t === 'Todas' ? 'Todas' : t.split(' ').slice(-1)[0]}
+        ${t === 'Todas' ? 'Todas' :
+        t === 'Plaza CC Río Grande' ? 'Plaza RGA' :
+        t === 'Casa Corea Río Grande' ? 'Corea RGA' :
+        t === 'Plaza CC Ushuaia' ? 'Plaza USH' :
+        t === 'Casa Corea Ushuaia' ? 'Corea USH' : t}
       </button>
     `;
   }).join('');
@@ -586,27 +604,55 @@ function renderTendencia(diarias) {
 }
 
 // ── RUBROS ────────────────────────────────────────────
+const TIENDAS_ORDEN = ['Plaza CC Río Grande','Casa Corea Río Grande','Plaza CC Ushuaia','Casa Corea Ushuaia'];
+const TABS_LABEL = {
+  'Todas las tiendas':'Todas','Plaza CC Río Grande':'Plaza RGA',
+  'Casa Corea Río Grande':'Corea RGA','Plaza CC Ushuaia':'Plaza USH','Casa Corea Ushuaia':'Corea USH'
+};
+
+function renderRubrosTabs(rubros) {
+  const tiendas = ['Todas las tiendas', ...TIENDAS_ORDEN];
+  const container = document.getElementById('rubros-tabs');
+  if (!container) return;
+  container.innerHTML = tiendas.map(t => {
+    const activo = t === estado.tiendaRubros;
+    const color = COLORES_TIENDA[t] || '#E8FF47';
+    return `<button class="tienda-tab ${activo ? 'activo' : ''}"
+      style="${activo ? `background:${color}` : ''}"
+      onclick="setTiendaRubros('${t}', this)">
+      ${TABS_LABEL[t] || t}</button>`;
+  }).join('');
+}
+
 function renderRubros(rubros) {
-  const top = rubros.slice(0, 12);
+  renderRubrosTabs(rubros);
+  // Filter by selected tienda
+  let datos = rubros;
+  if (estado.tiendaRubros && estado.tiendaRubros !== 'Todas las tiendas') {
+    // rubros_por_tienda has per-tienda breakdown
+    const rt = estado.datos['ranking_rubros_tienda'];
+    if (rt && rt[estado.tiendaRubros]) {
+      datos = rt[estado.tiendaRubros];
+    }
+  }
+  const top = datos.slice(0, 12);
   if (charts.rubros) charts.rubros.destroy();
   const ctx = document.getElementById('chart-rubros');
   charts.rubros = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: top.map(r => r.rubro?.substring(0, 20) || '—'),
+      labels: top.map(r => r.rubro?.substring(0, 22) || '—'),
       datasets: [{
         data: top.map(r => r.venta_neta),
         backgroundColor: top.map((_, i) => {
           const colors = ['#E8FF47','#4DFFB4','#FF9F43','#A78BFA','#FF6B6B','#45B7D1'];
           return colors[i % colors.length] + 'CC';
         }),
-        borderRadius: 3,
-        borderWidth: 0,
+        borderRadius: 3, borderWidth: 0,
       }],
     },
     options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         tooltip: {
@@ -614,9 +660,7 @@ function renderRubros(rubros) {
           titleColor: '#F0F0F0', bodyColor: '#6B7280',
           titleFont: { family: 'Syne', size: 12 },
           bodyFont: { family: 'DM Mono', size: 11 },
-          callbacks: {
-            label: ctx => ` $${Math.round(ctx.raw).toLocaleString('es-AR')}`,
-          },
+          callbacks: { label: ctx => ` $${Math.round(ctx.raw).toLocaleString('es-AR')}` },
         },
       },
       scales: {
@@ -627,15 +671,104 @@ function renderRubros(rubros) {
   });
 }
 
+// ── PROYECCIONES ──────────────────────────────────────
+// Proyecciones hardcodeadas — reemplazar con los valores reales del Google Sheet
+// Formato: { 'YYYY-MM': { 'Nombre Tienda': { facturacion: N, tickets: N } } }
+const PROYECCIONES = {
+  // Ejemplo — completar con los datos reales:
+  // '2026-03': {
+  //   'Plaza CC Río Grande':   { facturacion: 15000000, tickets: 450 },
+  //   'Casa Corea Río Grande': { facturacion: 12000000, tickets: 380 },
+  //   'Plaza CC Ushuaia':      { facturacion: 14000000, tickets: 420 },
+  //   'Casa Corea Ushuaia':    { facturacion: 11000000, tickets: 340 },
+  // }
+};
+
+function renderProyecciones(resumen) {
+  const ahora = new Date();
+  const mesKey = ahora.getFullYear() + '-' + String(ahora.getMonth()+1).padStart(2,'0');
+  const proy = PROYECCIONES[mesKey];
+  const panel = document.getElementById('panel-proyecciones');
+  const grid  = document.getElementById('proy-grid');
+  const label = document.getElementById('proy-mes-label');
+
+  if (!proy) {
+    // Sin proyecciones cargadas — mostrar instrucciones
+    panel.style.display = 'block';
+    const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    label.textContent = meses[ahora.getMonth()] + ' ' + ahora.getFullYear();
+    grid.innerHTML = `<div style="color:var(--muted);font-family:var(--font-m);font-size:12px;padding:8px">
+      Proyecciones no configuradas. Completar el objeto PROYECCIONES en index.html con los datos del Google Sheet.
+    </div>`;
+    return;
+  }
+
+  panel.style.display = 'block';
+  const rows = resumen['mes'] || [];
+  const realPorTienda = Object.fromEntries(rows.map(r => [r.tienda, r]));
+  const diasMes = new Date(ahora.getFullYear(), ahora.getMonth()+1, 0).getDate();
+  const diaActual = ahora.getDate();
+  const pctMesTranscurrido = diaActual / diasMes;
+
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  label.textContent = meses[ahora.getMonth()] + ' ' + ahora.getFullYear() + ' — día ' + diaActual + ' de ' + diasMes;
+
+  grid.innerHTML = TIENDAS_ORDEN.map(tienda => {
+    const p = proy[tienda];
+    if (!p) return '';
+    const real = realPorTienda[tienda] || {};
+    const ventaReal    = real.venta_neta || 0;
+    const ticketsReal  = real.tickets || 0;
+    const proyRacional = p.facturacion * pctMesTranscurrido; // proyección prorrata al día actual
+    const pctVenta     = proyRacional > 0 ? Math.min((ventaReal / proyRacional) * 100, 150) : 0;
+    const pctTickets   = p.tickets > 0 ? Math.min((ticketsReal / (p.tickets * pctMesTranscurrido)) * 100, 150) : 0;
+    const color        = COLORES_TIENDA[tienda] || '#E8FF47';
+    const semaforo     = pctVenta >= 95 ? '#4DFFB4' : pctVenta >= 75 ? '#FF9F43' : '#FF6B6B';
+
+    return `
+      <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid ${color};border-radius:6px;padding:16px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${color};margin-bottom:12px">${tienda}</div>
+
+        <div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">Facturación</span>
+            <span style="font-size:10px;font-family:var(--font-m);color:${semaforo}">${Math.round(pctVenta)}% de lo esperado</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:13px;font-weight:700">$${Math.round(ventaReal).toLocaleString('es-AR')}</span>
+            <span style="font-size:11px;color:var(--muted);font-family:var(--font-m)">proyectado $${Math.round(p.facturacion).toLocaleString('es-AR')}</span>
+          </div>
+          <div style="height:4px;background:var(--border);border-radius:2px">
+            <div style="height:100%;width:${Math.min(pctVenta,100)}%;background:${semaforo};border-radius:2px;transition:width .5s"></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="font-size:10px;color:var(--muted);font-family:var(--font-m)">Tickets</span>
+            <span style="font-size:10px;font-family:var(--font-m);color:${pctTickets>=95?'#4DFFB4':pctTickets>=75?'#FF9F43':'#FF6B6B'}">${Math.round(pctTickets)}% de lo esperado</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+            <span style="font-size:13px;font-weight:700">${ticketsReal.toLocaleString('es-AR')}</span>
+            <span style="font-size:11px;color:var(--muted);font-family:var(--font-m)">proyectado ${p.tickets.toLocaleString('es-AR')}</span>
+          </div>
+          <div style="height:4px;background:var(--border);border-radius:2px">
+            <div style="height:100%;width:${Math.min(pctTickets,100)}%;background:${pctTickets>=95?'#4DFFB4':pctTickets>=75?'#FF9F43':'#FF6B6B'};border-radius:2px;transition:width .5s"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 // ── CONTROLES ─────────────────────────────────────────
 function setPeriodo(p, btn) {
   estado.periodo = p;
   document.querySelectorAll('[data-periodo]').forEach(b => b.classList.remove('activo'));
   btn.classList.add('activo');
-  const resumen  = estado.datos['resumen_ventas'];
-  const ranking  = estado.datos['ranking_productos'];
-  const diarias  = estado.datos['ventas_diarias'];
-  if (resumen) { renderKPIs(resumen); renderComparativo(resumen); }
+  const resumen = estado.datos['resumen_ventas'];
+  const ranking = estado.datos['ranking_productos'];
+  if (resumen) { renderKPIs(resumen); renderComparativo(resumen); renderProyecciones(resumen); }
   if (ranking)  { renderRankingTabs(ranking); renderRanking(ranking); }
 }
 
@@ -650,13 +783,23 @@ function setVista(v, btn) {
 function setTiendaRank(t, btn) {
   estado.tiendaRank = t;
   document.querySelectorAll('#rank-tabs .tienda-tab').forEach(b => {
-    b.classList.remove('activo');
-    b.style.background = '';
+    b.classList.remove('activo'); b.style.background = '';
   });
   btn.classList.add('activo');
   btn.style.background = COLORES_TIENDA[t] || '#E8FF47';
   const ranking = estado.datos['ranking_productos'];
   if (ranking) renderRanking(ranking);
+}
+
+function setTiendaRubros(t, btn) {
+  estado.tiendaRubros = t;
+  document.querySelectorAll('#rubros-tabs .tienda-tab').forEach(b => {
+    b.classList.remove('activo'); b.style.background = '';
+  });
+  btn.classList.add('activo');
+  btn.style.background = COLORES_TIENDA[t] || '#E8FF47';
+  const rubros = estado.datos['ranking_rubros'];
+  if (rubros) renderRubros(rubros);
 }
 
 function toggleTiendaTend(t, todasTiendas, btn) {
@@ -676,6 +819,31 @@ function toggleTiendaTend(t, todasTiendas, btn) {
 }
 
 // ── INICIO ────────────────────────────────────────────
+async function init() {
+  try {
+    const [meta, resumen, ranking, diarias, rubros] = await Promise.all([
+      cargar('meta'), cargar('resumen_ventas'), cargar('ranking_productos'),
+      cargar('ventas_diarias'), cargar('ranking_rubros'),
+    ]);
+    const fecha = new Date(meta.ultima_actualizacion);
+    document.getElementById('meta-fecha').textContent =
+      'Actualizado: ' + fecha.toLocaleDateString('es-AR', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+    document.getElementById('meta-badge').textContent = '✓ ACTUALIZADO';
+    estado.tiendaRubros = 'Todas las tiendas';
+    renderKPIs(resumen);
+    renderComparativo(resumen);
+    renderRankingTabs(ranking);
+    renderRanking(ranking);
+    renderTendenciaTabs(diarias);
+    renderTendencia(diarias);
+    renderRubros(rubros);
+    renderProyecciones(resumen);
+  } catch(e) {
+    console.error(e);
+    document.querySelector('.wrapper').innerHTML +=
+      `<div style="color:#FF6B6B;font-family:monospace;padding:20px">Error: ${e.message}</div>`;
+  }
+}
 init();
 </script>
 </body>
