@@ -1,1 +1,10 @@
-{"ultima_actualizacion": "pendiente", "tiendas": {}}
+{
+  "ultima_actualizacion": "2026-03-16T16:41:21.776623",
+  "tiendas": {
+    "001": "Plaza CC Río Grande",
+    "002": "Casa Corea Río Grande",
+    "003": "Plaza CC Ushuaia",
+    "004": "Casa Corea Ushuaia"
+  },
+  "generado_por": "generar_datos.py v1.0"
+}
