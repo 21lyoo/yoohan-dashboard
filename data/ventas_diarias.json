@@ -114,6 +114,11 @@
       "fecha": "2026-03-14",
       "venta_neta": 7163620.01,
       "tickets": 119
+    },
+    {
+      "fecha": "2026-03-16",
+      "venta_neta": 2667970.04,
+      "tickets": 53
     }
   ],
   "Plaza CC Ushuaia": [
@@ -231,6 +236,11 @@
       "fecha": "2026-03-14",
       "venta_neta": 4946860.0,
       "tickets": 91
+    },
+    {
+      "fecha": "2026-03-16",
+      "venta_neta": 2488600.0,
+      "tickets": 46
     }
   ],
   "Casa Corea Ushuaia": [
@@ -348,6 +358,11 @@
       "fecha": "2026-03-14",
       "venta_neta": 4423675.0,
       "tickets": 86
+    },
+    {
+      "fecha": "2026-03-16",
+      "venta_neta": 1478000.01,
+      "tickets": 47
     }
   ],
   "Casa Corea Río Grande": [
@@ -460,6 +475,11 @@
       "fecha": "2026-03-14",
       "venta_neta": 4220600.0,
       "tickets": 72
+    },
+    {
+      "fecha": "2026-03-16",
+      "venta_neta": 2215000.03,
+      "tickets": 40
     }
   ]
 }
