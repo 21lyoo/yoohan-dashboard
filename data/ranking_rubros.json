@@ -1,42 +1,42 @@
 [
   {
     "rubro": "DENIM JEAN MUJER",
-    "unidades": 295.0,
-    "venta_neta": 19960563.67
+    "unidades": 316.0,
+    "venta_neta": 21375463.67
   },
   {
     "rubro": "CASUAL REMERA MC MUJER",
-    "unidades": 806.0,
-    "venta_neta": 15560310.02
+    "unidades": 835.0,
+    "venta_neta": 16107310.02
   },
   {
     "rubro": "CASUAL PANTALON MUJER",
-    "unidades": 178.0,
-    "venta_neta": 7726967.02
-  },
-  {
-    "rubro": "CASUAL BUZO MUJER",
-    "unidades": 129.0,
-    "venta_neta": 6552720.0
+    "unidades": 181.0,
+    "venta_neta": 7860967.02
   },
   {
     "rubro": "CASUAL CAMPERA MUJER",
-    "unidades": 102.0,
-    "venta_neta": 6455040.0
+    "unidades": 110.0,
+    "venta_neta": 6996040.0
+  },
+  {
+    "rubro": "CASUAL BUZO MUJER",
+    "unidades": 137.0,
+    "venta_neta": 6947720.0
   },
   {
     "rubro": "CASUAL SWEATER MUJER",
-    "unidades": 108.0,
-    "venta_neta": 5241720.0
+    "unidades": 113.0,
+    "venta_neta": 5538720.0
   },
   {
     "rubro": "BASICOS JOGGING HOMBRE",
-    "unidades": 103.0,
-    "venta_neta": 4939660.12
+    "unidades": 110.0,
+    "venta_neta": 5264660.12
   },
   {
     "rubro": "CASUAL TOP MC MUJER",
-    "unidades": 88.0,
-    "venta_neta": 1554910.0
+    "unidades": 90.0,
+    "venta_neta": 1591910.0
   }
 ]
