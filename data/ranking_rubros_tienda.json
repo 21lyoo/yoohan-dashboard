@@ -2,48 +2,53 @@
   "Plaza CC Ushuaia": [
     {
       "rubro": "DENIM JEAN MUJER",
-      "unidades": 113.0,
-      "venta_neta": 7781069.35
+      "unidades": 118.0,
+      "venta_neta": 8114069.35
     },
     {
       "rubro": "CASUAL REMERA MC MUJER",
-      "unidades": 264.0,
-      "venta_neta": 5209320.0
-    },
-    {
-      "rubro": "CASUAL BUZO MUJER",
-      "unidades": 71.0,
-      "venta_neta": 3576000.0
+      "unidades": 271.0,
+      "venta_neta": 5351320.0
     },
     {
       "rubro": "CASUAL CAMPERA MUJER",
-      "unidades": 56.0,
-      "venta_neta": 3575930.0
+      "unidades": 59.0,
+      "venta_neta": 3796930.0
+    },
+    {
+      "rubro": "CASUAL BUZO MUJER",
+      "unidades": 74.0,
+      "venta_neta": 3725000.0
     },
     {
       "rubro": "CASUAL SWEATER MUJER",
-      "unidades": 58.0,
-      "venta_neta": 2927000.0
+      "unidades": 60.0,
+      "venta_neta": 3042000.0
     },
     {
       "rubro": "CASUAL PANTALON MUJER",
-      "unidades": 58.0,
-      "venta_neta": 2674000.0
+      "unidades": 60.0,
+      "venta_neta": 2786000.0
     },
     {
       "rubro": "CASUAL TOP MC MUJER",
-      "unidades": 88.0,
-      "venta_neta": 1554910.0
+      "unidades": 90.0,
+      "venta_neta": 1591910.0
     },
     {
       "rubro": "NOCHE TOP MUJER",
-      "unidades": 70.0,
-      "venta_neta": 1444334.17
+      "unidades": 76.0,
+      "venta_neta": 1562334.17
     },
     {
       "rubro": "FORMAL PANTALON MUJER",
-      "unidades": 28.0,
-      "venta_neta": 1121000.0
+      "unidades": 30.0,
+      "venta_neta": 1181000.0
+    },
+    {
+      "rubro": "FORMAL BLAZER MUJER",
+      "unidades": 18.0,
+      "venta_neta": 1102000.0
     },
     {
       "rubro": "NOCHE CAMPERA MUJER",
@@ -56,19 +61,14 @@
       "venta_neta": 992380.0
     },
     {
-      "rubro": "FORMAL BLAZER MUJER",
-      "unidades": 14.0,
-      "venta_neta": 879000.0
-    },
-    {
       "rubro": "CINTURON MU",
-      "unidades": 53.0,
-      "venta_neta": 812909.78
+      "unidades": 55.0,
+      "venta_neta": 838909.78
     },
     {
       "rubro": "NOCHE SHORT MUJER",
-      "unidades": 23.0,
-      "venta_neta": 786150.0
+      "unidades": 24.0,
+      "venta_neta": 818150.0
     },
     {
       "rubro": "CASUAL BODY MUJER",
@@ -79,105 +79,110 @@
   "Plaza CC Río Grande": [
     {
       "rubro": "DENIM JEAN MUJER",
-      "unidades": 108.0,
-      "venta_neta": 7215310.0
+      "unidades": 116.0,
+      "venta_neta": 7796310.0
     },
     {
       "rubro": "CASUAL REMERA MC MUJER",
-      "unidades": 269.0,
-      "venta_neta": 5479200.0
+      "unidades": 272.0,
+      "venta_neta": 5546200.0
     },
     {
       "rubro": "CASUAL BUZO MUJER",
-      "unidades": 58.0,
-      "venta_neta": 2976720.0
+      "unidades": 63.0,
+      "venta_neta": 3222720.0
     },
     {
       "rubro": "CASUAL CAMPERA MUJER",
-      "unidades": 46.0,
-      "venta_neta": 2879110.0
+      "unidades": 51.0,
+      "venta_neta": 3199110.0
     },
     {
       "rubro": "CASUAL PANTALON MUJER",
       "unidades": 61.0,
-      "venta_neta": 2791717.0
+      "venta_neta": 2781717.0
     },
     {
       "rubro": "CASUAL SWEATER MUJER",
-      "unidades": 50.0,
-      "venta_neta": 2314720.0
+      "unidades": 53.0,
+      "venta_neta": 2496720.0
     },
     {
       "rubro": "NOCHE TOP MUJER",
-      "unidades": 68.0,
-      "venta_neta": 1340020.0
+      "unidades": 71.0,
+      "venta_neta": 1410020.0
     },
     {
       "rubro": "CASUAL REMERA ML MUJER",
-      "unidades": 51.0,
-      "venta_neta": 1202260.0
+      "unidades": 52.0,
+      "venta_neta": 1227260.0
     },
     {
       "rubro": "CASUAL TOP MC MUJER",
-      "unidades": 55.0,
-      "venta_neta": 1100000.0
+      "unidades": 63.0,
+      "venta_neta": 1225000.0
     },
     {
       "rubro": "FORMAL PANTALON MUJER",
-      "unidades": 21.0,
-      "venta_neta": 858450.0
+      "unidades": 22.0,
+      "venta_neta": 901450.0
     },
     {
       "rubro": "CASUAL MUSCULOSA MUJER",
-      "unidades": 41.0,
-      "venta_neta": 753170.0
-    },
-    {
-      "rubro": "BASICOS BABUCHA MUJER",
-      "unidades": 14.0,
-      "venta_neta": 689920.0
+      "unidades": 43.0,
+      "venta_neta": 812170.0
     },
     {
       "rubro": "BASICOS JEAN MUJER",
-      "unidades": 11.0,
-      "venta_neta": 678340.0
-    },
-    {
-      "rubro": "COLLAR/CADENA MU",
-      "unidades": 89.0,
-      "venta_neta": 649260.0
+      "unidades": 12.0,
+      "venta_neta": 736340.0
     },
     {
       "rubro": "NOCHE SHORT MUJER",
-      "unidades": 22.0,
-      "venta_neta": 633000.0
+      "unidades": 25.0,
+      "venta_neta": 693000.0
+    },
+    {
+      "rubro": "COLLAR/CADENA MU",
+      "unidades": 92.0,
+      "venta_neta": 670760.0
+    },
+    {
+      "rubro": "BASICOS BABUCHA MUJER",
+      "unidades": 13.0,
+      "venta_neta": 640920.0
     }
   ],
   "Casa Corea Ushuaia": [
     {
       "rubro": "BASICOS JOGGING HOMBRE",
-      "unidades": 70.0,
-      "venta_neta": 3373230.12
+      "unidades": 72.0,
+      "venta_neta": 3462230.12
     },
     {
       "rubro": "CASUAL REMERA MC MUJER",
-      "unidades": 145.0,
-      "venta_neta": 2599590.02
+      "unidades": 157.0,
+      "venta_neta": 2792590.02
     },
     {
       "rubro": "DENIM JEAN MUJER",
-      "unidades": 37.0,
-      "venta_neta": 2483470.0
+      "unidades": 39.0,
+      "venta_neta": 2603570.0
     },
     {
       "rubro": "CASUAL PANTALON MUJER",
-      "unidades": 59.0,
-      "venta_neta": 2261250.02
+      "unidades": 60.0,
+      "venta_neta": 2293250.02
     },
     {
       "rubro": "BASICOS REMERA MC HOMBRE",
       "unidades": 97.0,
       "venta_neta": 1397072.02
+    },
+    {
+      "rubro": "PACKS MUJER BOMBACHA",
+      "unidades": 55.0,
+      "venta_neta": 922730.0
     },
     {
       "rubro": "PACKS BOXER HOMBRE",
@@ -188,11 +193,6 @@
       "rubro": "FORMAL PANTALON MUJER",
       "unidades": 24.0,
       "venta_neta": 890080.0
-    },
-    {
-      "rubro": "PACKS MUJER BOMBACHA",
-      "unidades": 52.0,
-      "venta_neta": 864730.0
     },
     {
       "rubro": "CASUAL REMERA ML MUJER",
@@ -206,55 +206,60 @@
     },
     {
       "rubro": "JUGUETES",
-      "unidades": 70.0,
-      "venta_neta": 631000.0
-    },
-    {
-      "rubro": "PANTALON NIÑA",
-      "unidades": 30.0,
-      "venta_neta": 613610.01
+      "unidades": 75.0,
+      "venta_neta": 689000.0
     },
     {
       "rubro": "BASICOS JEAN MUJER",
-      "unidades": 9.0,
-      "venta_neta": 613000.0
+      "unidades": 10.0,
+      "venta_neta": 667000.0
     },
     {
       "rubro": "BASICOS CALZA MUJER",
-      "unidades": 20.0,
-      "venta_neta": 558000.01
+      "unidades": 24.0,
+      "venta_neta": 666000.01
     },
     {
-      "rubro": "CASUAL CAMPERA MUJER",
-      "unidades": 12.0,
-      "venta_neta": 536040.0
+      "rubro": "PANTALON NIÑA",
+      "unidades": 31.0,
+      "venta_neta": 630610.01
+    },
+    {
+      "rubro": "BASICOS JOGGING NIÑO",
+      "unidades": 19.0,
+      "venta_neta": 551000.0
     }
   ],
   "Casa Corea Río Grande": [
     {
       "rubro": "DENIM JEAN MUJER",
-      "unidades": 37.0,
-      "venta_neta": 2480714.32
+      "unidades": 43.0,
+      "venta_neta": 2861514.32
     },
     {
       "rubro": "CASUAL REMERA MC MUJER",
-      "unidades": 128.0,
-      "venta_neta": 2272200.0
+      "unidades": 135.0,
+      "venta_neta": 2417200.0
     },
     {
       "rubro": "BASICOS JOGGING HOMBRE",
-      "unidades": 33.0,
-      "venta_neta": 1566430.0
-    },
-    {
-      "rubro": "CASUAL SWEATER MUJER",
-      "unidades": 26.0,
-      "venta_neta": 1341940.0
+      "unidades": 38.0,
+      "venta_neta": 1802430.0
     },
     {
       "rubro": "CASUAL BUZO MUJER",
-      "unidades": 30.0,
-      "venta_neta": 1286000.0
+      "unidades": 33.0,
+      "venta_neta": 1406000.0
+    },
+    {
+      "rubro": "CASUAL SWEATER MUJER",
+      "unidades": 27.0,
+      "venta_neta": 1383940.0
+    },
+    {
+      "rubro": "PACKS BOXER HOMBRE",
+      "unidades": 36.0,
+      "venta_neta": 1103100.0
     },
     {
       "rubro": "FORMAL PANTALON MUJER",
@@ -262,19 +267,19 @@
       "venta_neta": 1053160.0
     },
     {
-      "rubro": "PACKS BOXER HOMBRE",
-      "unidades": 34.0,
-      "venta_neta": 1037100.0
-    },
-    {
       "rubro": "CASUAL PANTALON MUJER",
-      "unidades": 24.0,
-      "venta_neta": 918550.0
+      "unidades": 26.0,
+      "venta_neta": 982550.0
     },
     {
       "rubro": "BASICOS REMERA MC HOMBRE",
-      "unidades": 53.0,
-      "venta_neta": 826800.0
+      "unidades": 55.0,
+      "venta_neta": 851600.0
+    },
+    {
+      "rubro": "REMERON NIÑA",
+      "unidades": 51.0,
+      "venta_neta": 749040.0
     },
     {
       "rubro": "PACKS MUJER BOMBACHA",
@@ -282,9 +287,9 @@
       "venta_neta": 740000.0
     },
     {
-      "rubro": "REMERON NIÑA",
-      "unidades": 49.0,
-      "venta_neta": 717040.0
+      "rubro": "JEAN NIÑA",
+      "unidades": 25.0,
+      "venta_neta": 738000.0
     },
     {
       "rubro": "BASICOS PANTALON MUJER",
@@ -292,19 +297,14 @@
       "venta_neta": 667000.0
     },
     {
-      "rubro": "JEAN NIÑA",
-      "unidades": 23.0,
-      "venta_neta": 652000.0
-    },
-    {
       "rubro": "BASICOS REMERA MC NIÑO",
-      "unidades": 39.0,
-      "venta_neta": 551000.0
+      "unidades": 42.0,
+      "venta_neta": 582000.0
     },
     {
       "rubro": "JUGUETES",
-      "unidades": 52.0,
-      "venta_neta": 520500.0
+      "unidades": 53.0,
+      "venta_neta": 532500.0
     }
   ]
 }
