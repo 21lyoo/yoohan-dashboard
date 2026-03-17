@@ -5,24 +5,32 @@
         "codigo": "39992",
         "articulo": "UR 941605-012  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 20.0,
-        "venta_neta": 101017.27,
-        "apariciones": 13
+        "unidades": 21.0,
+        "venta_neta": 106017.27,
+        "apariciones": 12
       },
       {
         "codigo": "39988",
         "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 14.0,
-        "venta_neta": 70317.27,
-        "apariciones": 10
+        "unidades": 15.0,
+        "venta_neta": 75317.27,
+        "apariciones": 11
       },
       {
         "codigo": "11629",
         "articulo": "PANTY 1000-PIEL 08\r\n\r\n*PANTY SEMIOPACA DAILY",
         "rubro": "PANTY MU",
-        "unidades": 8.0,
-        "venta_neta": 57000.0,
+        "unidades": 9.0,
+        "venta_neta": 64000.0,
+        "apariciones": 9
+      },
+      {
+        "codigo": "40106",
+        "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
+        "rubro": "MEDIAS MU",
+        "unidades": 9.0,
+        "venta_neta": 18000.0,
         "apariciones": 8
       },
       {
@@ -34,11 +42,11 @@
         "apariciones": 6
       },
       {
-        "codigo": "39991",
-        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 8.0,
-        "venta_neta": 40317.27,
+        "codigo": "40107",
+        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
+        "rubro": "COLITAS",
+        "unidades": 7.0,
+        "venta_neta": 14000.0,
         "apariciones": 6
       },
       {
@@ -50,12 +58,12 @@
         "apariciones": 4
       },
       {
-        "codigo": "40106",
-        "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
-        "rubro": "MEDIAS MU",
+        "codigo": "39991",
+        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
         "unidades": 6.0,
-        "venta_neta": 12000.0,
-        "apariciones": 6
+        "venta_neta": 30317.27,
+        "apariciones": 5
       },
       {
         "codigo": "39712",
@@ -66,11 +74,27 @@
         "apariciones": 6
       },
       {
-        "codigo": "35818",
-        "articulo": "B22367 COLLAR\r\n\r\n*CADENA DIJES VARIOS",
-        "rubro": "COLLAR/CADENA MU",
+        "codigo": "39799",
+        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 6.0,
+        "venta_neta": 84000.0,
+        "apariciones": 6
+      },
+      {
+        "codigo": "13616",
+        "articulo": "PANTY 1000-NEGRO 01\r\n\r\n*PANTY SEMIOPACA DAILY",
+        "rubro": "PANTY MU",
         "unidades": 5.0,
-        "venta_neta": 30000.0,
+        "venta_neta": 35000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "35796",
+        "articulo": "CORSET PALO\r\n\r\n*ART 00401 PALOMA, CORSET BENGALINA CON PUNTILLA BRETELES PARA AJUSTAR Y CORDONES EN LA PARTE DE ATRAS",
+        "rubro": "NOCHE CORSET MUJER",
+        "unidades": 5.0,
+        "venta_neta": 190000.0,
         "apariciones": 5
       },
       {
@@ -82,27 +106,27 @@
         "apariciones": 5
       },
       {
-        "codigo": "40107",
-        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
-        "rubro": "COLITAS",
+        "codigo": "29440",
+        "articulo": "TOP MILITA\r\n\r\n*TOP TULL IRREGULAR TERMINACION EN PICO Y TAJO ART 2232T",
+        "rubro": "NOCHE TOP MUJER",
         "unidades": 5.0,
-        "venta_neta": 10000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "39811",
-        "articulo": "COL-BA0086 COLLAR  \r\n\r\n*COLGANTE CON MOSTACILLAS PERLAS TRANSPARENTES",
-        "rubro": "COLLAR/CADENA MU",
-        "unidades": 5.0,
-        "venta_neta": 30000.0,
+        "venta_neta": 75000.0,
         "apariciones": 5
       },
       {
-        "codigo": "39855",
-        "articulo": "TOP KLAND \r\n\r\n*R3594E TOP RIBB RANGLAN MANGAS CORTAS CUELLO REDONDO ESTAMPA OAKLAND 56",
-        "rubro": "CASUAL TOP MC MUJER",
+        "codigo": "40058",
+        "articulo": "BODY ML BENYA \r\n\r\n*03016-SS26 BODY ML LYCRA Y MODAL DOBLE ABERTURA FRONTAL CON APLIQUES DE CIRCULOS UNIDOS",
+        "rubro": "NOCHE BODY MUJER",
         "unidades": 5.0,
-        "venta_neta": 70000.0,
+        "venta_neta": 110000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "39703",
+        "articulo": "SWEATER MURDOCK\r\n\r\n*I019 SW CUELLO REDONDO TRENZADO TEJIDO MODELO CORTO",
+        "rubro": "CASUAL CAMPERA MUJER",
+        "unidades": 5.0,
+        "venta_neta": 230000.0,
         "apariciones": 5
       },
       {
@@ -114,28 +138,12 @@
         "apariciones": 5
       },
       {
-        "codigo": "39799",
-        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 5.0,
-        "venta_neta": 70000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "13616",
-        "articulo": "PANTY 1000-NEGRO 01\r\n\r\n*PANTY SEMIOPACA DAILY",
-        "rubro": "PANTY MU",
+        "codigo": "35818",
+        "articulo": "B22367 COLLAR\r\n\r\n*CADENA DIJES VARIOS",
+        "rubro": "COLLAR/CADENA MU",
         "unidades": 4.0,
-        "venta_neta": 28000.0,
+        "venta_neta": 24000.0,
         "apariciones": 4
-      },
-      {
-        "codigo": "37422",
-        "articulo": "MEDIAS R55065",
-        "rubro": "MEDIAS MU",
-        "unidades": 4.0,
-        "venta_neta": 16000.0,
-        "apariciones": 3
       },
       {
         "codigo": "18582",
@@ -146,19 +154,11 @@
         "apariciones": 3
       },
       {
-        "codigo": "29440",
-        "articulo": "TOP MILITA\r\n\r\n*TOP TULL IRREGULAR TERMINACION EN PICO Y TAJO ART 2232T",
-        "rubro": "NOCHE TOP MUJER",
+        "codigo": "40074",
+        "articulo": "REMERA MC SOLE\r\n\r\n*REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO SOL BORDADO",
+        "rubro": "CASUAL REMERA MC MUJER",
         "unidades": 4.0,
-        "venta_neta": 60000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "40025",
-        "articulo": "JEANS B THEM\r\n\r\n*24691 THEMIS JEANS BAGGY RIGIDO OXIDO NEVADO LOCALIZADO CON BIGOTES",
-        "rubro": "DENIM JEAN MUJER",
-        "unidades": 4.0,
-        "venta_neta": 312000.0,
+        "venta_neta": 76000.0,
         "apariciones": 4
       }
     ],
@@ -196,14 +196,6 @@
         "apariciones": 7
       },
       {
-        "codigo": "33932",
-        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 8.0,
-        "venta_neta": 252000.0,
-        "apariciones": 6
-      },
-      {
         "codigo": "35536",
         "articulo": "PACK X2 SQ ESTAMPA T4 T5\r\n\r\n*1 SOQUETE ESTAMPADO 105-105V 1-SOQUETE LISO BLANCO O AZUL 105B-105A",
         "rubro": "PACKS MEDIAS NIÑX",
@@ -212,12 +204,20 @@
         "apariciones": 7
       },
       {
+        "codigo": "34949",
+        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
+        "rubro": "MEDIAS NIÑA",
+        "unidades": 7.0,
+        "venta_neta": 28000.0,
+        "apariciones": 4
+      },
+      {
         "codigo": "39897",
         "articulo": "REMERA MC CUKI\r\n\r\n* 601 REMERA MODAL SOFT MEDIA POLERA MANGAS CORTAS LISO",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 8.0,
-        "venta_neta": 104000.0,
-        "apariciones": 6
+        "unidades": 7.0,
+        "venta_neta": 91000.0,
+        "apariciones": 5
       },
       {
         "codigo": "004194",
@@ -228,36 +228,12 @@
         "apariciones": 4
       },
       {
-        "codigo": "001236",
-        "articulo": "CALZA SARA-NEGRO\r\n\r\n*CALZA CHUPÍN ALGODÓN",
-        "rubro": "BASICOS CALZA MUJER",
+        "codigo": "35533",
+        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
+        "rubro": "PACKS MEDIAS NIÑX",
         "unidades": 6.0,
-        "venta_neta": 165000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "11664",
-        "articulo": "REMERA ASTOR -AZUL MARINO\r\n\r\n*REMERA CARDADA BASICA DE ADULTO",
-        "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 6.0,
-        "venta_neta": 74400.0,
-        "apariciones": 7
-      },
-      {
-        "codigo": "32967",
-        "articulo": "MEDIA 6001 SQ\r\n\r\n*MEDIA SOQUETES ESTAMPA HELLO KITTY",
-        "rubro": "MEDIAS MU",
-        "unidades": 6.0,
-        "venta_neta": 30000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "37131",
-        "articulo": "PACK X3 NENA BOMBACHA KO\r\n\r\n*ARTICULOS DE  BOMBACHA DE NENA",
-        "rubro": "PACKS BOMBACHAS NIÑA",
-        "unidades": 6.0,
-        "venta_neta": 102000.0,
-        "apariciones": 6
+        "venta_neta": 33600.0,
+        "apariciones": 4
       },
       {
         "codigo": "000605",
@@ -268,35 +244,59 @@
         "apariciones": 4
       },
       {
-        "codigo": "32609",
-        "articulo": "REMERA MC LONI\r\n\r\n*REMERA MORLEY MANGAS CORTAS CON CUELLO 1/2 POLERA",
-        "rubro": "CASUAL REMERA MC MUJER",
+        "codigo": "001236",
+        "articulo": "CALZA SARA-NEGRO\r\n\r\n*CALZA CHUPÍN ALGODÓN",
+        "rubro": "BASICOS CALZA MUJER",
         "unidades": 5.0,
-        "venta_neta": 105000.0,
-        "apariciones": 3
-      },
-      {
-        "codigo": "34262",
-        "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 5.0,
-        "venta_neta": 159000.0,
+        "venta_neta": 141000.0,
         "apariciones": 5
       },
       {
-        "codigo": "35225",
-        "articulo": "PACK X2 1/2 CAÑA URBANA\r\n\r\n*1 1/2 CAÑA ESTAMPADA 954/951   1 1/2 CAÑA LISA COLORES 912",
-        "rubro": "PACKS MEDIAS HOMBRE",
+        "codigo": "001277",
+        "articulo": "CALZA ADA-NEGRO\r\n\r\n*CALZA RECTA ALGODÓN",
+        "rubro": "BASICOS CALZA MUJER",
         "unidades": 5.0,
-        "venta_neta": 50970.0,
+        "venta_neta": 135000.0,
+        "apariciones": 3
+      },
+      {
+        "codigo": "11664",
+        "articulo": "REMERA ASTOR -AZUL MARINO\r\n\r\n*REMERA CARDADA BASICA DE ADULTO",
+        "rubro": "BASICOS REMERA MC HOMBRE",
+        "unidades": 5.0,
+        "venta_neta": 62000.0,
+        "apariciones": 6
+      },
+      {
+        "codigo": "32967",
+        "articulo": "MEDIA 6001 SQ\r\n\r\n*MEDIA SOQUETES ESTAMPA HELLO KITTY",
+        "rubro": "MEDIAS MU",
+        "unidades": 5.0,
+        "venta_neta": 25000.0,
         "apariciones": 4
       },
       {
-        "codigo": "38891",
-        "articulo": "STICKER\r\n\r\n*STICKER",
-        "rubro": "STICKERS",
+        "codigo": "35537",
+        "articulo": "PACK X2 1/2 CAÑA ESTAMPA T1 T2 T3\r\n\r\n*1 MEDIA CAÑA ESTAMPADA 1020 / 1021 / 1021V",
+        "rubro": "PACKS MEDIAS NIÑX",
         "unidades": 5.0,
-        "venta_neta": 10000.0,
+        "venta_neta": 36000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "37131",
+        "articulo": "PACK X3 NENA BOMBACHA KO\r\n\r\n*ARTICULOS DE  BOMBACHA DE NENA",
+        "rubro": "PACKS BOMBACHAS NIÑA",
+        "unidades": 5.0,
+        "venta_neta": 85000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "39637",
+        "articulo": "REMERON MC SIGURD\r\n\r\n*REMERON ALGODON MANGAS CORTAS CUELLO REDONDO ESTAMPA FRONTAL LITTLE DUDE STITCH",
+        "rubro": "REMERON NIÑA",
+        "unidades": 5.0,
+        "venta_neta": 65910.0,
         "apariciones": 5
       },
       {
@@ -308,179 +308,17 @@
         "apariciones": 5
       },
       {
-        "codigo": "31678",
-        "articulo": "REMERA MC FRAN\r\n\r\n*REMERA DE MODAL  MANGAS CORTAS CUELLO REDONDO LISA",
+        "codigo": "39790",
+        "articulo": "REMERA MC ELINA\r\n\r\n*13740  ARIZONA REMERA MANGAS CORTAS MORLEY 1/2 POLERA",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 4.0,
-        "venta_neta": 56000.0,
+        "unidades": 5.0,
+        "venta_neta": 85000.0,
         "apariciones": 3
       },
       {
-        "codigo": "34949",
-        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
-        "rubro": "MEDIAS NIÑA",
-        "unidades": 4.0,
-        "venta_neta": 16000.0,
-        "apariciones": 3
-      }
-    ],
-    "Plaza CC Río Grande": [
-      {
-        "codigo": "39991",
-        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 8.0,
-        "venta_neta": 40000.0,
-        "apariciones": 8
-      },
-      {
-        "codigo": "32400",
-        "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
-        "rubro": "COLITAS",
-        "unidades": 7.0,
-        "venta_neta": 14160.0,
-        "apariciones": 7
-      },
-      {
-        "codigo": "39477",
-        "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
-        "rubro": "CASUAL PANTALON MUJER",
-        "unidades": 7.0,
-        "venta_neta": 280000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "40074",
-        "articulo": "REMERA MC SOLE\r\n\r\n*REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO SOL BORDADO",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 7.0,
-        "venta_neta": 133000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "39760",
-        "articulo": "REMERA MC NIKA\r\n\r\n*ANIKA REMERA DE ALGODON RIBB MANGAS CORTAS CUELLO REDONDO",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 7.0,
-        "venta_neta": 197960.0,
-        "apariciones": 7
-      },
-      {
-        "codigo": "32508",
-        "articulo": "1/2 POLERA MARCE\r\n\r\n*1/2 POLERA MODAL MANGAS LARGAS SOFT ART RML16",
-        "rubro": "CASUAL POLERA MUJER",
-        "unidades": 6.0,
-        "venta_neta": 78000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "35194",
-        "articulo": "N° 1 -  ARO ARGOLLA ACERO\r\n\r\n*",
-        "rubro": "AROS",
-        "unidades": 6.0,
-        "venta_neta": 10800.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "40020",
-        "articulo": "REMERA MC ORIGI\r\n\r\n*3200E REMERA MANGAS CORTAS CUELLO REDONDO RIBB LISA",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 6.0,
-        "venta_neta": 126000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "40045",
-        "articulo": "TOP ML ARIEL\r\n\r\n*R3776 TOP MANGAS LARGAR ESCOTE V Y ESPALDA CON PUNTILLA RIBB",
-        "rubro": "CASUAL TOP ML MUJER",
-        "unidades": 6.0,
-        "venta_neta": 108000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "39990",
-        "articulo": "UR 941605-003  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 6.0,
-        "venta_neta": 30000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "39965",
-        "articulo": "REMERA MC BAS \r\n\r\n*REMERA DE ALGODON RIB BASICA MC CUELLO REDONDO  LISA ART 269147",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 6.0,
-        "venta_neta": 120000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "39886",
-        "articulo": "REMERA MC MUMITA \r\n\r\n*6729 REMERA DE MORLEY 1/2 POLERA MANGAS CORTAS CUELLO REDONDO LISA",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 6.0,
-        "venta_neta": 84000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "35793",
-        "articulo": "TOP LUCI\r\n\r\n*ART 00327 LUCILA,TOP MICROFIBRA TIPO MARILYN LISO",
-        "rubro": "NOCHE TOP MUJER",
-        "unidades": 5.0,
-        "venta_neta": 115000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "19544",
-        "articulo": "BABUCHA FRISADA-GRIS MELANGE\r\n\r\n*BABUCHA CLASICA FRISADA CON PUÑO ELASTICO  EN LA PARTE DE ABAJO",
-        "rubro": "BASICOS BABUCHA MUJER",
-        "unidades": 5.0,
-        "venta_neta": 245000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "40106",
-        "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
-        "rubro": "MEDIAS MU",
-        "unidades": 5.0,
-        "venta_neta": 10000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "39972",
-        "articulo": "BH31683-17 SOQUETES ESTAMPA\r\n\r\n*",
-        "rubro": "MEDIAS MU",
-        "unidades": 5.0,
-        "venta_neta": 25000.0,
-        "apariciones": 3
-      },
-      {
-        "codigo": "39733",
-        "articulo": "PANTALON BAR\r\n\r\n*BARRO PANTALON CON PUÑO Y ELASTICO EN CINTURA TELA NEOPREN",
-        "rubro": "CASUAL PANTALON MUJER",
-        "unidades": 5.0,
-        "venta_neta": 250000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "39989",
-        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 5.0,
-        "venta_neta": 25000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "13616",
-        "articulo": "PANTY 1000-NEGRO 01\r\n\r\n*PANTY SEMIOPACA DAILY",
-        "rubro": "PANTY MU",
-        "unidades": 4.0,
-        "venta_neta": 28000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "16956",
-        "articulo": "PUSH UP BOOB TAPE-PIEL\r\n\r\n*COR5 PUSHUP AUTOADHESIVA",
-        "rubro": "CINTA",
+        "codigo": "18504",
+        "articulo": "REMERA LIZ-AZUL MARINO\r\n\r\n*REMERA DE NIÑO MC DE ALGODON LISA",
+        "rubro": "BASICOS REMERA MC NIÑO",
         "unidades": 4.0,
         "venta_neta": 36000.0,
         "apariciones": 4
@@ -491,41 +329,33 @@
         "codigo": "11661",
         "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
         "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 8.0,
-        "venta_neta": 99200.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "37071",
-        "articulo": "PACK X3 NENA BOMBACHA SH\r\n\r\n*ARTICULOS DE  BOMBACHA DE NENA 1254,1228,1221,1241, 1220",
-        "rubro": "PACKS BOMBACHAS NIÑA",
-        "unidades": 8.0,
-        "venta_neta": 120000.0,
-        "apariciones": 8
+        "unidades": 10.0,
+        "venta_neta": 124000.0,
+        "apariciones": 5
       },
       {
         "codigo": "08910",
         "articulo": "ARTICULO DE CAMBIO",
         "rubro": "CAMBIOS",
+        "unidades": 8.0,
+        "venta_neta": 0.08,
+        "apariciones": 8
+      },
+      {
+        "codigo": "37071",
+        "articulo": "PACK X3 NENA BOMBACHA SH\r\n\r\n*ARTICULOS DE  BOMBACHA DE NENA 1254,1228,1221,1241, 1220",
+        "rubro": "PACKS BOMBACHAS NIÑA",
         "unidades": 7.0,
-        "venta_neta": 0.07,
+        "venta_neta": 105000.0,
         "apariciones": 7
       },
       {
-        "codigo": "33527",
-        "articulo": "ART E40001 COLITAS CHICAS\r\n\r\n*COLITAS DE ALGODON CHICAS S40001/ E40001",
-        "rubro": "COLITAS",
-        "unidades": 7.0,
-        "venta_neta": 14000.0,
+        "codigo": "000609",
+        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
+        "rubro": "BASICOS JOGGING HOMBRE",
+        "unidades": 6.0,
+        "venta_neta": 294000.0,
         "apariciones": 6
-      },
-      {
-        "codigo": "35243",
-        "articulo": "PACK X3 SURTIDO NIÑO\r\n\r\n*2 LISOS Y 1 ESTAMPADO",
-        "rubro": "PACKS BOXER NIÑO",
-        "unidades": 7.0,
-        "venta_neta": 168000.0,
-        "apariciones": 5
       },
       {
         "codigo": "11663",
@@ -536,28 +366,12 @@
         "apariciones": 5
       },
       {
-        "codigo": "33932",
-        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
-        "rubro": "PACKS BOXER HOMBRE",
+        "codigo": "39581",
+        "articulo": "CALZA PEDRAZA\r\n\r\n*ART MI013A CALZA OXFORD MICROFIBRA SUAVE TIPO DEPORTIVA",
+        "rubro": "CASUAL CALZA MUJER",
         "unidades": 6.0,
-        "venta_neta": 183000.0,
-        "apariciones": 4
-      },
-      {
-        "codigo": "36895",
-        "articulo": "PACK X3 VEDETINA\r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS 26/232/23/22 Y 27",
-        "rubro": "PACKS MUJER BOMBACHA",
-        "unidades": 6.0,
-        "venta_neta": 90000.0,
+        "venta_neta": 206380.0,
         "apariciones": 5
-      },
-      {
-        "codigo": "39680",
-        "articulo": "REMERA MC URICH \r\n\r\n*5550 REMERA RIBB MANGAS CORTAS MEDIA POLETA CON CIERRE",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 6.0,
-        "venta_neta": 96000.0,
-        "apariciones": 6
       },
       {
         "codigo": "39583",
@@ -576,28 +390,28 @@
         "apariciones": 1
       },
       {
-        "codigo": "34262",
-        "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 5.0,
-        "venta_neta": 162000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "37089",
-        "articulo": "R44000 PINZAS \r\n\r\n*",
-        "rubro": "PINZAS Y BROCHES",
+        "codigo": "33527",
+        "articulo": "ART E40001 COLITAS CHICAS\r\n\r\n*COLITAS DE ALGODON CHICAS S40001/ E40001",
+        "rubro": "COLITAS",
         "unidades": 5.0,
         "venta_neta": 10000.0,
         "apariciones": 4
       },
       {
-        "codigo": "39432",
-        "articulo": "ARGOLLA FANTASIA CHATA",
-        "rubro": "AROS",
+        "codigo": "35243",
+        "articulo": "PACK X3 SURTIDO NIÑO\r\n\r\n*2 LISOS Y 1 ESTAMPADO",
+        "rubro": "PACKS BOXER NIÑO",
         "unidades": 5.0,
-        "venta_neta": 20320.0,
-        "apariciones": 5
+        "venta_neta": 120000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "36895",
+        "articulo": "PACK X3 VEDETINA\r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS 26/232/23/22 Y 27",
+        "rubro": "PACKS MUJER BOMBACHA",
+        "unidades": 5.0,
+        "venta_neta": 75000.0,
+        "apariciones": 4
       },
       {
         "codigo": "39323",
@@ -608,27 +422,11 @@
         "apariciones": 4
       },
       {
-        "codigo": "39634",
-        "articulo": "REMERON MC REEDUS\r\n\r\n*REMERON DE ALGODON MANGAS CORTAS ESTAMPA FRONTAL MARIPOSA Y BE CURIOUS",
-        "rubro": "REMERON NIÑA",
+        "codigo": "39359",
+        "articulo": "1/2 POLERA DAPHNE \r\n\r\n*MC051 REMERA 1/2 POLERA MANGAS CORTAS MORLEY",
+        "rubro": "CASUAL POLERA MUJER",
         "unidades": 5.0,
-        "venta_neta": 65000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "39648",
-        "articulo": "T40005 SET DE 6 COLITAS\r\n\r\n*SET DE 6 COLITAS ALGODON ANIMAL PRINT CHICAS",
-        "rubro": "COLITAS",
-        "unidades": 5.0,
-        "venta_neta": 15148.15,
-        "apariciones": 5
-      },
-      {
-        "codigo": "39679",
-        "articulo": "REMERA MC TORVI\r\n\r\n*555 REMERA RIBB MANGAS CORTAS CON FRUNCE  CUELLO REDONDO",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 5.0,
-        "venta_neta": 80000.0,
+        "venta_neta": 70000.0,
         "apariciones": 4
       },
       {
@@ -640,11 +438,213 @@
         "apariciones": 4
       },
       {
-        "codigo": "000609",
-        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
-        "rubro": "BASICOS JOGGING HOMBRE",
+        "codigo": "33417",
+        "articulo": "E41004 SCRUNCHIES A PRINT\r\n\r\n*",
+        "rubro": "COLITAS",
         "unidades": 4.0,
-        "venta_neta": 196000.0,
+        "venta_neta": 8000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "34262",
+        "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
+        "rubro": "PACKS BOXER HOMBRE",
+        "unidades": 4.0,
+        "venta_neta": 132000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "37162",
+        "articulo": "PACK X3 SP COLALESS 3103/3101\r\n\r\nART 3103 Y 3101 LISO Y ESTAMPADO ALGODON",
+        "rubro": "PACKS MUJER BOMBACHA",
+        "unidades": 4.0,
+        "venta_neta": 68000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "37614",
+        "articulo": "S40002 PACKX6 COLITAS",
+        "rubro": "COLITAS",
+        "unidades": 4.0,
+        "venta_neta": 8000.0,
+        "apariciones": 2
+      },
+      {
+        "codigo": "37089",
+        "articulo": "R44000 PINZAS \r\n\r\n*",
+        "rubro": "PINZAS Y BROCHES",
+        "unidades": 4.0,
+        "venta_neta": 8000.0,
+        "apariciones": 3
+      },
+      {
+        "codigo": "39790",
+        "articulo": "REMERA MC ELINA\r\n\r\n*13740  ARIZONA REMERA MANGAS CORTAS MORLEY 1/2 POLERA",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 4.0,
+        "venta_neta": 69190.0,
+        "apariciones": 3
+      }
+    ],
+    "Plaza CC Río Grande": [
+      {
+        "codigo": "39991",
+        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 9.0,
+        "venta_neta": 45000.0,
+        "apariciones": 9
+      },
+      {
+        "codigo": "39477",
+        "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
+        "rubro": "CASUAL PANTALON MUJER",
+        "unidades": 8.0,
+        "venta_neta": 320000.0,
+        "apariciones": 6
+      },
+      {
+        "codigo": "32400",
+        "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
+        "rubro": "COLITAS",
+        "unidades": 7.0,
+        "venta_neta": 14000.0,
+        "apariciones": 7
+      },
+      {
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
+        "unidades": 7.0,
+        "venta_neta": 0.07,
+        "apariciones": 7
+      },
+      {
+        "codigo": "40020",
+        "articulo": "REMERA MC ORIGI\r\n\r\n*3200E REMERA MANGAS CORTAS CUELLO REDONDO RIBB LISA",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 7.0,
+        "venta_neta": 147000.0,
+        "apariciones": 6
+      },
+      {
+        "codigo": "39760",
+        "articulo": "REMERA MC NIKA\r\n\r\n*ANIKA REMERA DE ALGODON RIBB MANGAS CORTAS CUELLO REDONDO",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 7.0,
+        "venta_neta": 197960.0,
+        "apariciones": 7
+      },
+      {
+        "codigo": "39990",
+        "articulo": "UR 941605-003  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 7.0,
+        "venta_neta": 35000.0,
+        "apariciones": 7
+      },
+      {
+        "codigo": "35194",
+        "articulo": "N° 1 -  ARO ARGOLLA ACERO\r\n\r\n*",
+        "rubro": "AROS",
+        "unidades": 6.0,
+        "venta_neta": 10800.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "40074",
+        "articulo": "REMERA MC SOLE\r\n\r\n*REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO SOL BORDADO",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 6.0,
+        "venta_neta": 114000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "40106",
+        "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
+        "rubro": "MEDIAS MU",
+        "unidades": 6.0,
+        "venta_neta": 12000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "39989",
+        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 6.0,
+        "venta_neta": 30000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "32508",
+        "articulo": "1/2 POLERA MARCE\r\n\r\n*1/2 POLERA MODAL MANGAS LARGAS SOFT ART RML16",
+        "rubro": "CASUAL POLERA MUJER",
+        "unidades": 5.0,
+        "venta_neta": 65000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "39297",
+        "articulo": "CALZA INDIAN\r\n\r\n*PANT 221 CLAZA PLUSH OXFORD CON SIMIL ELASTICO GRUESO EN CINTURA",
+        "rubro": "CASUAL CALZA MUJER",
+        "unidades": 5.0,
+        "venta_neta": 110000.0,
+        "apariciones": 3
+      },
+      {
+        "codigo": "40045",
+        "articulo": "TOP ML ARIEL\r\n\r\n*R3776 TOP MANGAS LARGAR ESCOTE V Y ESPALDA CON PUNTILLA RIBB",
+        "rubro": "CASUAL TOP ML MUJER",
+        "unidades": 5.0,
+        "venta_neta": 90000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "40107",
+        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
+        "rubro": "COLITAS",
+        "unidades": 5.0,
+        "venta_neta": 10000.0,
+        "apariciones": 5
+      },
+      {
+        "codigo": "32326",
+        "articulo": "REMERA MC KAF\r\n\r\n*ART RMC128 REMERA MANGA CORTA CUELLO REDONDO MODAL",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 4.0,
+        "venta_neta": 52000.0,
+        "apariciones": 3
+      },
+      {
+        "codigo": "13616",
+        "articulo": "PANTY 1000-NEGRO 01\r\n\r\n*PANTY SEMIOPACA DAILY",
+        "rubro": "PANTY MU",
+        "unidades": 4.0,
+        "venta_neta": 28000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "34196",
+        "articulo": "TOP TORI-BLANCO\r\n\r\n*TOP DE ALGODON CUELLO REDONDO  BASICO",
+        "rubro": "BASICO TOP MUJER",
+        "unidades": 4.0,
+        "venta_neta": 76000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "35793",
+        "articulo": "TOP LUCI\r\n\r\n*ART 00327 LUCILA,TOP MICROFIBRA TIPO MARILYN LISO",
+        "rubro": "NOCHE TOP MUJER",
+        "unidades": 4.0,
+        "venta_neta": 92000.0,
+        "apariciones": 4
+      },
+      {
+        "codigo": "35796",
+        "articulo": "CORSET PALO\r\n\r\n*ART 00401 PALOMA, CORSET BENGALINA CON PUNTILLA BRETELES PARA AJUSTAR Y CORDONES EN LA PARTE DE ATRAS",
+        "rubro": "NOCHE CORSET MUJER",
+        "unidades": 4.0,
+        "venta_neta": 152000.0,
         "apariciones": 4
       }
     ],
@@ -653,9 +653,9 @@
         "codigo": "11661",
         "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
         "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 26.0,
-        "venta_neta": 322400.01,
-        "apariciones": 12
+        "unidades": 28.0,
+        "venta_neta": 347200.01,
+        "apariciones": 13
       },
       {
         "codigo": "39992",
@@ -663,15 +663,23 @@
         "rubro": "ANILLOS",
         "unidades": 24.0,
         "venta_neta": 121017.27,
-        "apariciones": 16
+        "apariciones": 14
       },
       {
         "codigo": "000609",
         "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 19.0,
-        "venta_neta": 931000.09,
-        "apariciones": 16
+        "unidades": 21.0,
+        "venta_neta": 1029000.09,
+        "apariciones": 18
+      },
+      {
+        "codigo": "39988",
+        "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 18.0,
+        "venta_neta": 90317.27,
+        "apariciones": 13
       },
       {
         "codigo": "11663",
@@ -685,40 +693,40 @@
         "codigo": "39991",
         "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 16.0,
-        "venta_neta": 80317.27,
+        "unidades": 15.0,
+        "venta_neta": 75317.27,
         "apariciones": 14
-      },
-      {
-        "codigo": "39988",
-        "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 14.0,
-        "venta_neta": 70317.27,
-        "apariciones": 10
-      },
-      {
-        "codigo": "33932",
-        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 14.0,
-        "venta_neta": 435000.0,
-        "apariciones": 10
-      },
-      {
-        "codigo": "08910",
-        "articulo": "ARTICULO DE CAMBIO",
-        "rubro": "CAMBIOS",
-        "unidades": 11.0,
-        "venta_neta": 0.11,
-        "apariciones": 11
       },
       {
         "codigo": "40106",
         "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
         "rubro": "MEDIAS MU",
+        "unidades": 15.0,
+        "venta_neta": 30000.0,
+        "apariciones": 13
+      },
+      {
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
+        "unidades": 15.0,
+        "venta_neta": 0.15,
+        "apariciones": 15
+      },
+      {
+        "codigo": "40107",
+        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
+        "rubro": "COLITAS",
+        "unidades": 12.0,
+        "venta_neta": 24000.0,
+        "apariciones": 11
+      },
+      {
+        "codigo": "39989",
+        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
         "unidades": 11.0,
-        "venta_neta": 22000.0,
+        "venta_neta": 55000.0,
         "apariciones": 10
       },
       {
@@ -726,7 +734,7 @@
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
         "unidades": 10.0,
-        "venta_neta": 20160.0,
+        "venta_neta": 20000.0,
         "apariciones": 9
       },
       {
@@ -735,7 +743,7 @@
         "rubro": "CASUAL REMERA MC MUJER",
         "unidades": 10.0,
         "venta_neta": 190000.0,
-        "apariciones": 7
+        "apariciones": 9
       },
       {
         "codigo": "39879",
@@ -746,20 +754,12 @@
         "apariciones": 5
       },
       {
-        "codigo": "39989",
-        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 10.0,
-        "venta_neta": 50000.0,
+        "codigo": "11629",
+        "articulo": "PANTY 1000-PIEL 08\r\n\r\n*PANTY SEMIOPACA DAILY",
+        "rubro": "PANTY MU",
+        "unidades": 9.0,
+        "venta_neta": 64000.0,
         "apariciones": 9
-      },
-      {
-        "codigo": "34262",
-        "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 10.0,
-        "venta_neta": 321000.0,
-        "apariciones": 10
       },
       {
         "codigo": "35534",
@@ -770,36 +770,36 @@
         "apariciones": 7
       },
       {
-        "codigo": "40107",
-        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
-        "rubro": "COLITAS",
+        "codigo": "13616",
+        "articulo": "PANTY 1000-NEGRO 01\r\n\r\n*PANTY SEMIOPACA DAILY",
+        "rubro": "PANTY MU",
         "unidades": 9.0,
-        "venta_neta": 18000.0,
-        "apariciones": 8
+        "venta_neta": 63000.0,
+        "apariciones": 9
       },
       {
-        "codigo": "39799",
-        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
+        "codigo": "35796",
+        "articulo": "CORSET PALO\r\n\r\n*ART 00401 PALOMA, CORSET BENGALINA CON PUNTILLA BRETELES PARA AJUSTAR Y CORDONES EN LA PARTE DE ATRAS",
+        "rubro": "NOCHE CORSET MUJER",
+        "unidades": 9.0,
+        "venta_neta": 342000.0,
+        "apariciones": 9
+      },
+      {
+        "codigo": "39790",
+        "articulo": "REMERA MC ELINA\r\n\r\n*13740  ARIZONA REMERA MANGAS CORTAS MORLEY 1/2 POLERA",
         "rubro": "CASUAL REMERA MC MUJER",
         "unidades": 9.0,
-        "venta_neta": 127120.0,
-        "apariciones": 11
+        "venta_neta": 154190.0,
+        "apariciones": 6
       },
       {
-        "codigo": "37071",
-        "articulo": "PACK X3 NENA BOMBACHA SH\r\n\r\n*ARTICULOS DE  BOMBACHA DE NENA 1254,1228,1221,1241, 1220",
-        "rubro": "PACKS BOMBACHAS NIÑA",
+        "codigo": "39477",
+        "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
+        "rubro": "CASUAL PANTALON MUJER",
         "unidades": 8.0,
-        "venta_neta": 120000.0,
-        "apariciones": 8
-      },
-      {
-        "codigo": "11629",
-        "articulo": "PANTY 1000-PIEL 08\r\n\r\n*PANTY SEMIOPACA DAILY",
-        "rubro": "PANTY MU",
-        "unidades": 8.0,
-        "venta_neta": 57000.0,
-        "apariciones": 8
+        "venta_neta": 320000.0,
+        "apariciones": 6
       },
       {
         "codigo": "37144",
@@ -817,9 +817,9 @@
         "codigo": "000609",
         "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 41.0,
-        "venta_neta": 2012430.1,
-        "apariciones": 40
+        "unidades": 42.0,
+        "venta_neta": 2061430.1,
+        "apariciones": 41
       },
       {
         "codigo": "11661",
@@ -870,12 +870,28 @@
         "apariciones": 15
       },
       {
+        "codigo": "35533",
+        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
+        "rubro": "PACKS MEDIAS NIÑX",
+        "unidades": 14.0,
+        "venta_neta": 73600.0,
+        "apariciones": 11
+      },
+      {
         "codigo": "000605",
         "articulo": "JOGGING CAIRO-NEGRO\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
         "unidades": 13.0,
         "venta_neta": 637000.02,
         "apariciones": 13
+      },
+      {
+        "codigo": "004194",
+        "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
+        "rubro": "BASICOS JOGGING NIÑO",
+        "unidades": 12.0,
+        "venta_neta": 348000.0,
+        "apariciones": 10
       },
       {
         "codigo": "37499",
@@ -886,20 +902,20 @@
         "apariciones": 11
       },
       {
-        "codigo": "004194",
-        "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
-        "rubro": "BASICOS JOGGING NIÑO",
-        "unidades": 11.0,
-        "venta_neta": 319000.0,
-        "apariciones": 9
-      },
-      {
         "codigo": "34262",
         "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
         "rubro": "PACKS BOXER HOMBRE",
         "unidades": 11.0,
         "venta_neta": 339000.0,
         "apariciones": 10
+      },
+      {
+        "codigo": "34949",
+        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
+        "rubro": "MEDIAS NIÑA",
+        "unidades": 11.0,
+        "venta_neta": 44000.01,
+        "apariciones": 8
       },
       {
         "codigo": "35534",
@@ -919,7 +935,7 @@
       },
       {
         "codigo": "32609",
-        "articulo": "REMERA MC LONI\r\n\r\n*REMERA MORLEY MANGAS CORTAS CON CUELLO 1/2 POLERA",
+        "articulo": "OBS REMERA MC LONI\r\n\r\n*REMERA MORLEY MANGAS CORTAS CON CUELLO 1/2 POLERA",
         "rubro": "CASUAL REMERA MC MUJER",
         "unidades": 10.0,
         "venta_neta": 210000.0,
@@ -934,44 +950,28 @@
         "apariciones": 8
       },
       {
+        "codigo": "35537",
+        "articulo": "PACK X2 1/2 CAÑA ESTAMPA T1 T2 T3\r\n\r\n*1 MEDIA CAÑA ESTAMPADA 1020 / 1021 / 1021V",
+        "rubro": "PACKS MEDIAS NIÑX",
+        "unidades": 10.0,
+        "venta_neta": 72000.0,
+        "apariciones": 9
+      },
+      {
+        "codigo": "36893",
+        "articulo": "PACK X3 U COLALESS SURTIDO \r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS BA16,BA13,12,17",
+        "rubro": "PACKS MUJER BOMBACHA",
+        "unidades": 10.0,
+        "venta_neta": 150000.0,
+        "apariciones": 7
+      },
+      {
         "codigo": "36895",
         "articulo": "PACK X3 VEDETINA\r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS 26/232/23/22 Y 27",
         "rubro": "PACKS MUJER BOMBACHA",
         "unidades": 10.0,
         "venta_neta": 151050.0,
         "apariciones": 9
-      },
-      {
-        "codigo": "37163",
-        "articulo": "PACK X3 SP COLALESS 3106\r\n\r\nART 3106 COLALESS PUNTILLA REGULABLE",
-        "rubro": "PACKS MUJER BOMBACHA",
-        "unidades": 10.0,
-        "venta_neta": 167000.0,
-        "apariciones": 10
-      },
-      {
-        "codigo": "35533",
-        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
-        "rubro": "PACKS MEDIAS NIÑX",
-        "unidades": 9.0,
-        "venta_neta": 45600.0,
-        "apariciones": 8
-      },
-      {
-        "codigo": "36893",
-        "articulo": "PACK X3 U COLALESS SURTIDO \r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS BA16,BA13,12,17",
-        "rubro": "PACKS MUJER BOMBACHA",
-        "unidades": 9.0,
-        "venta_neta": 135000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "39692",
-        "articulo": "PANTALON ROSI\r\n\r\n*PANTALON ANCHO MODAL GAMUZAOO CON ELASTICO Y CORDON EN CINTURA",
-        "rubro": "CASUAL CARDIGAN MUJER",
-        "unidades": 9.0,
-        "venta_neta": 279000.0,
-        "apariciones": 8
       }
     ],
     "Plaza CC Ushuaia": [
@@ -979,9 +979,9 @@
         "codigo": "39992",
         "articulo": "UR 941605-012  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 28.0,
-        "venta_neta": 141017.27,
-        "apariciones": 21
+        "unidades": 31.0,
+        "venta_neta": 156017.27,
+        "apariciones": 22
       },
       {
         "codigo": "32344",
@@ -995,33 +995,49 @@
         "codigo": "39988",
         "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 15.0,
-        "venta_neta": 75317.27,
-        "apariciones": 11
+        "unidades": 16.0,
+        "venta_neta": 80317.27,
+        "apariciones": 12
       },
       {
         "codigo": "39799",
         "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 15.0,
-        "venta_neta": 210000.0,
-        "apariciones": 16
+        "unidades": 16.0,
+        "venta_neta": 224000.0,
+        "apariciones": 17
       },
       {
         "codigo": "11629",
         "articulo": "PANTY 1000-PIEL 08\r\n\r\n*PANTY SEMIOPACA DAILY",
         "rubro": "PANTY MU",
-        "unidades": 13.0,
-        "venta_neta": 92000.0,
-        "apariciones": 12
+        "unidades": 14.0,
+        "venta_neta": 99000.0,
+        "apariciones": 13
       },
       {
         "codigo": "39991",
         "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
+        "unidades": 12.0,
+        "venta_neta": 60317.27,
+        "apariciones": 9
+      },
+      {
+        "codigo": "29440",
+        "articulo": "TOP MILITA\r\n\r\n*TOP TULL IRREGULAR TERMINACION EN PICO Y TAJO ART 2232T",
+        "rubro": "NOCHE TOP MUJER",
+        "unidades": 12.0,
+        "venta_neta": 180000.0,
+        "apariciones": 11
+      },
+      {
+        "codigo": "38863",
+        "articulo": "REMERA MC MILE \r\n\r\n*MALENA REMERA MANGAS CORTAS CUELLO REDONDO CON RECORTES EN MANGAS ALGODON",
+        "rubro": "CASUAL REMERA MC MUJER",
         "unidades": 11.0,
-        "venta_neta": 55317.27,
-        "apariciones": 8
+        "venta_neta": 209000.0,
+        "apariciones": 13
       },
       {
         "codigo": "35793",
@@ -1032,20 +1048,20 @@
         "apariciones": 8
       },
       {
-        "codigo": "29440",
-        "articulo": "TOP MILITA\r\n\r\n*TOP TULL IRREGULAR TERMINACION EN PICO Y TAJO ART 2232T",
-        "rubro": "NOCHE TOP MUJER",
-        "unidades": 11.0,
-        "venta_neta": 165000.0,
+        "codigo": "35796",
+        "articulo": "CORSET PALO\r\n\r\n*ART 00401 PALOMA, CORSET BENGALINA CON PUNTILLA BRETELES PARA AJUSTAR Y CORDONES EN LA PARTE DE ATRAS",
+        "rubro": "NOCHE CORSET MUJER",
+        "unidades": 10.0,
+        "venta_neta": 380000.0,
         "apariciones": 10
       },
       {
-        "codigo": "38863",
-        "articulo": "REMERA MC MILE \r\n\r\n*MALENA REMERA MANGAS CORTAS CUELLO REDONDO CON RECORTES EN MANGAS ALGODON",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 10.0,
-        "venta_neta": 190000.0,
-        "apariciones": 13
+        "codigo": "40106",
+        "articulo": "044000 PINZAS \r\n\r\n*PINZAS DE PELO PELUCHE",
+        "rubro": "MEDIAS MU",
+        "unidades": 9.0,
+        "venta_neta": 18000.0,
+        "apariciones": 8
       },
       {
         "codigo": "39855",
@@ -1053,14 +1069,6 @@
         "rubro": "CASUAL TOP MC MUJER",
         "unidades": 9.0,
         "venta_neta": 126000.0,
-        "apariciones": 9
-      },
-      {
-        "codigo": "39989",
-        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 9.0,
-        "venta_neta": 45000.0,
         "apariciones": 9
       },
       {
@@ -1072,11 +1080,35 @@
         "apariciones": 9
       },
       {
+        "codigo": "39989",
+        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 9.0,
+        "venta_neta": 45000.0,
+        "apariciones": 9
+      },
+      {
+        "codigo": "39541",
+        "articulo": "TOP MC WEIR\r\n\r\n*TOP MANGAS CORTAS CUELLO REDONDO COMBINADO ESTAMPA FRONTAL BORDADA \"WEIRDO\" ALGODON LYCRA",
+        "rubro": "CASUAL TOP MC MUJER",
+        "unidades": 8.0,
+        "venta_neta": 136000.0,
+        "apariciones": 7
+      },
+      {
         "codigo": "39856",
         "articulo": "PANTALON ROTH\r\n\r\n*P2354 PANTALON DEPORTIVO ACETATO ANCHO CON LINEAS Y EN EL RUEDO CON TIRA PARA AJUSTAR",
         "rubro": "CASUAL PANTALON MUJER",
         "unidades": 8.0,
         "venta_neta": 320000.0,
+        "apariciones": 8
+      },
+      {
+        "codigo": "39517",
+        "articulo": "PERFUMINA SUNSET\r\n\r\n*PERFUMINA TEXTIL 350 ML",
+        "rubro": "PERFUMINAS",
+        "unidades": 8.0,
+        "venta_neta": 104824.89,
         "apariciones": 8
       },
       {
@@ -1088,22 +1120,6 @@
         "apariciones": 6
       },
       {
-        "codigo": "39541",
-        "articulo": "TOP MC WEIR\r\n\r\n*TOP MANGAS CORTAS CUELLO REDONDO COMBINADO ESTAMPA FRONTAL BORDADA \"WEIRDO\" ALGODON LYCRA",
-        "rubro": "CASUAL TOP MC MUJER",
-        "unidades": 8.0,
-        "venta_neta": 136000.0,
-        "apariciones": 7
-      },
-      {
-        "codigo": "39517",
-        "articulo": "PERFUMINA SUNSET\r\n\r\n*PERFUMINA TEXTIL 350 ML",
-        "rubro": "PERFUMINAS",
-        "unidades": 8.0,
-        "venta_neta": 104824.89,
-        "apariciones": 8
-      },
-      {
         "codigo": "40025",
         "articulo": "JEANS B THEM\r\n\r\n*24691 THEMIS JEANS BAGGY RIGIDO OXIDO NEVADO LOCALIZADO CON BIGOTES",
         "rubro": "DENIM JEAN MUJER",
@@ -1112,27 +1128,11 @@
         "apariciones": 7
       },
       {
-        "codigo": "39760",
-        "articulo": "REMERA MC NIKA\r\n\r\n*ANIKA REMERA DE ALGODON RIBB MANGAS CORTAS CUELLO REDONDO",
-        "rubro": "CASUAL REMERA MC MUJER",
+        "codigo": "40107",
+        "articulo": "W41004 SCRUNCHIE PELU\r\n\r\n*SCRUNCHIE DE PELO PELUCHE",
+        "rubro": "COLITAS",
         "unidades": 7.0,
-        "venta_neta": 196000.0,
-        "apariciones": 5
-      },
-      {
-        "codigo": "39811",
-        "articulo": "COL-BA0086 COLLAR  \r\n\r\n*COLGANTE CON MOSTACILLAS PERLAS TRANSPARENTES",
-        "rubro": "COLLAR/CADENA MU",
-        "unidades": 7.0,
-        "venta_neta": 42000.0,
-        "apariciones": 6
-      },
-      {
-        "codigo": "39714",
-        "articulo": "JEANS B KRAT \r\n\r\n*24692 KRATOS JEANS BAGGY STONE AZUL NEVADO CON BIGOTES Y LOCALIZADO RIGIDO",
-        "rubro": "DENIM JEAN MUJER",
-        "unidades": 7.0,
-        "venta_neta": 546000.0,
+        "venta_neta": 14000.0,
         "apariciones": 6
       }
     ],
@@ -1149,17 +1149,17 @@
         "codigo": "32400",
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
-        "unidades": 18.0,
-        "venta_neta": 36160.0,
-        "apariciones": 18
+        "unidades": 19.0,
+        "venta_neta": 38160.0,
+        "apariciones": 19
       },
       {
         "codigo": "39990",
         "articulo": "UR 941605-003  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 15.0,
-        "venta_neta": 75350.0,
-        "apariciones": 15
+        "unidades": 16.0,
+        "venta_neta": 80350.0,
+        "apariciones": 16
       },
       {
         "codigo": "32344",
@@ -1170,20 +1170,28 @@
         "apariciones": 17
       },
       {
-        "codigo": "39477",
-        "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
-        "rubro": "CASUAL PANTALON MUJER",
-        "unidades": 12.0,
-        "venta_neta": 480000.0,
-        "apariciones": 10
-      },
-      {
         "codigo": "39991",
         "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 11.0,
-        "venta_neta": 55000.0,
+        "unidades": 13.0,
+        "venta_neta": 65000.0,
+        "apariciones": 13
+      },
+      {
+        "codigo": "39477",
+        "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
+        "rubro": "CASUAL PANTALON MUJER",
+        "unidades": 13.0,
+        "venta_neta": 520000.0,
         "apariciones": 11
+      },
+      {
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
+        "unidades": 12.0,
+        "venta_neta": 0.12,
+        "apariciones": 12
       },
       {
         "codigo": "39760",
@@ -1194,6 +1202,14 @@
         "apariciones": 13
       },
       {
+        "codigo": "35793",
+        "articulo": "TOP LUCI\r\n\r\n*ART 00327 LUCILA,TOP MICROFIBRA TIPO MARILYN LISO",
+        "rubro": "NOCHE TOP MUJER",
+        "unidades": 11.0,
+        "venta_neta": 253000.0,
+        "apariciones": 11
+      },
+      {
         "codigo": "39886",
         "articulo": "REMERA MC MUMITA \r\n\r\n*6729 REMERA DE MORLEY 1/2 POLERA MANGAS CORTAS CUELLO REDONDO LISA",
         "rubro": "CASUAL REMERA MC MUJER",
@@ -1202,20 +1218,12 @@
         "apariciones": 11
       },
       {
-        "codigo": "39799",
-        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
+        "codigo": "40020",
+        "articulo": "REMERA MC ORIGI\r\n\r\n*3200E REMERA MANGAS CORTAS CUELLO REDONDO RIBB LISA",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 10.0,
-        "venta_neta": 141120.0,
-        "apariciones": 12
-      },
-      {
-        "codigo": "35793",
-        "articulo": "TOP LUCI\r\n\r\n*ART 00327 LUCILA,TOP MICROFIBRA TIPO MARILYN LISO",
-        "rubro": "NOCHE TOP MUJER",
-        "unidades": 10.0,
-        "venta_neta": 230000.0,
-        "apariciones": 10
+        "unidades": 9.0,
+        "venta_neta": 189000.0,
+        "apariciones": 8
       },
       {
         "codigo": "39965",
@@ -1234,11 +1242,27 @@
         "apariciones": 8
       },
       {
-        "codigo": "40020",
-        "articulo": "REMERA MC ORIGI\r\n\r\n*3200E REMERA MANGAS CORTAS CUELLO REDONDO RIBB LISA",
+        "codigo": "39799",
+        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
         "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 9.0,
+        "venta_neta": 127120.0,
+        "apariciones": 13
+      },
+      {
+        "codigo": "21187",
+        "articulo": "REMERA MC AMSTEL\r\n\r\n*ART 8106 REMERA MC MORLEY ESCOTE  EN V",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 9.0,
+        "venta_neta": 126000.0,
+        "apariciones": 8
+      },
+      {
+        "codigo": "39988",
+        "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
         "unidades": 8.0,
-        "venta_neta": 168000.0,
+        "venta_neta": 40000.0,
         "apariciones": 7
       },
       {
@@ -1250,11 +1274,11 @@
         "apariciones": 8
       },
       {
-        "codigo": "39733",
-        "articulo": "PANTALON BAR\r\n\r\n*BARRO PANTALON CON PUÑO Y ELASTICO EN CINTURA TELA NEOPREN",
-        "rubro": "CASUAL PANTALON MUJER",
+        "codigo": "39989",
+        "articulo": "UR 941603-12 ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
         "unidades": 8.0,
-        "venta_neta": 400000.0,
+        "venta_neta": 40350.0,
         "apariciones": 7
       },
       {
@@ -1266,39 +1290,23 @@
         "apariciones": 8
       },
       {
-        "codigo": "21187",
-        "articulo": "REMERA MC AMSTEL\r\n\r\n*ART 8106 REMERA MC MORLEY ESCOTE  EN V",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 8.0,
-        "venta_neta": 112000.0,
-        "apariciones": 7
-      },
-      {
-        "codigo": "08910",
-        "articulo": "ARTICULO DE CAMBIO",
-        "rubro": "CAMBIOS",
-        "unidades": 8.0,
-        "venta_neta": 0.08,
-        "apariciones": 8
-      },
-      {
         "codigo": "19544",
         "articulo": "BABUCHA FRISADA-GRIS MELANGE\r\n\r\n*BABUCHA CLASICA FRISADA CON PUÑO ELASTICO  EN LA PARTE DE ABAJO",
         "rubro": "BASICOS BABUCHA MUJER",
         "unidades": 8.0,
         "venta_neta": 395920.0,
         "apariciones": 8
-      },
-      {
-        "codigo": "40074",
-        "articulo": "REMERA MC SOLE\r\n\r\n*REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO SOL BORDADO",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 7.0,
-        "venta_neta": 133000.0,
-        "apariciones": 4
       }
     ],
     "Casa Corea Río Grande": [
+      {
+        "codigo": "33932",
+        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
+        "rubro": "PACKS BOXER HOMBRE",
+        "unidades": 18.0,
+        "venta_neta": 551100.0,
+        "apariciones": 15
+      },
       {
         "codigo": "34262",
         "articulo": "PACK X 3 LISO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 GRIS O BLANCO",
@@ -1316,12 +1324,20 @@
         "apariciones": 15
       },
       {
-        "codigo": "33932",
-        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
-        "rubro": "PACKS BOXER HOMBRE",
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
         "unidades": 16.0,
-        "venta_neta": 485100.0,
-        "apariciones": 13
+        "venta_neta": 0.16,
+        "apariciones": 16
+      },
+      {
+        "codigo": "11661",
+        "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
+        "rubro": "BASICOS REMERA MC HOMBRE",
+        "unidades": 15.0,
+        "venta_neta": 186000.0,
+        "apariciones": 10
       },
       {
         "codigo": "36895",
@@ -1348,28 +1364,20 @@
         "apariciones": 13
       },
       {
-        "codigo": "11661",
-        "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
-        "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 13.0,
-        "venta_neta": 161200.0,
-        "apariciones": 9
-      },
-      {
-        "codigo": "08910",
-        "articulo": "ARTICULO DE CAMBIO",
-        "rubro": "CAMBIOS",
-        "unidades": 13.0,
-        "venta_neta": 0.13,
-        "apariciones": 13
-      },
-      {
         "codigo": "004194",
         "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
         "rubro": "BASICOS JOGGING NIÑO",
+        "unidades": 12.0,
+        "venta_neta": 348000.0,
+        "apariciones": 11
+      },
+      {
+        "codigo": "000609",
+        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
+        "rubro": "BASICOS JOGGING HOMBRE",
         "unidades": 11.0,
-        "venta_neta": 319000.0,
-        "apariciones": 10
+        "venta_neta": 539000.0,
+        "apariciones": 11
       },
       {
         "codigo": "39648",
@@ -1444,20 +1452,12 @@
         "apariciones": 7
       },
       {
-        "codigo": "000609",
-        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
-        "rubro": "BASICOS JOGGING HOMBRE",
+        "codigo": "004761",
+        "articulo": "REMERA ANIBAL-BLANCO\r\n\r\n*REMERA MC ALGODON LISA DE NIÑO",
+        "rubro": "BASICOS REMERA MC NIÑO",
         "unidades": 9.0,
-        "venta_neta": 441000.0,
-        "apariciones": 9
-      },
-      {
-        "codigo": "39680",
-        "articulo": "REMERA MC URICH \r\n\r\n*5550 REMERA RIBB MANGAS CORTAS MEDIA POLETA CON CIERRE",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 8.0,
-        "venta_neta": 128000.0,
-        "apariciones": 7
+        "venta_neta": 117000.0,
+        "apariciones": 6
       }
     ],
     "Todas las tiendas": [
@@ -1465,25 +1465,33 @@
         "codigo": "39992",
         "articulo": "UR 941605-012  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
         "rubro": "ANILLOS",
-        "unidades": 52.0,
-        "venta_neta": 261017.27,
-        "apariciones": 41
+        "unidades": 55.0,
+        "venta_neta": 276017.27,
+        "apariciones": 42
       },
       {
         "codigo": "000609",
         "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 50.0,
-        "venta_neta": 2453430.1,
-        "apariciones": 49
+        "unidades": 53.0,
+        "venta_neta": 2600430.1,
+        "apariciones": 52
       },
       {
         "codigo": "11661",
         "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
         "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 40.0,
-        "venta_neta": 496000.01,
-        "apariciones": 23
+        "unidades": 42.0,
+        "venta_neta": 520800.01,
+        "apariciones": 24
+      },
+      {
+        "codigo": "33932",
+        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
+        "rubro": "PACKS BOXER HOMBRE",
+        "unidades": 36.0,
+        "venta_neta": 1103100.0,
+        "apariciones": 31
       },
       {
         "codigo": "11663",
@@ -1492,14 +1500,6 @@
         "unidades": 35.0,
         "venta_neta": 434000.01,
         "apariciones": 27
-      },
-      {
-        "codigo": "33932",
-        "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
-        "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 34.0,
-        "venta_neta": 1037100.0,
-        "apariciones": 29
       },
       {
         "codigo": "32344",
@@ -1518,20 +1518,44 @@
         "apariciones": 27
       },
       {
-        "codigo": "39799",
-        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 25.0,
-        "venta_neta": 351120.0,
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
+        "unidades": 28.0,
+        "venta_neta": 0.28,
         "apariciones": 28
       },
       {
         "codigo": "32400",
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
+        "unidades": 26.0,
+        "venta_neta": 52160.0,
+        "apariciones": 25
+      },
+      {
+        "codigo": "39799",
+        "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 25.0,
+        "venta_neta": 351120.0,
+        "apariciones": 30
+      },
+      {
+        "codigo": "39991",
+        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 25.0,
+        "venta_neta": 125317.27,
+        "apariciones": 22
+      },
+      {
+        "codigo": "39988",
+        "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
         "unidades": 24.0,
-        "venta_neta": 48160.0,
-        "apariciones": 23
+        "venta_neta": 120317.27,
+        "apariciones": 19
       },
       {
         "codigo": "36895",
@@ -1542,52 +1566,36 @@
         "apariciones": 21
       },
       {
-        "codigo": "39991",
-        "articulo": "UR941605-007  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 22.0,
-        "venta_neta": 110317.27,
-        "apariciones": 19
-      },
-      {
         "codigo": "004194",
         "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
         "rubro": "BASICOS JOGGING NIÑO",
-        "unidades": 22.0,
-        "venta_neta": 638000.0,
-        "apariciones": 19
-      },
-      {
-        "codigo": "39988",
-        "articulo": "UR941603-005\r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
-        "unidades": 21.0,
-        "venta_neta": 105317.27,
-        "apariciones": 17
-      },
-      {
-        "codigo": "08910",
-        "articulo": "ARTICULO DE CAMBIO",
-        "rubro": "CAMBIOS",
-        "unidades": 21.0,
-        "venta_neta": 0.21,
+        "unidades": 24.0,
+        "venta_neta": 696000.0,
         "apariciones": 21
+      },
+      {
+        "codigo": "35533",
+        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
+        "rubro": "PACKS MEDIAS NIÑX",
+        "unidades": 23.0,
+        "venta_neta": 118600.0,
+        "apariciones": 19
       },
       {
         "codigo": "35793",
         "articulo": "TOP LUCI\r\n\r\n*ART 00327 LUCILA,TOP MICROFIBRA TIPO MARILYN LISO",
         "rubro": "NOCHE TOP MUJER",
-        "unidades": 21.0,
-        "venta_neta": 483000.0,
-        "apariciones": 18
+        "unidades": 22.0,
+        "venta_neta": 506000.0,
+        "apariciones": 19
       },
       {
-        "codigo": "39990",
-        "articulo": "UR 941605-003  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
+        "codigo": "000605",
+        "articulo": "JOGGING CAIRO-NEGRO\r\n\r\n*JOGGING RECTO FRISADO",
+        "rubro": "BASICOS JOGGING HOMBRE",
         "unidades": 20.0,
-        "venta_neta": 100350.0,
-        "apariciones": 19
+        "venta_neta": 980000.02,
+        "apariciones": 20
       },
       {
         "codigo": "35243",
@@ -1611,14 +1619,6 @@
         "rubro": "PACKS MEDIAS  MUJER",
         "unidades": 19.0,
         "venta_neta": 120700.0,
-        "apariciones": 18
-      },
-      {
-        "codigo": "39760",
-        "articulo": "REMERA MC NIKA\r\n\r\n*ANIKA REMERA DE ALGODON RIBB MANGAS CORTAS CUELLO REDONDO",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 18.0,
-        "venta_neta": 505960.0,
         "apariciones": 18
       }
     ]
@@ -1645,17 +1645,17 @@
         "codigo": "000609",
         "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 129.0,
-        "venta_neta": 6272430.12,
-        "apariciones": 122
+        "unidades": 130.0,
+        "venta_neta": 6321430.12,
+        "apariciones": 123
       },
       {
         "codigo": "004194",
         "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
         "rubro": "BASICOS JOGGING NIÑO",
-        "unidades": 76.0,
-        "venta_neta": 2151100.02,
-        "apariciones": 63
+        "unidades": 77.0,
+        "venta_neta": 2180100.02,
+        "apariciones": 64
       },
       {
         "codigo": "11664",
@@ -1674,20 +1674,20 @@
         "apariciones": 55
       },
       {
-        "codigo": "35537",
-        "articulo": "PACK X2 1/2 CAÑA ESTAMPA T1 T2 T3\r\n\r\n*1 MEDIA CAÑA ESTAMPADA 1020 / 1021 / 1021V",
-        "rubro": "PACKS MEDIAS NIÑX",
-        "unidades": 63.0,
-        "venta_neta": 453888.01,
-        "apariciones": 52
-      },
-      {
         "codigo": "35533",
         "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
         "rubro": "PACKS MEDIAS NIÑX",
-        "unidades": 61.0,
-        "venta_neta": 307800.0,
-        "apariciones": 48
+        "unidades": 66.0,
+        "venta_neta": 335800.0,
+        "apariciones": 51
+      },
+      {
+        "codigo": "35537",
+        "articulo": "PACK X2 1/2 CAÑA ESTAMPA T1 T2 T3\r\n\r\n*1 MEDIA CAÑA ESTAMPADA 1020 / 1021 / 1021V",
+        "rubro": "PACKS MEDIAS NIÑX",
+        "unidades": 65.0,
+        "venta_neta": 468288.01,
+        "apariciones": 54
       },
       {
         "codigo": "35243",
@@ -1701,9 +1701,9 @@
         "codigo": "38891",
         "articulo": "STICKER\r\n\r\n*STICKER",
         "rubro": "STICKERS",
-        "unidades": 57.0,
-        "venta_neta": 114420.0,
-        "apariciones": 45
+        "unidades": 58.0,
+        "venta_neta": 116420.0,
+        "apariciones": 46
       },
       {
         "codigo": "000605",
@@ -1730,20 +1730,20 @@
         "apariciones": 37
       },
       {
+        "codigo": "34949",
+        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
+        "rubro": "MEDIAS NIÑA",
+        "unidades": 49.0,
+        "venta_neta": 196000.01,
+        "apariciones": 34
+      },
+      {
         "codigo": "35536",
         "articulo": "PACK X2 SQ ESTAMPA T4 T5\r\n\r\n*1 SOQUETE ESTAMPADO 105-105V 1-SOQUETE LISO BLANCO O AZUL 105B-105A",
         "rubro": "PACKS MEDIAS NIÑX",
         "unidades": 48.0,
         "venta_neta": 274260.0,
         "apariciones": 41
-      },
-      {
-        "codigo": "34949",
-        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
-        "rubro": "MEDIAS NIÑA",
-        "unidades": 45.0,
-        "venta_neta": 180000.01,
-        "apariciones": 32
       },
       {
         "codigo": "31678",
@@ -1757,17 +1757,17 @@
         "codigo": "35532",
         "articulo": "PACK X2 SQ MORLEY T1 T2 T3\r\n\r\n*1 SOQUETE MORLEY LISO 104ML- 1 SOQUETE MORLEY ESTAMPADO  104MS",
         "rubro": "PACKS MEDIAS NIÑX",
-        "unidades": 40.0,
-        "venta_neta": 201550.0,
-        "apariciones": 34
+        "unidades": 41.0,
+        "venta_neta": 207150.0,
+        "apariciones": 35
       },
       {
         "codigo": "27650",
         "articulo": "REMERA MC SUZU\r\n\r\n*REMERA DE MODAL RAYADA CUELLO REDONDO MC",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 40.0,
-        "venta_neta": 760000.0,
-        "apariciones": 39
+        "unidades": 41.0,
+        "venta_neta": 779000.0,
+        "apariciones": 40
       },
       {
         "codigo": "34262",
@@ -1791,17 +1791,17 @@
         "codigo": "33932",
         "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
         "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 139.0,
-        "venta_neta": 4177200.0,
-        "apariciones": 120
+        "unidades": 141.0,
+        "venta_neta": 4243200.0,
+        "apariciones": 122
       },
       {
         "codigo": "11661",
         "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
         "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 74.0,
-        "venta_neta": 923428.0,
-        "apariciones": 56
+        "unidades": 76.0,
+        "venta_neta": 948228.0,
+        "apariciones": 57
       },
       {
         "codigo": "35185",
@@ -1836,6 +1836,14 @@
         "apariciones": 52
       },
       {
+        "codigo": "08910",
+        "articulo": "ARTICULO DE CAMBIO",
+        "rubro": "CAMBIOS",
+        "unidades": 50.0,
+        "venta_neta": 0.51,
+        "apariciones": 50
+      },
+      {
         "codigo": "35243",
         "articulo": "PACK X3 SURTIDO NIÑO\r\n\r\n*2 LISOS Y 1 ESTAMPADO",
         "rubro": "PACKS BOXER NIÑO",
@@ -1852,14 +1860,6 @@
         "apariciones": 41
       },
       {
-        "codigo": "08910",
-        "articulo": "ARTICULO DE CAMBIO",
-        "rubro": "CAMBIOS",
-        "unidades": 47.0,
-        "venta_neta": 0.48,
-        "apariciones": 47
-      },
-      {
         "codigo": "36896",
         "articulo": "PACK X3 VEDETINA ESPECIAL LISO\r\n\r\n*3 LISAS ART 27 XL",
         "rubro": "PACKS MUJER BOMBACHA",
@@ -1871,9 +1871,9 @@
         "codigo": "004194",
         "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
         "rubro": "BASICOS JOGGING NIÑO",
-        "unidades": 45.0,
-        "venta_neta": 1268360.0,
-        "apariciones": 37
+        "unidades": 46.0,
+        "venta_neta": 1297360.0,
+        "apariciones": 38
       },
       {
         "codigo": "36894",
@@ -1903,9 +1903,25 @@
         "codigo": "004761",
         "articulo": "REMERA ANIBAL-BLANCO\r\n\r\n*REMERA MC ALGODON LISA DE NIÑO",
         "rubro": "BASICOS REMERA MC NIÑO",
+        "unidades": 41.0,
+        "venta_neta": 523000.0,
+        "apariciones": 26
+      },
+      {
+        "codigo": "000609",
+        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
+        "rubro": "BASICOS JOGGING HOMBRE",
         "unidades": 40.0,
-        "venta_neta": 510000.0,
-        "apariciones": 25
+        "venta_neta": 1903500.0,
+        "apariciones": 36
+      },
+      {
+        "codigo": "000605",
+        "articulo": "JOGGING CAIRO-NEGRO\r\n\r\n*JOGGING RECTO FRISADO",
+        "rubro": "BASICOS JOGGING HOMBRE",
+        "unidades": 39.0,
+        "venta_neta": 1858920.0,
+        "apariciones": 38
       },
       {
         "codigo": "37071",
@@ -1916,28 +1932,12 @@
         "apariciones": 35
       },
       {
-        "codigo": "000609",
-        "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
-        "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 38.0,
-        "venta_neta": 1805500.0,
-        "apariciones": 34
-      },
-      {
         "codigo": "34949",
         "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
         "rubro": "MEDIAS NIÑA",
         "unidades": 38.0,
         "venta_neta": 152000.0,
         "apariciones": 23
-      },
-      {
-        "codigo": "000605",
-        "articulo": "JOGGING CAIRO-NEGRO\r\n\r\n*JOGGING RECTO FRISADO",
-        "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 37.0,
-        "venta_neta": 1760920.0,
-        "apariciones": 36
       },
       {
         "codigo": "39324",
@@ -1977,33 +1977,33 @@
         "codigo": "32400",
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
-        "unidades": 45.0,
-        "venta_neta": 91160.0,
-        "apariciones": 44
-      },
-      {
-        "codigo": "36784",
-        "articulo": "L-LENTES DE SOL",
-        "rubro": "LENTES DE SOL",
-        "unidades": 41.0,
-        "venta_neta": 697000.0,
-        "apariciones": 38
+        "unidades": 46.0,
+        "venta_neta": 93160.0,
+        "apariciones": 45
       },
       {
         "codigo": "08910",
         "articulo": "ARTICULO DE CAMBIO",
         "rubro": "CAMBIOS",
-        "unidades": 41.0,
-        "venta_neta": 0.41,
-        "apariciones": 41
+        "unidades": 45.0,
+        "venta_neta": 0.45,
+        "apariciones": 45
+      },
+      {
+        "codigo": "36784",
+        "articulo": "L-LENTES DE SOL",
+        "rubro": "LENTES DE SOL",
+        "unidades": 42.0,
+        "venta_neta": 714000.0,
+        "apariciones": 39
       },
       {
         "codigo": "39477",
         "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
         "rubro": "CASUAL PANTALON MUJER",
-        "unidades": 37.0,
-        "venta_neta": 1480000.0,
-        "apariciones": 36
+        "unidades": 38.0,
+        "venta_neta": 1520000.0,
+        "apariciones": 37
       },
       {
         "codigo": "38863",
@@ -2049,9 +2049,9 @@
         "codigo": "39799",
         "articulo": "REMERA MC VICO\r\n\r\n*AUIA REMERA DE ALGODON MANGAS CORTAS CUELLO REDONDO TERMINACION OVALADA",
         "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 23.0,
-        "venta_neta": 325080.0,
-        "apariciones": 23
+        "unidades": 22.0,
+        "venta_neta": 311080.0,
+        "apariciones": 24
       },
       {
         "codigo": "39331",
@@ -2068,6 +2068,14 @@
         "unidades": 22.0,
         "venta_neta": 79140.0,
         "apariciones": 19
+      },
+      {
+        "codigo": "24818",
+        "articulo": "VINCHAS LISAS ALGODON-NEGRO\r\n\r\n*VINCHAS LISOS ALGODON",
+        "rubro": "PINZAS Y BROCHES",
+        "unidades": 22.0,
+        "venta_neta": 66240.0,
+        "apariciones": 21
       },
       {
         "codigo": "39143",
@@ -2092,14 +2100,6 @@
         "unidades": 21.0,
         "venta_neta": 63000.0,
         "apariciones": 21
-      },
-      {
-        "codigo": "24818",
-        "articulo": "VINCHAS LISAS ALGODON-NEGRO\r\n\r\n*VINCHAS LISOS ALGODON",
-        "rubro": "PINZAS Y BROCHES",
-        "unidades": 21.0,
-        "venta_neta": 63240.0,
-        "apariciones": 20
       },
       {
         "codigo": "39465",
@@ -2168,6 +2168,14 @@
         "apariciones": 28
       },
       {
+        "codigo": "39992",
+        "articulo": "UR 941605-012  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
+        "rubro": "ANILLOS",
+        "unidades": 31.0,
+        "venta_neta": 156017.27,
+        "apariciones": 22
+      },
+      {
         "codigo": "38805",
         "articulo": "MUSCULOSA OSA\r\n\r\n*ART 321/1 OSAKA , MUSCULOS DE TIRAS CON ESPALDA DESCUBIERTA ALGODON",
         "rubro": "CASUAL MUSCULOSA MUJER",
@@ -2184,12 +2192,20 @@
         "apariciones": 27
       },
       {
-        "codigo": "39992",
-        "articulo": "UR 941605-012  ANILLO \r\n\r\n*ANILLO BAÑADO EN PLATA",
-        "rubro": "ANILLOS",
+        "codigo": "38863",
+        "articulo": "REMERA MC MILE \r\n\r\n*MALENA REMERA MANGAS CORTAS CUELLO REDONDO CON RECORTES EN MANGAS ALGODON",
+        "rubro": "CASUAL REMERA MC MUJER",
+        "unidades": 29.0,
+        "venta_neta": 553660.0,
+        "apariciones": 32
+      },
+      {
+        "codigo": "24818",
+        "articulo": "VINCHAS LISAS ALGODON-NEGRO\r\n\r\n*VINCHAS LISOS ALGODON",
+        "rubro": "PINZAS Y BROCHES",
         "unidades": 28.0,
-        "venta_neta": 141017.27,
-        "apariciones": 21
+        "venta_neta": 84000.0,
+        "apariciones": 27
       },
       {
         "codigo": "39465",
@@ -2200,28 +2216,20 @@
         "apariciones": 26
       },
       {
-        "codigo": "38863",
-        "articulo": "REMERA MC MILE \r\n\r\n*MALENA REMERA MANGAS CORTAS CUELLO REDONDO CON RECORTES EN MANGAS ALGODON",
-        "rubro": "CASUAL REMERA MC MUJER",
-        "unidades": 28.0,
-        "venta_neta": 534660.0,
-        "apariciones": 32
-      },
-      {
-        "codigo": "24818",
-        "articulo": "VINCHAS LISAS ALGODON-NEGRO\r\n\r\n*VINCHAS LISOS ALGODON",
-        "rubro": "PINZAS Y BROCHES",
-        "unidades": 27.0,
-        "venta_neta": 81000.0,
-        "apariciones": 26
-      },
-      {
         "codigo": "32400",
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
-        "unidades": 26.0,
-        "venta_neta": 52160.0,
-        "apariciones": 25
+        "unidades": 27.0,
+        "venta_neta": 54160.0,
+        "apariciones": 26
+      },
+      {
+        "codigo": "36784",
+        "articulo": "L-LENTES DE SOL",
+        "rubro": "LENTES DE SOL",
+        "unidades": 27.0,
+        "venta_neta": 460190.0,
+        "apariciones": 26
       },
       {
         "codigo": "16956",
@@ -2232,20 +2240,12 @@
         "apariciones": 26
       },
       {
-        "codigo": "36784",
-        "articulo": "L-LENTES DE SOL",
-        "rubro": "LENTES DE SOL",
-        "unidades": 26.0,
-        "venta_neta": 443190.0,
-        "apariciones": 25
-      },
-      {
         "codigo": "29440",
         "articulo": "TOP MILITA\r\n\r\n*TOP TULL IRREGULAR TERMINACION EN PICO Y TAJO ART 2232T",
         "rubro": "NOCHE TOP MUJER",
-        "unidades": 25.0,
-        "venta_neta": 342000.0,
-        "apariciones": 23
+        "unidades": 26.0,
+        "venta_neta": 357000.0,
+        "apariciones": 24
       },
       {
         "codigo": "38862",
@@ -2277,17 +2277,17 @@
         "codigo": "33932",
         "articulo": "PACK X 3 SURTIDO\r\n\r\n*PACK SURTIDO DE BOXER SY , 1 LISO NEGRO, 1 LISO DE COLOR, 1 ESTAMPADO",
         "rubro": "PACKS BOXER HOMBRE",
-        "unidades": 281.0,
-        "venta_neta": 8450400.0,
-        "apariciones": 240
+        "unidades": 283.0,
+        "venta_neta": 8516400.0,
+        "apariciones": 242
       },
       {
         "codigo": "11661",
         "articulo": "REMERA ASTOR-NEGRO\r\n\r\n*REMERA BASICA DE ADULTO",
         "rubro": "BASICOS REMERA MC HOMBRE",
-        "unidades": 230.0,
-        "venta_neta": 2857828.03,
-        "apariciones": 160
+        "unidades": 232.0,
+        "venta_neta": 2882628.03,
+        "apariciones": 161
       },
       {
         "codigo": "32344",
@@ -2301,17 +2301,17 @@
         "codigo": "000609",
         "articulo": "JOGGING CAIRO-AZUL\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 167.0,
-        "venta_neta": 8077930.12,
-        "apariciones": 156
+        "unidades": 170.0,
+        "venta_neta": 8224930.12,
+        "apariciones": 159
       },
       {
         "codigo": "08910",
         "articulo": "ARTICULO DE CAMBIO",
         "rubro": "CAMBIOS",
-        "unidades": 149.0,
-        "venta_neta": 1.5,
-        "apariciones": 149
+        "unidades": 156.0,
+        "venta_neta": 1.57,
+        "apariciones": 156
       },
       {
         "codigo": "11663",
@@ -2330,6 +2330,14 @@
         "apariciones": 108
       },
       {
+        "codigo": "004194",
+        "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
+        "rubro": "BASICOS JOGGING NIÑO",
+        "unidades": 123.0,
+        "venta_neta": 3477460.02,
+        "apariciones": 102
+      },
+      {
         "codigo": "35185",
         "articulo": "KH24-203 COLITAS TUBO-NEGRO\r\n\r\n*",
         "rubro": "COLITAS",
@@ -2338,12 +2346,12 @@
         "apariciones": 97
       },
       {
-        "codigo": "004194",
-        "articulo": "JOGGING JUAN-AZUL\r\n\r\n*JOGGING RECTO DE NIÑO FRISADO",
-        "rubro": "BASICOS JOGGING NIÑO",
-        "unidades": 121.0,
-        "venta_neta": 3419460.02,
-        "apariciones": 100
+        "codigo": "35533",
+        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
+        "rubro": "PACKS MEDIAS NIÑX",
+        "unidades": 111.0,
+        "venta_neta": 561500.0,
+        "apariciones": 88
       },
       {
         "codigo": "35243",
@@ -2354,20 +2362,12 @@
         "apariciones": 92
       },
       {
-        "codigo": "35533",
-        "articulo": "PACK X2 SQ ESTAMPA T1 T2 T3\r\n\r\n*1 SOQUETE ESTAMPADO 104- 1 SOQUETE ESTAMPADO 104N Y 104V",
-        "rubro": "PACKS MEDIAS NIÑX",
-        "unidades": 106.0,
-        "venta_neta": 533500.0,
-        "apariciones": 85
-      },
-      {
         "codigo": "32400",
         "articulo": "ART J40012 GOMITAS SILICONA\r\n\r\n*GOMITAS DE SILICONA EN ESTUCHE J40012/T40012",
         "rubro": "COLITAS",
-        "unidades": 102.0,
-        "venta_neta": 205320.0,
-        "apariciones": 100
+        "unidades": 104.0,
+        "venta_neta": 209320.0,
+        "apariciones": 102
       },
       {
         "codigo": "37131",
@@ -2381,9 +2381,9 @@
         "codigo": "000605",
         "articulo": "JOGGING CAIRO-NEGRO\r\n\r\n*JOGGING RECTO FRISADO",
         "rubro": "BASICOS JOGGING HOMBRE",
-        "unidades": 93.0,
-        "venta_neta": 4439220.05,
-        "apariciones": 92
+        "unidades": 95.0,
+        "venta_neta": 4537220.05,
+        "apariciones": 94
       },
       {
         "codigo": "34262",
@@ -2392,6 +2392,14 @@
         "unidades": 91.0,
         "venta_neta": 2757300.01,
         "apariciones": 86
+      },
+      {
+        "codigo": "34949",
+        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
+        "rubro": "MEDIAS NIÑA",
+        "unidades": 87.0,
+        "venta_neta": 348000.01,
+        "apariciones": 57
       },
       {
         "codigo": "36896",
@@ -2410,28 +2418,20 @@
         "apariciones": 69
       },
       {
-        "codigo": "34949",
-        "articulo": "MEDIAS 5802 KITTY\r\n\r\n*MEDIAS SOQUETES NIÑA ESTAMPA KITTY",
-        "rubro": "MEDIAS NIÑA",
-        "unidades": 83.0,
-        "venta_neta": 332000.01,
-        "apariciones": 55
-      },
-      {
         "codigo": "36894",
         "articulo": "PACK X3  UG COLALESS ESPECIAL\r\n\r\n*2 ESTAMPADAS Y 1 LISA CON LOS SIGUIENTES ARTICULOS 12 UG Y 17UG",
         "rubro": "PACKS MUJER BOMBACHA",
-        "unidades": 81.0,
-        "venta_neta": 1215000.0,
-        "apariciones": 70
+        "unidades": 82.0,
+        "venta_neta": 1230000.0,
+        "apariciones": 71
       },
       {
         "codigo": "39477",
         "articulo": "PANTALON ASLAUG\r\n\r\n*ART P2347 \"GAEL\" PANTALON CINTURA ANCHA RECTO ALGODON RUSTICO",
         "rubro": "CASUAL PANTALON MUJER",
-        "unidades": 81.0,
-        "venta_neta": 3242800.0,
-        "apariciones": 78
+        "unidades": 82.0,
+        "venta_neta": 3282800.0,
+        "apariciones": 79
       }
     ]
   }
