@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOO HAN SRL - Vista Encargadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px 0;
+            margin-bottom: 32px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-left h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .header-left p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .header-right .update-time {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        /* Store Selector */
+        .store-selector {
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .store-tab {
+            padding: 12px 16px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #6b7280;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .store-tab:hover {
+            background: #e5e7eb;
+        }
+
+        .store-tab.active {
+            color: white;
+            border: none;
+        }
+
+        .store-tab[data-store="Plaza CC Rio Grande"].active {
+            background: #2563EB;
+        }
+
+        .store-tab[data-store="Casa Corea Rio Grande"].active {
+            background: #059669;
+        }
+
+        .store-tab[data-store="Plaza CC Ushuaia"].active {
+            background: #D97706;
+        }
+
+        .store-tab[data-store="Casa Corea Ushuaia"].active {
+            background: #7C3AED;
+        }
+
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .kpi-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #d1d5db;
+        }
+
+        .kpi-card.plaza-cc-rio-grande {
+            border-left-color: #2563EB;
+        }
+
+        .kpi-card.casa-corea-rio-grande {
+            border-left-color: #059669;
+        }
+
+        .kpi-card.plaza-cc-ushuaia {
+            border-left-color: #D97706;
+        }
+
+        .kpi-card.casa-corea-ushuaia {
+            border-left-color: #7C3AED;
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .kpi-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .kpi-meta.positive {
+            color: #059669;
+        }
+
+        .kpi-meta.negative {
+            color: #DC2626;
+        }
+
+        .arrow {
+            font-size: 14px;
+        }
+
+        /* Comparison Table */
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 16px;
+            margin-top: 32px;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f3f4f6;
+            padding: 14px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .metric-name {
+            font-weight: 600;
+            color: #1f2937;
+            min-width: 140px;
+        }
+
+        .metric-value {
+            text-align: right;
+            font-weight: 500;
+            color: #1f2937;
+            min-width: 100px;
+        }
+
+        .metric-change {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 80px;
+        }
+
+        .metric-change.positive {
+            color: #059669;
+        }
+
+        .metric-change.negative {
+            color: #DC2626;
+        }
+
+        /* Charts */
+        .chart-container {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+            position: relative;
+            height: 350px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 100%;
+        }
+
+        /* Progress Bars */
+        .progress-section {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+        }
+
+        .progress-item {
+            margin-bottom: 24px;
+        }
+
+        .progress-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .progress-label-text {
+            color: #1f2937;
+        }
+
+        .progress-value {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .progress-bar-container {
+            background: #e5e7eb;
+            border-radius: 4px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            background: linear-gradient(90deg, #2563EB, #1e40af);
+        }
+
+        .progress-bar-fill.high {
+            background: linear-gradient(90deg, #059669, #047857);
+        }
+
+        .progress-bar-fill.warning {
+            background: linear-gradient(90deg, #D97706, #B45309);
+        }
+
+        .progress-bar-fill.danger {
+            background: linear-gradient(90deg, #DC2626, #991B1B);
+        }
+
+        /* Loading and Error States */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        .error-message {
+            background: #FEE2E2;
+            border: 1px solid #FECACA;
+            color: #991B1B;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 3px solid #e5e7eb;
+            border-top-color: #2563EB;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                text-align: left;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 12px;
+            }
+
+            .kpi-value {
+                font-size: 24px;
+            }
+
+            .store-selector {
+                flex-direction: column;
+            }
+
+            .store-tab {
+                width: 100%;
+            }
+
+            .chart-container {
+                height: 280px;
+                padding: 16px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            td, th {
+                padding: 10px;
+            }
+
+            .metric-name {
+                min-width: 100px;
+            }
+
+            .metric-value {
+                min-width: 80px;
+                font-size: 12px;
+            }
+        }
+
+        /* Utilities */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>YOO HAN SRL</h1>
+                    <p>Vista Encargadas - Análisis Semanal</p>
+                </div>
+                <div class="header-right">
+                    <div>Última actualización:</div>
+                    <div class="update-time" id="updateTime">Cargando...</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Store Selector -->
+        <div class="store-selector" id="storeSelector"></div>
+
+        <!-- Error Messages -->
+        <div id="errorContainer"></div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading">
+            <div class="loading-spinner"></div>
+            <p style="margin-top: 16px;">Cargando datos...</p>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboardContent" class="hidden">
+            <!-- KPI Cards -->
+            <div class="kpi-grid" id="kpiGrid"></div>
+
+            <!-- Comparison Table -->
+            <h2 class="section-title">Comparativo Semanal</h2>
+            <div class="comparison-table">
+                <table id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th colspan="2" style="text-align: center;">Semana Actual</th>
+                            <th colspan="2" style="text-align: center;">Semana Pasada</th>
+                            <th colspan="2" style="text-align: center;">Misma Semana Año Pasado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Daily Trend Chart -->
+            <h2 class="section-title">Tendencia Diaria - Facturación</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Progress Bars -->
+            <h2 class="section-title">Progreso Mensual</h2>
+            <div class="progress-section" id="progressSection"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            dataPath: './data/',
+            stores: [
+                'Plaza CC Rio Grande',
+                'Casa Corea Rio Grande',
+                'Plaza CC Ushuaia',
+                'Casa Corea Ushuaia'
+            ],
+            storeColors: {
+                'Plaza CC Rio Grande': '#2563EB',
+                'Casa Corea Rio Grande': '#059669',
+                'Plaza CC Ushuaia': '#D97706',
+                'Casa Corea Ushuaia': '#7C3AED'
+            },
+            storeClasses: {
+                'Plaza CC Rio Grande': 'plaza-cc-rio-grande',
+                'Casa Corea Rio Grande': 'casa-corea-rio-grande',
+                'Plaza CC Ushuaia': 'plaza-cc-ushuaia',
+                'Casa Corea Ushuaia': 'casa-corea-ushuaia'
+            }
+        };
+
+        let currentStore = CONFIG.stores[0];
+        let dashboardData = {};
+        let trendChart = null;
+
+        // Fetch with cache busting
+        async function fetchJSON(filename) {
+            const url = `${CONFIG.dataPath}${filename}?t=${Date.now()}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            } catch (error) {
+                console.error(`Error loading ${filename}:`, error);
+                return null;
+            }
+        }
+
+        // Format number Argentine style
+        function formatNumber(num, decimals = 0) {
+            if (typeof num !== 'number' || isNaN(num)) return '0';
+            const formatted = num.toFixed(decimals);
+            const parts = formatted.split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            return parts.join(',');
+        }
+
+        function formatCurrency(num) {
+            return '$' + formatNumber(num, 0);
+        }
+
+        // Format date to DD/MM/YYYY
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return date.toLocaleDateString('es-AR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+        }
+
+        // Initialize store selector
+        function initializeStoreSelector() {
+            const selector = document.getElementById('storeSelector');
+            selector.innerHTML = '';
+            CONFIG.stores.forEach(store => {
+                const button = document.createElement('button');
+                button.className = `store-tab ${store === currentStore ? 'active' : ''}`;
+                button.setAttribute('data-store', store);
+                button.textContent = store;
+                button.addEventListener('click', () => selectStore(store));
+                selector.appendChild(button);
+            });
+        }
+
+        // Select store and update dashboard
+        async function selectStore(store) {
+            currentStore = store;
+            document.querySelectorAll('.store-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-store') === store);
+            });
+            renderKPICards();
+            renderComparisonTable();
+            renderTrendChart();
+            renderProgressBars();
+        }
+
+        // Render KPI Cards
+        function renderKPICards() {
+            const grid = document.getElementById('kpiGrid');
+            grid.innerHTML = '';
+
+            if (!dashboardData.comparativo_semanal || !dashboardData.proyecciones) {
+                grid.innerHTML = '<p style="color: #6b7280;">Datos no disponibles</p>';
+                return;
+            }
+
+            const semanaActual = dashboardData.comparativo_semanal.semana_actual
+                .find(s => s.tienda === currentStore);
+
+            if (!semanaActual) {
+                grid.innerHTML = '<p style="color: #6b7280;">Datos no disponibles para esta tienda</p>';
+                return;
+            }
+
+            const semanaAnioP = dashboardData.comparativo_semanal.semana_anio_pasado
+                .find(s => s.tienda === currentStore);
+
+            const storeColorClass = CONFIG.storeClasses[currentStore];
+
+            // Facturación vs Objetivo Semanal
+            const proyecciones = dashboardData.proyecciones.proyecciones || {};
+            const currentMonth = new Date().toISOString().slice(0, 7);
+            const monthProj = proyecciones[currentMonth];
+            const storeProj = monthProj ? monthProj[currentStore] : null;
+            const weeklyObjective = storeProj ? (storeProj.proy_facturacion || 0) / 4.33 : 0;
+            const factuPct = weeklyObjective > 0 ? ((semanaActual.venta_neta / weeklyObjective) * 100) : 0;
+
+            const kpiFacturacion = document.createElement('div');
+            kpiFacturacion.className = `kpi-card ${storeColorClass}`;
+            kpiFacturacion.innerHTML = `
+                <div class="kpi-label">Facturación Semana</div>
+                <div class="kpi-value">${formatCurrency(semanaActual.venta_neta)}</div>
+                <div class="kpi-meta">${formatNumber(factuPct, 1)}% del objetivo</div>
+            `;
+            grid.appendChild(kpiFacturacion);
+
+            // Tickets vs Objetivo
+            const weeklyTicketObjective = storeProj ? (storeProj.proy_tickets || 0) / 4.33 : 0;
+            const ticketPct = weeklyTicketObjective > 0 ? ((semanaActual.tickets / weeklyTicketObjective) * 100) : 0;
+
+            const kpiTickets = document.createElement('div');
+            kpiTickets.className = `kpi-card ${storeColorClass}`;
+            kpiTickets.innerHTML = `
+                <div class="kpi-label">Tickets Semana</div>
+                <div class="kpi-value">${formatNumber(semanaActual.tickets)}</div>
+                <div class="kpi-meta">${formatNumber(ticketPct, 1)}% del objetivo</div>
+            `;
+            grid.appendChild(kpiTickets);
+
+            // UPT vs Year Ago
+            const uptChangeNum = semanaActual.upt - (semanaAnioP?.upt || 0);
+            const uptChangePct = semanaAnioP?.upt ? ((uptChangeNum / semanaAnioP.upt) * 100) : 0;
+            const uptClass = uptChangeNum >= 0 ? 'positive' : 'negative';
+            const uptArrow = uptChangeNum >= 0 ? '↑' : '↓';
+
+            const kpiUPT = document.createElement('div');
+            kpiUPT.className = `kpi-card ${storeColorClass}`;
+            kpiUPT.innerHTML = `
+                <div class="kpi-label">UPT (Unidades/Ticket)</div>
+                <div class="kpi-value">${formatNumber(semanaActual.upt, 2)}</div>
+                <div class="kpi-meta ${uptClass}"><span class="arrow">${uptArrow}</span> ${formatNumber(Math.abs(uptChangePct), 1)}% vs año pasado</div>
+            `;
+            grid.appendChild(kpiUPT);
+
+            // Ticket Promedio vs Last Week
+            const semanaP = dashboardData.comparativo_semanal.semana_pasada
+                .find(s => s.tienda === currentStore);
+            const ticketPromedioChangeNum = semanaActual.ticket_promedio - (semanaP?.ticket_promedio || 0);
+            const ticketPromedioPct = semanaP?.ticket_promedio ? ((ticketPromedioChangeNum / semanaP.ticket_promedio) * 100) : 0;
+            const ticketPromedioClass = ticketPromedioChangeNum >= 0 ? 'positive' : 'negative';
+            const ticketPromedioArrow = ticketPromedioChangeNum >= 0 ? '↑' : '↓';
+
+            const kpiTicketProm = document.createElement('div');
+            kpiTicketProm.className = `kpi-card ${storeColorClass}`;
+            kpiTicketProm.innerHTML = `
+                <div class="kpi-label">Ticket Promedio</div>
+                <div class="kpi-value">${formatCurrency(semanaActual.ticket_promedio)}</div>
+                <div class="kpi-meta ${ticketPromedioClass}"><span class="arrow">${ticketPromedioArrow}</span> ${formatNumber(Math.abs(ticketPromedioPct), 1)}% vs semana pasada</div>
+            `;
+            grid.appendChild(kpiTicketProm);
+
+            // Margen Bruto %
+            const kpiMargen = document.createElement('div');
+            kpiMargen.className = `kpi-card ${storeColorClass}`;
+            kpiMargen.innerHTML = `
+                <div class="kpi-label">Margen Bruto</div>
+                <div class="kpi-value">${formatNumber(semanaActual.margen_pct, 1)}%</div>
+                <div class="kpi-meta">Esta semana</div>
+            `;
+            grid.appendChild(kpiMargen);
+        }
+
+        // Render Comparison Table
+        function renderComparisonTable() {
+            const tbody = document.getElementById('comparisonBody');
+            tbody.innerHTML = '';
+
+            if (!dashboardData.comparativo_semanal) return;
+
+            const semanaA = dashboardData.comparativo_semanal.semana_actual
+                .find(s => s.tienda === currentStore);
+            const semanaP = dashboardData.comparativo_semanal.semana_pasada
+                .find(s => s.tienda === currentStore);
+            const semanaAP = dashboardData.comparativo_semanal.semana_anio_pasado
+                .find(s => s.tienda === currentStore);
+
+            if (!semanaA || !semanaP || !semanaAP) return;
+
+            const metrics = [
+                {
+                    name: 'Facturación',
+                    current: semanaA.venta_neta,
+                    last: semanaP.venta_neta,
+                    yearAgo: semanaAP.venta_neta,
+                    format: formatCurrency
+                },
+                {
+                    name: 'Tickets',
+                    current: semanaA.tickets,
+                    last: semanaP.tickets,
+                    yearAgo: semanaAP.tickets,
+                    format: formatNumber
+                },
+                {
+                    name: 'UPT',
+                    current: semanaA.upt,
+                    last: semanaP.upt,
+                    yearAgo: semanaAP.upt,
+                    format: (n) => formatNumber(n, 2)
+                },
+                {
+                    name: 'Ticket Promedio',
+                    current: semanaA.ticket_promedio,
+                    last: semanaP.ticket_promedio,
+                    yearAgo: semanaAP.ticket_promedio,
+                    format: formatCurrency
+                },
+                {
+                    name: 'Margen Bruto %',
+                    current: semanaA.margen_pct,
+                    last: semanaP.margen_pct,
+                    yearAgo: semanaAP.margen_pct,
+                    format: (n) => formatNumber(n, 1) + '%'
+                }
+            ];
+
+            metrics.forEach(metric => {
+                const changeLast = metric.current - metric.last;
+                const changePct = metric.last !== 0 ? ((changeLast / metric.last) * 100) : 0;
+                const changeLastClass = changeLast >= 0 ? 'positive' : 'negative';
+                const arrowLast = changeLast >= 0 ? '↑' : '↓';
+
+                const changeYearAgo = metric.current - metric.yearAgo;
+                const changePctYA = metric.yearAgo !== 0 ? ((changeYearAgo / metric.yearAgo) * 100) : 0;
+                const changeYAClass = changeYearAgo >= 0 ? 'positive' : 'negative';
+                const arrowYA = changeYearAgo >= 0 ? '↑' : '↓';
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="metric-name">${metric.name}</td>
+                    <td class="metric-value">${metric.format(metric.current)}</td>
+                    <td class="metric-change ${changeLastClass}">${arrowLast} ${formatNumber(Math.abs(changePct), 1)}%</td>
+                    <td class="metric-value">${metric.format(metric.last)}</td>
+                    <td class="metric-change ${changeLastClass}">${arrowLast} ${formatNumber(Math.abs(changePct), 1)}%</td>
+                    <td class="metric-value">${metric.format(metric.yearAgo)}</td>
+                    <td class="metric-change ${changeYAClass}">${arrowYA} ${formatNumber(Math.abs(changePctYA), 1)}%</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Render Trend Chart
+        function renderTrendChart() {
+            if (!dashboardData.ventas_dia_semana || !dashboardData.ventas_dia_semana[currentStore]) {
+                document.querySelector('#trendChart').parentElement.parentElement.innerHTML =
+                    '<p style="color: #6b7280; padding: 20px;">Datos no disponibles</p>';
+                return;
+            }
+
+            const ventasActuales = dashboardData.ventas_dia_semana[currentStore]
+                .filter(v => v.semana === 'actual')
+                .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+            const ventasPasadas = dashboardData.ventas_dia_semana[currentStore]
+                .filter(v => v.semana === 'pasada')
+                .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+            const daysOfWeek = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+            const labels = daysOfWeek;
+
+            const dataActual = ventasActuales.map(v => v.venta_neta);
+            const dataPasada = ventasPasadas.map(v => v.venta_neta);
+
+            const ctx = document.getElementById('trendChart').getContext('2d');
+
+            if (trendChart) {
+                trendChart.destroy();
+            }
+
+            const storeColor = CONFIG.storeColors[currentStore];
+
+            trendChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Esta Semana',
+                            data: dataActual,
+                            borderColor: storeColor,
+                            backgroundColor: storeColor + '10',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointBackgroundColor: storeColor,
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointHoverRadius: 6
+                        },
+                        {
+                            label: 'Semana Pasada',
+                            data: dataPasada,
+                            borderColor: '#9CA3AF',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.4,
+                            pointRadius: 3,
+                            pointBackgroundColor: '#9CA3AF',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointHoverRadius: 5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Inter', sans-serif", size: 13, weight: 500 },
+                                color: '#6b7280',
+                                padding: 16,
+                                usePointStyle: true
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 12 },
+                                color: '#9CA3AF',
+                                callback: function(value) {
+                                    return '$' + formatNumber(value);
+                                }
+                            },
+                            grid: {
+                                color: '#f3f4f6',
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 12 },
+                                color: '#9CA3AF'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render Progress Bars
+        function renderProgressBars() {
+            const section = document.getElementById('progressSection');
+            section.innerHTML = '';
+
+            if (!dashboardData.resumen_ventas || !dashboardData.proyecciones) return;
+
+            const storeResumen = dashboardData.resumen_ventas.mes
+                .find(m => m.tienda === currentStore);
+
+            if (!storeResumen) return;
+
+            const proyecciones = dashboardData.proyecciones.proyecciones || {};
+            const currentMonth = new Date().toISOString().slice(0, 7);
+            const monthProj = proyecciones[currentMonth];
+            const storeProj = monthProj ? monthProj[currentStore] : null;
+
+            if (storeProj) {
+                // Facturación Progress
+                const factuProgress = (storeResumen.venta_neta / storeProj.proy_facturacion) * 100;
+                const factuProgressCapped = Math.min(factuProgress, 100);
+                const factuProgressClass = factuProgressCapped >= 75 ? 'high' :
+                                          factuProgressCapped >= 50 ? '' : 'warning';
+
+                const factuItem = document.createElement('div');
+                factuItem.className = 'progress-item';
+                factuItem.innerHTML = `
+                    <div class="progress-label">
+                        <span class="progress-label-text">Facturación Mensual</span>
+                        <span class="progress-value">${formatCurrency(storeResumen.venta_neta)} / ${formatCurrency(storeProj.proy_facturacion)}</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill ${factuProgressClass}" style="width: ${factuProgressCapped}%"></div>
+                    </div>
+                `;
+                section.appendChild(factuItem);
+
+                // Tickets Progress
+                const ticketProgress = (storeResumen.tickets / storeProj.proy_tickets) * 100;
+                const ticketProgressCapped = Math.min(ticketProgress, 100);
+                const ticketProgressClass = ticketProgressCapped >= 75 ? 'high' :
+                                           ticketProgressCapped >= 50 ? '' : 'warning';
+
+                const ticketItem = document.createElement('div');
+                ticketItem.className = 'progress-item';
+                ticketItem.innerHTML = `
+                    <div class="progress-label">
+                        <span class="progress-label-text">Tickets Mensuales</span>
+                        <span class="progress-value">${formatNumber(storeResumen.tickets)} / ${formatNumber(storeProj.proy_tickets)}</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill ${ticketProgressClass}" style="width: ${ticketProgressCapped}%"></div>
+                    </div>
+                `;
+                section.appendChild(ticketItem);
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            const container = document.getElementById('errorContainer');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            container.appendChild(errorDiv);
+        }
+
+        // Initialize dashboard
+        async function initialize() {
+            try {
+                // Load all data
+                const [meta, comparativo, ventasD, proyecciones, resumen] = await Promise.all([
+                    fetchJSON('meta.json'),
+                    fetchJSON('comparativo_semanal.json'),
+                    fetchJSON('ventas_dia_semana.json'),
+                    fetchJSON('proyecciones.json'),
+                    fetchJSON('resumen_ventas.json')
+                ]);
+
+                if (!meta || !comparativo || !ventasD || !proyecciones || !resumen) {
+                    throw new Error('No se pudieron cargar los datos requeridos');
+                }
+
+                dashboardData = {
+                    meta,
+                    comparativo_semanal: comparativo,
+                    ventas_dia_semana: ventasD,
+                    proyecciones,
+                    resumen_ventas: resumen
+                };
+
+                // Update header
+                if (meta.ultima_actualizacion) {
+                    document.getElementById('updateTime').textContent =
+                        new Date(meta.ultima_actualizacion).toLocaleString('es-AR');
+                }
+
+                // Initialize UI
+                initializeStoreSelector();
+
+                // Hide loading, show dashboard
+                document.getElementById('loadingState').classList.add('hidden');
+                document.getElementById('dashboardContent').classList.remove('hidden');
+
+                // Render all sections
+                renderKPICards();
+                renderComparisonTable();
+                renderTrendChart();
+                renderProgressBars();
+
+            } catch (error) {
+                console.error('Error initializing dashboard:', error);
+                document.getElementById('loadingState').classList.add('hidden');
+                showError('Error al cargar los datos del dashboard: ' + error.message);
+            }
+        }
+
+        // Start initialization when DOM is ready
+        document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
