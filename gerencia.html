@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOO HAN SRL - Vista Gerencia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .header-title h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .header-update {
+            text-align: right;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .header-update strong {
+            display: block;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        /* Loading & Error States */
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+        .error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc2626;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .kpi-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .kpi-change {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .kpi-change.positive {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .kpi-change.negative {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .kpi-change.neutral {
+            background-color: #f3f4f6;
+            color: #4b5563;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 32px 0 16px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background-color: #f1f5f9;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .tienda-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .store-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .best-value {
+            background-color: #dcfce7;
+            font-weight: 600;
+            color: #166534;
+        }
+
+        .worst-value {
+            background-color: #fee2e2;
+            font-weight: 600;
+            color: #991b1b;
+        }
+
+        .total-row {
+            background-color: #f1f5f9;
+            font-weight: 700;
+        }
+
+        /* Charts */
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+            margin-bottom: 8px;
+        }
+
+        .chart-wrapper.large {
+            height: 400px;
+        }
+
+        /* Proyecciones */
+        .proyecciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .proyeccion-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .proyeccion-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 8px;
+        }
+
+        .proyeccion-store {
+            font-weight: 700;
+            color: #0f172a;
+            flex: 1;
+        }
+
+        .proyeccion-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .proyeccion-metric {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .proyeccion-metric-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2px;
+        }
+
+        .progress-bar-container {
+            margin-bottom: 12px;
+        }
+
+        .progress-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-fill.green {
+            background-color: #10b981;
+        }
+
+        .progress-fill.amber {
+            background-color: #f59e0b;
+        }
+
+        .progress-fill.red {
+            background-color: #ef4444;
+        }
+
+        /* Margin Analysis */
+        .margin-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .margin-card {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .margin-card-store {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .margin-card-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-update {
+                text-align: left;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-value {
+                font-size: 24px;
+            }
+
+            .header-title h1 {
+                font-size: 22px;
+            }
+
+            .proyecciones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .margin-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            th, td {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .table-responsive {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kpi-value {
+                font-size: 20px;
+            }
+
+            .margin-cards {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-title">
+                    <h1>YOO HAN SRL</h1>
+                    <p>Vista Gerencia</p>
+                </div>
+                <div class="header-update">
+                    <p>Última actualización</p>
+                    <strong id="lastUpdate">Cargando...</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorContainer"></div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading" style="display: none;">
+            <p>Cargando datos del dashboard...</p>
+        </div>
+
+        <!-- Content -->
+        <div id="content" style="display: none;">
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Facturación Semana</div>
+                    <div class="kpi-value" id="kpiFacturacion">-</div>
+                    <span class="kpi-change neutral" id="kpiFacturacionChange">-</span>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Tickets Semana</div>
+                    <div class="kpi-value" id="kpiTickets">-</div>
+                    <span class="kpi-change neutral" id="kpiTicketsChange">-</span>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Margen Bruto %</div>
+                    <div class="kpi-value" id="kpiMargen">-</div>
+                    <span class="kpi-change neutral" id="kpiMargenChange">-</span>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Ticket Promedio</div>
+                    <div class="kpi-value" id="kpiTicketProm">-</div>
+                    <span class="kpi-change neutral" id="kpiTicketPromChange">-</span>
+                </div>
+            </div>
+
+            <!-- Store Comparison Table -->
+            <h2 class="section-title">Comparativo por Tienda - Semana Actual</h2>
+            <div class="table-responsive">
+                <table id="storeComparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Tienda</th>
+                            <th>Facturación</th>
+                            <th>Tickets</th>
+                            <th>UPT</th>
+                            <th>Ticket Prom</th>
+                            <th>Margen %</th>
+                        </tr>
+                    </thead>
+                    <tbody id="storeComparisonBody">
+                        <tr><td colspan="6" style="text-align: center; color: #94a3b8;">Cargando datos...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Weekly Trend -->
+            <h2 class="section-title">Tendencia Semanal - Últimas 12 Semanas</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper large">
+                    <canvas id="weeklyTrendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Monthly Summary -->
+            <h2 class="section-title">Resumen Mensual por Tienda</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper large">
+                    <canvas id="monthlySummaryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Proyecciones -->
+            <h2 class="section-title">Proyecciones vs Real - Mes Actual</h2>
+            <div class="proyecciones-grid" id="proyeccionesContainer">
+                <p style="color: #94a3b8;">Cargando proyecciones...</p>
+            </div>
+
+            <!-- Margin Analysis -->
+            <h2 class="section-title">Análisis de Margen por Tienda</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="marginChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Color mapping for stores
+        const storeColors = {
+            'Plaza CC Rio Grande': '#2563EB',
+            'Casa Corea Rio Grande': '#059669',
+            'Plaza CC Ushuaia': '#D97706',
+            'Casa Corea Ushuaia': '#7C3AED'
+        };
+
+        // Argentine number formatting
+        function formatNumber(value) {
+            if (value === null || value === undefined) return '0';
+            return new Intl.NumberFormat('es-AR').format(Math.round(value));
+        }
+
+        function formatCurrency(value) {
+            if (value === null || value === undefined) return '$0';
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(value);
+        }
+
+        function formatPercent(value) {
+            if (value === null || value === undefined) return '0%';
+            return (Math.round(value * 10) / 10).toLocaleString('es-AR') + '%';
+        }
+
+        function formatDecimal(value) {
+            if (value === null || value === undefined) return '0.00';
+            return (Math.round(value * 100) / 100).toLocaleString('es-AR');
+        }
+
+        // Fetch with cache busting
+        async function fetchJSON(path) {
+            try {
+                const response = await fetch(`./data/${path}?t=${Date.now()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Error fetching ${path}:`, error);
+                return null;
+            }
+        }
+
+        // Load all data
+        async function loadDashboard() {
+            showLoading(true);
+
+            const [meta, resumen, tendencia, mensual, proyecciones, comparativo] = await Promise.all([
+                fetchJSON('meta.json'),
+                fetchJSON('resumen_ventas.json'),
+                fetchJSON('tendencia_semanal.json'),
+                fetchJSON('resumen_mensual.json'),
+                fetchJSON('proyecciones.json'),
+                fetchJSON('comparativo_semanal.json')
+            ]);
+
+            // Check for errors
+            if (!meta || !resumen || !tendencia || !mensual) {
+                showError('Error al cargar los datos. Por favor, verifica que los archivos JSON estén disponibles en ./data/');
+                showLoading(false);
+                return;
+            }
+
+            // Update header
+            if (meta.ultima_actualizacion) {
+                document.getElementById('lastUpdate').textContent = new Date(meta.ultima_actualizacion).toLocaleString('es-AR');
+            }
+
+            // Populate KPIs (current week)
+            populateKPIs(resumen, comparativo);
+
+            // Store comparison table
+            populateStoreComparison(resumen);
+
+            // Charts
+            createWeeklyTrendChart(tendencia);
+            createMonthlySummaryChart(mensual);
+            createMarginChart(resumen, mensual);
+
+            // Proyecciones
+            if (proyecciones && proyecciones.proyecciones) {
+                populateProyecciones(proyecciones, resumen);
+            }
+
+            showLoading(false);
+            showContent(true);
+        }
+
+        function populateKPIs(resumen, comparativo) {
+            if (!resumen.semana || resumen.semana.length === 0) return;
+
+            // Current week
+            const currentWeek = resumen.semana;
+            const currentTotal = {
+                venta_neta: 0,
+                tickets: 0,
+                margen_pct: 0,
+                ticket_promedio: 0
+            };
+
+            currentWeek.forEach(store => {
+                currentTotal.venta_neta += store.venta_neta || 0;
+                currentTotal.tickets += store.tickets || 0;
+                currentTotal.ticket_promedio += store.ticket_promedio || 0;
+            });
+
+            currentTotal.ticket_promedio = currentTotal.ticket_promedio / currentWeek.length;
+
+            // Calculate weighted margin
+            const totalCosto = currentWeek.reduce((sum, s) => sum + (s.costo || 0), 0);
+            currentTotal.margen_pct = totalCosto > 0 ? ((currentTotal.venta_neta - totalCosto) / currentTotal.venta_neta * 100) : 0;
+
+            // Compare with previous week if available
+            let factChange = '', ticketsChange = '', margenChange = '', ticketPromChange = '';
+
+            if (comparativo && comparativo.semana && comparativo.semana.length > 0) {
+                const prevWeek = comparativo.semana;
+                const prevTotal = {
+                    venta_neta: 0,
+                    tickets: 0,
+                    ticket_promedio: 0
+                };
+
+                prevWeek.forEach(store => {
+                    prevTotal.venta_neta += store.venta_neta || 0;
+                    prevTotal.tickets += store.tickets || 0;
+                    prevTotal.ticket_promedio += store.ticket_promedio || 0;
+                });
+
+                prevTotal.ticket_promedio = prevTotal.ticket_promedio / prevWeek.length;
+                const prevCosto = prevWeek.reduce((sum, s) => sum + (s.costo || 0), 0);
+                const prevMargen = prevCosto > 0 ? ((prevTotal.venta_neta - prevCosto) / prevTotal.venta_neta * 100) : 0;
+
+                factChange = calculateChange(currentTotal.venta_neta, prevTotal.venta_neta);
+                ticketsChange = calculateChange(currentTotal.tickets, prevTotal.tickets);
+                margenChange = calculateChangePercent(currentTotal.margen_pct, prevMargen);
+                ticketPromChange = calculateChange(currentTotal.ticket_promedio, prevTotal.ticket_promedio);
+            }
+
+            // Update DOM
+            document.getElementById('kpiFacturacion').textContent = formatCurrency(currentTotal.venta_neta);
+            document.getElementById('kpiFacturacionChange').textContent = factChange;
+            document.getElementById('kpiFacturacionChange').className = `kpi-change ${getChangeClass(factChange)}`;
+
+            document.getElementById('kpiTickets').textContent = formatNumber(currentTotal.tickets);
+            document.getElementById('kpiTicketsChange').textContent = ticketsChange;
+            document.getElementById('kpiTicketsChange').className = `kpi-change ${getChangeClass(ticketsChange)}`;
+
+            document.getElementById('kpiMargen').textContent = formatPercent(currentTotal.margen_pct);
+            document.getElementById('kpiMargenChange').textContent = margenChange;
+            document.getElementById('kpiMargenChange').className = `kpi-change ${getChangeClass(margenChange)}`;
+
+            document.getElementById('kpiTicketProm').textContent = formatCurrency(currentTotal.ticket_promedio);
+            document.getElementById('kpiTicketPromChange').textContent = ticketPromChange;
+            document.getElementById('kpiTicketPromChange').className = `kpi-change ${getChangeClass(ticketPromChange)}`;
+        }
+
+        function calculateChange(current, previous) {
+            if (previous === 0) return 'N/A';
+            const pct = ((current - previous) / previous * 100).toFixed(1);
+            const sign = pct >= 0 ? '+' : '';
+            return `${sign}${pct}%`;
+        }
+
+        function calculateChangePercent(current, previous) {
+            const diff = (current - previous).toFixed(1);
+            const sign = diff >= 0 ? '+' : '';
+            return `${sign}${diff}pp`;
+        }
+
+        function getChangeClass(changeStr) {
+            if (changeStr === 'N/A') return 'neutral';
+            const value = parseFloat(changeStr);
+            if (value > 0) return 'positive';
+            if (value < 0) return 'negative';
+            return 'neutral';
+        }
+
+        function populateStoreComparison(resumen) {
+            if (!resumen.semana || resumen.semana.length === 0) return;
+
+            const tbody = document.getElementById('storeComparisonBody');
+            tbody.innerHTML = '';
+
+            const stores = resumen.semana.slice().sort((a, b) => (b.venta_neta || 0) - (a.venta_neta || 0));
+
+            const allValues = {
+                facturacion: stores.map(s => s.venta_neta || 0),
+                tickets: stores.map(s => s.tickets || 0),
+                upt: stores.map(s => s.upt || 0),
+                ticket_prom: stores.map(s => s.ticket_promedio || 0),
+                margen: stores.map(s => s.margen_pct || 0)
+            };
+
+            const maxFact = Math.max(...allValues.facturacion);
+            const minFact = Math.min(...allValues.facturacion);
+            const maxTickets = Math.max(...allValues.tickets);
+            const minTickets = Math.min(...allValues.tickets);
+            const maxUpt = Math.max(...allValues.upt);
+            const minUpt = Math.min(...allValues.upt);
+            const maxProm = Math.max(...allValues.ticket_prom);
+            const minProm = Math.min(...allValues.ticket_prom);
+            const maxMargen = Math.max(...allValues.margen);
+            const minMargen = Math.min(...allValues.margen);
+
+            let totalFact = 0, totalTickets = 0, totalUpt = 0, totalMargen = 0;
+
+            stores.forEach(store => {
+                const row = document.createElement('tr');
+                const color = storeColors[store.tienda] || '#666';
+
+                const fact = store.venta_neta || 0;
+                const tickets = store.tickets || 0;
+                const upt = store.upt || 0;
+                const prom = store.ticket_promedio || 0;
+                const margen = store.margen_pct || 0;
+
+                totalFact += fact;
+                totalTickets += tickets;
+                totalMargen += margen;
+
+                const factClass = fact === maxFact ? 'best-value' : (fact === minFact ? 'worst-value' : '');
+                const ticketsClass = tickets === maxTickets ? 'best-value' : (tickets === minTickets ? 'worst-value' : '');
+                const uptClass = upt === maxUpt ? 'best-value' : (upt === minUpt ? 'worst-value' : '');
+                const promClass = prom === maxProm ? 'best-value' : (prom === minProm ? 'worst-value' : '');
+                const margenClass = margen === maxMargen ? 'best-value' : (margen === minMargen ? 'worst-value' : '');
+
+                row.innerHTML = `
+                    <td><span class="store-indicator" style="background-color: ${color};"></span><span class="tienda-name">${store.tienda}</span></td>
+                    <td class="${factClass}">${formatCurrency(fact)}</td>
+                    <td class="${ticketsClass}">${formatNumber(tickets)}</td>
+                    <td class="${uptClass}">${formatDecimal(upt)}</td>
+                    <td class="${promClass}">${formatCurrency(prom)}</td>
+                    <td class="${margenClass}">${formatPercent(margen)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Total row
+            const totalRow = document.createElement('tr');
+            totalRow.className = 'total-row';
+            const avgMargen = stores.length > 0 ? totalMargen / stores.length : 0;
+            totalRow.innerHTML = `
+                <td>TOTAL</td>
+                <td>${formatCurrency(totalFact)}</td>
+                <td>${formatNumber(totalTickets)}</td>
+                <td>-</td>
+                <td>-</td>
+                <td>${formatPercent(avgMargen)}</td>
+            `;
+            tbody.appendChild(totalRow);
+        }
+
+        function createWeeklyTrendChart(tendencia) {
+            if (!tendencia || tendencia.length === 0) return;
+
+            // Get last 12 weeks
+            const weeks = tendencia.slice(-12);
+            const labels = weeks.map(w => {
+                const date = new Date(w.semana);
+                return date.toLocaleDateString('es-AR', { month: 'short', day: 'numeric' });
+            });
+
+            const stores = Object.keys(storeColors);
+            const datasets = stores.map(store => {
+                const data = weeks.map(week => {
+                    const storeData = week.tiendas[store];
+                    return storeData ? storeData.venta_neta : 0;
+                });
+
+                return {
+                    label: store,
+                    data: data,
+                    borderColor: storeColors[store],
+                    backgroundColor: storeColors[store] + '20',
+                    tension: 0.4,
+                    fill: true,
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointHoverRadius: 5,
+                    pointBackgroundColor: storeColors[store]
+                };
+            });
+
+            const ctx = document.getElementById('weeklyTrendChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Inter', sans-serif" },
+                                usePointStyle: true,
+                                padding: 15
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + new Intl.NumberFormat('es-AR').format(value);
+                                },
+                                font: { family: "'Inter', sans-serif" }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: { family: "'Inter', sans-serif" }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createMonthlySummaryChart(mensual) {
+            if (!mensual || mensual.length === 0) return;
+
+            const stores = Object.keys(storeColors);
+            const labels = mensual.map(m => m.nombre || `Mes ${m.mes}`);
+
+            const datasets = stores.map(store => {
+                const data = mensual.map(month => {
+                    const storeData = month.tiendas[store];
+                    return storeData ? storeData.venta_neta : 0;
+                });
+
+                return {
+                    label: store,
+                    data: data,
+                    backgroundColor: storeColors[store],
+                    borderRadius: 4,
+                    borderSkipped: false
+                };
+            });
+
+            const ctx = document.getElementById('monthlySummaryChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'x',
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Inter', sans-serif" },
+                                usePointStyle: true,
+                                padding: 15
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                            ticks: {
+                                font: { family: "'Inter', sans-serif" }
+                            }
+                        },
+                        y: {
+                            stacked: false,
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + new Intl.NumberFormat('es-AR').format(value);
+                                },
+                                font: { family: "'Inter', sans-serif" }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createMarginChart(resumen, mensual) {
+            const stores = Object.keys(storeColors);
+
+            if (resumen.semana && resumen.semana.length > 0) {
+                // Use current week margins
+                const margins = stores.map(store => {
+                    const storeData = resumen.semana.find(s => s.tienda === store);
+                    return storeData ? storeData.margen_pct : 0;
+                });
+
+                const ctx = document.getElementById('marginChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: stores,
+                        datasets: [{
+                            label: 'Margen Bruto %',
+                            data: margins,
+                            backgroundColor: Object.values(storeColors),
+                            borderRadius: 4,
+                            borderSkipped: false
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: { family: "'Inter', sans-serif" }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: { family: "'Inter', sans-serif" }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        function populateProyecciones(proyecciones, resumen) {
+            const container = document.getElementById('proyeccionesContainer');
+            container.innerHTML = '';
+
+            const currentMonth = new Date().toISOString().substring(0, 7); // YYYY-MM
+            const monthData = proyecciones.proyecciones[currentMonth];
+
+            if (!monthData) {
+                container.innerHTML = '<p style="color: #94a3b8; grid-column: 1/-1;">No hay proyecciones para el mes actual.</p>';
+                return;
+            }
+
+            const stores = Object.keys(storeColors);
+
+            stores.forEach(store => {
+                const proj = monthData[store];
+                if (!proj) return;
+
+                // Get actual data from current week
+                let actualFact = 0, actualTickets = 0;
+                if (resumen.semana) {
+                    const storeData = resumen.semana.find(s => s.tienda === store);
+                    if (storeData) {
+                        actualFact = storeData.venta_neta || 0;
+                        actualTickets = storeData.tickets || 0;
+                    }
+                }
+
+                // Calculate projected values for current week (monthly / 4.33)
+                const weeklyProjFact = (proj.proy_facturacion || 0) / 4.33;
+                const weeklyProjTickets = (proj.proy_tickets || 0) / 4.33;
+
+                const pctFact = weeklyProjFact > 0 ? (actualFact / weeklyProjFact * 100) : 0;
+                const pctTickets = weeklyProjTickets > 0 ? (actualTickets / weeklyProjTickets * 100) : 0;
+
+                const color = storeColors[store];
+                const factClass = pctFact >= 95 ? 'green' : (pctFact >= 75 ? 'amber' : 'red');
+                const ticketsClass = pctTickets >= 95 ? 'green' : (pctTickets >= 75 ? 'amber' : 'red');
+
+                const card = document.createElement('div');
+                card.className = 'proyeccion-card';
+                card.innerHTML = `
+                    <div class="proyeccion-header">
+                        <span class="store-indicator" style="background-color: ${color};"></span>
+                        <span class="proyeccion-store">${store}</span>
+                    </div>
+                    <div class="proyeccion-metrics">
+                        <div>
+                            <div class="proyeccion-metric">Real Facturación</div>
+                            <div class="proyeccion-metric-value">${formatCurrency(actualFact)}</div>
+                        </div>
+                        <div>
+                            <div class="proyeccion-metric">Proyectado*</div>
+                            <div class="proyeccion-metric-value">${formatCurrency(weeklyProjFact)}</div>
+                        </div>
+                        <div>
+                            <div class="proyeccion-metric">Real Tickets</div>
+                            <div class="proyeccion-metric-value">${formatNumber(actualTickets)}</div>
+                        </div>
+                        <div>
+                            <div class="proyeccion-metric">Proyectado*</div>
+                            <div class="proyeccion-metric-value">${formatNumber(weeklyProjTickets)}</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label">
+                            <span>Facturación</span>
+                            <span>${pctFact.toFixed(1)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill ${factClass}" style="width: ${Math.min(pctFact, 100)}%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label">
+                            <span>Tickets</span>
+                            <span>${pctTickets.toFixed(1)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill ${ticketsClass}" style="width: ${Math.min(pctTickets, 100)}%;"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 11px; color: #94a3b8; margin-top: 8px;">*Valores semanales calculados de proyección mensual</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function showLoading(show) {
+            document.getElementById('loadingState').style.display = show ? 'block' : 'none';
+        }
+
+        function showContent(show) {
+            document.getElementById('content').style.display = show ? 'block' : 'none';
+        }
+
+        function showError(message) {
+            const errorContainer = document.getElementById('errorContainer');
+            errorContainer.innerHTML = `<div class="error">${message}</div>`;
+        }
+
+        // Initialize dashboard
+        loadDashboard();
+    </script>
+</body>
+</html>
