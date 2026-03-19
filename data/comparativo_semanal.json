@@ -1,0 +1,19 @@
+{
+  "semana_actual": [],
+  "semana_pasada": [],
+  "semana_anio_pasado": [],
+  "_periodos": {
+    "semana_actual": {
+      "desde": "2026-03-16",
+      "hasta": "2026-03-19"
+    },
+    "semana_pasada": {
+      "desde": "2026-03-09",
+      "hasta": "2026-03-15"
+    },
+    "semana_anio_pasado": {
+      "desde": "2025-03-17",
+      "hasta": "2025-03-23"
+    }
+  }
+}
