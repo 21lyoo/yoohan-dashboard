@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-03-17T11:05:08.080771",
+  "ultima_actualizacion": "2026-03-19T09:42:59.373539",
   "tiendas": {
-    "001": "Plaza CC Río Grande",
-    "002": "Casa Corea Río Grande",
+    "001": "Plaza CC Rio Grande",
+    "002": "Casa Corea Rio Grande",
     "003": "Plaza CC Ushuaia",
     "004": "Casa Corea Ushuaia"
   },
-  "generado_por": "generar_datos.py v1.1"
+  "generado_por": "generar_datos.py v2.0 - multi-dashboard"
 }
